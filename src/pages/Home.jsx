@@ -135,7 +135,7 @@ export default function Home({ onNavigateToVideo }) {
         <button
           onClick={() => setShowAiPopup(!showAiPopup)}
           style={{ width: 'clamp(100px, 15vw, 180px)', height: 'clamp(100px, 15vw, 180px)' }}
-          className="hover:scale-105 transition-transform">
+          className="scale-105">
           
           <img
             src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/641c5ea98_ai-btn.png"
