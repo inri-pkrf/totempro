@@ -131,7 +131,7 @@ export default function Home({ onNavigateToVideo }) {
       </div>
 
       {/* AI character - bottom left corner of white card */}
-      <div className="mt-1 absolute z-20" style={{ bottom: 'calc(13% - 50px)', left: 'calc(3% - 10px)' }}>
+      <div className="mt-1 mb-2 px-2 absolute z-20" style={{ bottom: 'calc(13% - 50px)', left: 'calc(3% - 10px)' }}>
         <button
           onClick={() => setShowAiPopup(!showAiPopup)}
           style={{ width: 'clamp(100px, 15vw, 180px)', height: 'clamp(100px, 15vw, 180px)' }}
@@ -139,7 +139,7 @@ export default function Home({ onNavigateToVideo }) {
           
           <img
             src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/641c5ea98_ai-btn.png"
-            alt="AI" className="pl-1 w-full h-full object-cover" />
+            alt="AI" className="w-full h-full object-cover" />
           
           
         </button>
