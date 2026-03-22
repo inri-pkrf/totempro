@@ -19,6 +19,9 @@ export default function VideoScreen({ onEnded }) {
     }
   }, [isMobile]);
 
+  const desktopVideoUrl = "https://base44.app/api/apps/69bfa8f7c160ff3fb92ea9a6/files/mp/public/69bfa8f7c160ff3fb92ea9a6/e017ffda5_introVidComp.mp4";
+  const mobileVideoUrl = "https://base44.app/api/apps/69bfa8f7c160ff3fb92ea9a6/files/mp/public/69bfa8f7c160ff3fb92ea9a6/aa4a9a054_introVid.mp4";
+
   return (
     <div className="w-screen h-screen bg-black overflow-hidden">
       <video
@@ -28,7 +31,7 @@ export default function VideoScreen({ onEnded }) {
         muted
         playsInline
       >
-        <source src="https://base44.app/api/apps/69bfa8f7c160ff3fb92ea9a6/files/mp/public/69bfa8f7c160ff3fb92ea9a6/e017ffda5_introVidComp.mp4" type="video/mp4" />
+        <source src={isMobile ? mobileVideoUrl : desktopVideoUrl} type="video/mp4" />
       </video>
     </div>
   );
