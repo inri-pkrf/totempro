@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Home from './Home';
 import ColorScreen from '../components/totem/ColorScreen';
 import VideoScreen from '../components/totem/VideoScreen';
+import NavButtons from '../components/totem/NavButtons';
 
 const COLOR_SCREEN_COUNT = 4;
 const COLOR_DURATION = 5000;
