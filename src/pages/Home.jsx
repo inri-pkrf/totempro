@@ -126,11 +126,6 @@ export default function Home({ onNavigateToVideo }) {
         </div>
       </div>
 
-      {/* Overlay backdrop */}
-      {showAiPopup && (
-        <div className="fixed inset-0 bg-black/30 z-10" />
-      )}
-
       {/* AI character - bottom left corner of white card */}
       <div className="mb-[2.125rem] pl-[7%] absolute z-20" style={{ bottom: '6.5%', left: 'calc(3% - 10px)' }}>
         <button
