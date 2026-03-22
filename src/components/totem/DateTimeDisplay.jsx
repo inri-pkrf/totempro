@@ -38,7 +38,7 @@ export default function DateTimeDisplay() {
         <span className="font-bold" style={{ fontSize: 'clamp(0.9rem, 2.25vw, 1.65rem)' }}>{hours}:{minutes}</span>
         <span style={{ fontSize: 'clamp(0.9rem, 2.25vw, 1.65rem)' }}>{day}.{month}.{year}</span>
       </div>
-      <div className="font-assistant opacity-90" style={{ fontSize: 'clamp(0.75rem, 1.6vw, 1.05rem)' }}>
+      <div className="font-assistant opacity-90" style={{ fontSize: 'clamp(0.65rem, 1.4vw, 0.9rem)' }}>
         {dayName} | {hebrewDate}
       </div>
     </div>
