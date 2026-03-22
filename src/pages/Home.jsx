@@ -149,8 +149,8 @@ export default function Home({ onNavigateToVideo }) {
         <img
           src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/b7ce82468_text-pic.png"
           alt=""
-          style={{ height: 'clamp(40px, 6vh, 90px)' }}
-          className="object-contain opacity-80" />
+          style={{ height: 'clamp(60px, 10vh, 120px)' }}
+          className="object-contain opacity-100" />
         
       </div>
     </div>);
