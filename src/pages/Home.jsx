@@ -147,7 +147,7 @@ export default function Home({ onNavigateToVideo }) {
       {/* Text image bottom center */}
       <div className="absolute left-1/2 -translate-x-1/2 z-10" style={{ bottom: '3%' }}>
         <img
-          src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/b7ce82468_text-pic.png"
+          src="https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/02efd5e7a_0.png"
           alt=""
           style={{ height: 'clamp(120px, 18vh, 220px)', maxWidth: '90%' }}
           className="object-contain opacity-100" />
