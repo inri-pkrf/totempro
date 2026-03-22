@@ -33,11 +33,11 @@ export default function Home({ onNavigateToVideo }) {
       {/* Title */}
       <div className="px-[5%] mt-[1%] text-center z-10 flex-shrink-0">
         <h1 className="font-karantina text-white font-normal drop-shadow-lg leading-none"
-        style={{ fontSize: 'clamp(4.5rem, 12vw, 9rem)' }}>
+        style={{ fontSize: 'clamp(3.2rem, 9.5vw, 7.5rem)' }}>
           ברוכים הבאים והבאות
         </h1>
         <h2 className="font-karantina text-white font-normal drop-shadow-lg leading-none mt-1"
-        style={{ fontSize: 'clamp(3.5rem, 9.5vw, 8rem)' }}>
+        style={{ fontSize: 'clamp(2.5rem, 7.5vw, 6.5rem)' }}>
           למכללה הלאומית לאיתנות ישראלית
         </h2>
       </div>
