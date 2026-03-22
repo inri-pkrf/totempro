@@ -18,7 +18,7 @@ export default function VideoScreen({ onEnded }) {
         muted
         playsInline
       >
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+        <source src="https://base44.app/api/apps/69bfa8f7c160ff3fb92ea9a6/files/mp/public/69bfa8f7c160ff3fb92ea9a6/e017ffda5_introVidComp.mp4" type="video/mp4" />
       </video>
     </div>
   );
