@@ -126,15 +126,6 @@ export default function Home({ onNavigateToVideo }) {
         </div>
       </div>
 
-      {/* Dark background overlay */}
-      {showAiPopup && (
-        <div 
-          className="fixed inset-0 z-10" 
-          style={{ backgroundColor: 'rgba(0, 0, 0, 0.4)' }}
-          onClick={() => setShowAiPopup(false)}
-        />
-      )}
-
       {/* AI character - bottom left corner of white card */}
       <div className="mb-[2.125rem] pl-[7%] absolute z-20" style={{ bottom: '6.5%', left: 'calc(3% - 10px)' }}>
         <button
