@@ -84,8 +84,8 @@ export default function Home({ onNavigateToVideo }) {
               className="flex items-center gap-3 rounded-full px-[4%] transition-all duration-200 shadow hover:shadow-md hover:brightness-110 w-full"
               style={{
                 background: 'linear-gradient(to right, #003A57, #007FBD)',
-                paddingTop: '0.8%',
-                paddingBottom: '0.8%'
+                paddingTop: '1.5%',
+                paddingBottom: '1.5%'
               }}>
               
                 <div className="rounded-full bg-white flex items-center justify-center flex-shrink-0"
@@ -108,8 +108,8 @@ export default function Home({ onNavigateToVideo }) {
               className="flex items-center gap-3 rounded-full px-[4%] transition-all duration-200 shadow hover:shadow-md hover:brightness-110 w-full"
               style={{
                 background: 'linear-gradient(to right, #003A57, #007FBD)',
-                paddingTop: '0.8%',
-                paddingBottom: '0.8%'
+                paddingTop: '1.5%',
+                paddingBottom: '1.5%'
               }}>
               
               <div className="rounded-full bg-white flex items-center justify-center flex-shrink-0"
