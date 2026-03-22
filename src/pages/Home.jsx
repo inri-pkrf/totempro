@@ -26,7 +26,7 @@ export default function Home({ onNavigateToVideo }) {
       dir="rtl">
       
       {/* Top: date/time */}
-      <div className="flex justify-end items-start px-[5%] pt-[2%] z-20 flex-shrink-0">
+      <div className="flex justify-end items-start px-[5%] pt-[2%] z-20 flex-shrink-0" style={{ opacity: showAiPopup ? 0.3 : 1, transition: 'opacity 0.3s' }}>
         <DateTimeDisplay />
       </div>
 
