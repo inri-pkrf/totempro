@@ -70,7 +70,7 @@ export default function Home({ onNavigateToVideo }) {
               <img
                 src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/10285006f_menu-btn.png"
                 alt="תפריט"
-                style={{ width: 'clamp(22px, 3vw, 36px)' }}
+                style={{ width: 'clamp(44px, 6vw, 72px)' }}
                 className="object-contain" />
               
             </button>
