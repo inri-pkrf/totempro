@@ -8,13 +8,9 @@ const BUTTONS = [
 { label: 'הספרייה הלאומית לחירום', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/711382d76_icon2.png' },
 { label: 'הכשרות למשרדי הממשלה', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/64e9c981f_icon3-4.png' },
 { label: 'הכשרות לרשויות המקומיות', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/64e9c981f_icon3-4.png' },
-{ label: 'עזר ניהול מצבי חירום', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/28dfee8ee_icon5.png' }];
-
-
-const EXTRA_BUTTON = {
-  label: "מאגר 'שאגת הארי'",
-  icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/01ea85710_icon6.png'
-};
+{ label: 'עזר ניהול מצבי חירום', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/28dfee8ee_icon5.png' },
+{ label: "מאגר 'שאגת הארי'", icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/01ea85710_icon6.png' }
+];
 
 export default function Home({ onNavigateToVideo }) {
   const [showAiPopup, setShowAiPopup] = useState(false);
