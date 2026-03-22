@@ -77,56 +77,54 @@ export default function Home({ onNavigateToVideo }) {
           </div>
 
           {/* Buttons - fill remaining space evenly */}
-          <div className="flex-1 flex flex-col justify-center px-[5%] pb-[3%] relative z-10 min-h-0" dir="rtl">
-            <div className="flex flex-col gap-[4%]">
-              {BUTTONS.map((btn, i) =>
-              <button
-                key={i}
-                className="flex items-center gap-3 rounded-full px-[4%] transition-all duration-200 shadow hover:shadow-md hover:brightness-110 w-full"
-                style={{
-                  background: 'linear-gradient(to right, #003A57, #007FBD)',
-                  paddingTop: '1.5%',
-                  paddingBottom: '1.5%'
-                }}>
-                
-                  <div className="rounded-full bg-white flex items-center justify-center flex-shrink-0"
-                style={{ width: 'clamp(32px, 4vw, 46px)', height: 'clamp(32px, 4vw, 46px)' }}>
-                    <img src={btn.icon} alt="" style={{ width: '60%', height: '60%' }} className="object-contain" />
-                  </div>
-                  <span className="flex-1 text-white font-assistant font-bold" style={{ fontSize: 'clamp(0.8rem, 1.8vw, 1.15rem)' }}>
-                    {btn.label}
-                  </span>
-                </button>
-              )}
-
-              <div className="text-center">
-                <span className="text-[#1a5f7a] font-assistant font-semibold cursor-pointer hover:underline underline" style={{ fontSize: 'clamp(0.7rem, 1.2vw, 0.95rem)' }}>
-                  עוד מוצרים דיגיטליים &gt;
-                </span>
-              </div>
-
-              <button
-                className="flex items-center gap-3 rounded-full px-[4%] transition-all duration-200 shadow hover:shadow-md hover:brightness-110 w-full"
-                style={{
-                  background: 'linear-gradient(to right, #003A57, #007FBD)',
-                  paddingTop: '1.5%',
-                  paddingBottom: '1.5%'
-                }}>
-                
+          <div className="flex-1 flex flex-col justify-center px-[5%] pb-[3%] relative z-10 min-h-0 gap-[4%]" dir="rtl">
+            {BUTTONS.map((btn, i) =>
+            <button
+              key={i}
+              className="flex items-center gap-3 rounded-full px-[4%] transition-all duration-200 shadow hover:shadow-md hover:brightness-110 w-full"
+              style={{
+                background: 'linear-gradient(to right, #003A57, #007FBD)',
+                paddingTop: '1.5%',
+                paddingBottom: '1.5%'
+              }}>
+              
                 <div className="rounded-full bg-white flex items-center justify-center flex-shrink-0"
-                style={{ width: 'clamp(32px, 4vw, 46px)', height: 'clamp(32px, 4vw, 46px)' }}>
-                  <img src={EXTRA_BUTTON.icon} alt="" style={{ width: '60%', height: '60%' }} className="object-contain" />
+              style={{ width: 'clamp(32px, 4vw, 46px)', height: 'clamp(32px, 4vw, 46px)' }}>
+                  <img src={btn.icon} alt="" style={{ width: '60%', height: '60%' }} className="object-contain" />
                 </div>
                 <span className="flex-1 text-white font-assistant font-bold" style={{ fontSize: 'clamp(0.8rem, 1.8vw, 1.15rem)' }}>
-                  {EXTRA_BUTTON.label}
+                  {btn.label}
                 </span>
               </button>
+            )}
 
-              <div className="text-center">
-                <span className="text-[#1a5f7a] font-assistant font-semibold cursor-pointer hover:underline underline" style={{ fontSize: 'clamp(0.7rem, 1.2vw, 0.95rem)' }}>
-                  עוד מאגרים למצבי חירום &gt;
-                </span>
+            <div className="text-center">
+              <span className="text-[#1a5f7a] font-assistant font-semibold cursor-pointer hover:underline underline" style={{ fontSize: 'clamp(0.7rem, 1.2vw, 0.95rem)' }}>
+                עוד מוצרים דיגיטליים &gt;
+              </span>
+            </div>
+
+            <button
+              className="flex items-center gap-3 rounded-full px-[4%] transition-all duration-200 shadow hover:shadow-md hover:brightness-110 w-full"
+              style={{
+                background: 'linear-gradient(to right, #003A57, #007FBD)',
+                paddingTop: '1.5%',
+                paddingBottom: '1.5%'
+              }}>
+              
+              <div className="rounded-full bg-white flex items-center justify-center flex-shrink-0"
+              style={{ width: 'clamp(32px, 4vw, 46px)', height: 'clamp(32px, 4vw, 46px)' }}>
+                <img src={EXTRA_BUTTON.icon} alt="" style={{ width: '60%', height: '60%' }} className="object-contain" />
               </div>
+              <span className="flex-1 text-white font-assistant font-bold" style={{ fontSize: 'clamp(0.8rem, 1.8vw, 1.15rem)' }}>
+                {EXTRA_BUTTON.label}
+              </span>
+            </button>
+
+            <div className="text-center">
+              <span className="text-[#1a5f7a] font-assistant font-semibold cursor-pointer hover:underline underline" style={{ fontSize: 'clamp(0.7rem, 1.2vw, 0.95rem)' }}>
+                עוד מאגרים למצבי חירום &gt;
+              </span>
             </div>
           </div>
         </div>
