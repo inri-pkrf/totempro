@@ -47,7 +47,7 @@ export default function ColorScreen({ screenIndex }) {
           <h1
             key={i}
             className="font-karantina text-white font-normal leading-tight text-center"
-            style={{ fontSize: 'clamp(3rem, 10vw, 8rem)', marginBottom: '1.5%' }}
+            style={{ fontSize: 'clamp(3.5rem, 12vw, 10rem)', marginBottom: '1.5%' }}
           >
             {line}
           </h1>
