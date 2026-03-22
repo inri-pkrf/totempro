@@ -1,13 +1,23 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 
 export default function VideoScreen({ onEnded }) {
   const videoRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.play().catch(() => {});
     }
-  }, []);
+  }, [isMobile]);
 
   return (
     <div className="w-screen h-screen bg-black overflow-hidden">
