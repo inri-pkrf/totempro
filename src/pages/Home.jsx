@@ -17,7 +17,7 @@ export default function Home({ onNavigateToVideo }) {
 
   return (
     <div
-      className="w-screen h-screen relative overflow-hidden flex flex-col"
+      className="w-screen min-h-screen relative overflow-y-auto flex flex-col"
       style={{
         backgroundImage: `url(https://media.base44.com/images/public/user_6885e537f90714e91be36212/93d0b0613_bg-pic.jpg)`,
         backgroundSize: 'cover',
