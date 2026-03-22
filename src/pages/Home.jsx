@@ -57,8 +57,14 @@ export default function Home({ onNavigateToVideo }) {
             <img src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/09589c8ed_blue.png" alt="" className="w-full" />
           </div>
 
-          {/* Card header: menu + logo */}
+          {/* Card header: logo + menu */}
           <div className="flex justify-between items-center px-[5%] pt-[3%] pb-[2%] flex-shrink-0 relative z-10">
+            <img
+              src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/b4fb5c195_logo.png"
+              alt="Logo"
+              style={{ height: 'clamp(44px, 6.5vh, 72px)' }}
+              className="object-contain"
+            />
             <button className="flex items-center justify-center">
               <img
                 src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/10285006f_menu-btn.png"
@@ -67,12 +73,6 @@ export default function Home({ onNavigateToVideo }) {
                 className="object-contain"
               />
             </button>
-            <img
-              src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/b4fb5c195_logo.png"
-              alt="Logo"
-              style={{ height: 'clamp(44px, 6.5vh, 72px)' }}
-              className="object-contain"
-            />
           </div>
 
           {/* Buttons - fill remaining space evenly */}
