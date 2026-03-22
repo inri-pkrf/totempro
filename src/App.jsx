@@ -30,6 +30,7 @@ const AuthenticatedApp = () => {
   return (
     <Routes>
       <Route path="/" element={<TotemController />} />
+      <Route path="/TotemController" element={<TotemController />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
