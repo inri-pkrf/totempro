@@ -57,22 +57,14 @@ export default function TotemController() {
       )}
 
       {currentView.startsWith('color-') && (
-        <div className="w-full h-full relative">
-          <ColorScreen screenIndex={parseInt(currentView.split('-')[1])} />
-          <div className="absolute bottom-4 left-4 flex items-center gap-3 z-20">
-            <button className="w-[6vw] h-[6vw] max-w-[60px] max-h-[60px] rounded-full overflow-hidden shadow-lg hover:scale-110 transition-transform">
-              <img src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/509cead3e_video-btn.png" alt="וידאו" className="w-full h-full object-cover" />
-            </button>
-            <button onClick={handleNavigateHome} className="w-[6vw] h-[6vw] max-w-[60px] max-h-[60px] rounded-full overflow-hidden shadow-lg hover:scale-110 transition-transform">
-              <img src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/5d2d4d14b_home-btn.png" alt="בית" className="w-full h-full object-cover" />
-            </button>
-          </div>
-        </div>
+        <ColorScreen screenIndex={parseInt(currentView.split('-')[1])} />
       )}
 
       {currentView === 'video' && (
         <VideoScreen onEnded={handleVideoEnd} />
       )}
+
+      <NavButtons onNavigateToVideo={handleNavigateToVideo} onNavigateHome={handleNavigateHome} />
     </div>
   );
 }
