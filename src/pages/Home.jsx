@@ -17,14 +17,13 @@ export default function Home({ onNavigateToVideo }) {
 
   return (
     <div
-      className="w-screen h-screen relative overflow-hidden flex flex-col items-center justify-center"
+      className="w-screen h-screen relative overflow-hidden flex flex-col"
       style={{
         backgroundImage: `url(https://media.base44.com/images/public/user_6885e537f90714e91be36212/93d0b0613_bg-pic.jpg)`,
         backgroundSize: 'cover',
         backgroundPosition: 'center top'
       }}
       dir="rtl">
-      <div className="w-full h-full flex flex-col max-w-md">
       
       {/* Top: date/time */}
       <div className="flex justify-end items-start px-[5%] pt-[2%] z-20 flex-shrink-0">
@@ -154,7 +153,6 @@ export default function Home({ onNavigateToVideo }) {
         
         
       </div>
-      </div>
-      </div>);
+    </div>);
 
-      }
+}
