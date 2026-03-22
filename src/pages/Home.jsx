@@ -126,8 +126,8 @@ export default function Home({ onNavigateToVideo }) {
         </div>
       </div>
 
-      {/* AI character - bottom left corner of white card */}
-      <div className="mb-[2.125rem] pl-[7%] absolute z-20" style={{ bottom: '6.5%', left: 'calc(8% - 10px)', borderRadius: '100px' }}>
+      {/* AI character - bottom left corner of page */}
+      <div className="absolute z-20" style={{ bottom: '2%', left: '2%', borderRadius: '100px' }}>
         <button
           onClick={() => setShowAiPopup(!showAiPopup)}
           style={{ width: 'clamp(60px, 10vw, 100px)', height: 'clamp(60px, 10vw, 100px)' }}
