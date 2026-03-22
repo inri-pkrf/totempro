@@ -13,7 +13,7 @@ export default function VideoScreen({ onEnded }) {
     <div className="w-screen h-screen bg-black overflow-hidden">
       <video
         ref={videoRef}
-        className="w-full h-full object-contain"
+        className="w-full h-full object-cover"
         onEnded={onEnded}
         muted
         playsInline
