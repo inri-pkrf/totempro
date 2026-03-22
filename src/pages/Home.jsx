@@ -1,7 +1,19 @@
 import React, { useState } from 'react';
 import DateTimeDisplay from '../components/totem/DateTimeDisplay';
-import HomeButtons from '../components/totem/HomeButtons';
 import AiPopup from '../components/totem/AiPopup';
+
+const BUTTONS = [
+  { label: 'אתר המכללה', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png' },
+  { label: 'הספרייה הלאומית לחירום', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/711382d76_icon2.png' },
+  { label: 'הכשרות למשרדי הממשלה', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/64e9c981f_icon3-4.png' },
+  { label: 'הכשרות לרשויות המקומיות', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/28dfee8ee_icon5.png' },
+  { label: 'עזר ניהול מצבי חירום', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/01ea85710_icon6.png' },
+];
+
+const EXTRA_BUTTON = {
+  label: "מאגר 'שאגת הארי'",
+  icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/64e9c981f_icon3-4.png',
+};
 
 export default function Home({ onNavigateToVideo }) {
   const [showAiPopup, setShowAiPopup] = useState(false);
@@ -16,58 +28,112 @@ export default function Home({ onNavigateToVideo }) {
       }}
       dir="rtl"
     >
-      {/* Top header: date on right */}
-      <div className="flex justify-between items-start px-[4%] pt-[2%] z-20">
-        <div />
+      {/* Top: date/time */}
+      <div className="flex justify-end items-start px-[5%] pt-[2%] z-20 flex-shrink-0">
         <DateTimeDisplay />
       </div>
 
       {/* Title */}
-      <div className="px-[4%] mt-[1%] text-right z-10">
-        <h1 className="font-karantina text-white font-bold drop-shadow-lg leading-tight"
-            style={{ fontSize: 'clamp(2rem, 6vw, 5rem)' }}>
+      <div className="px-[5%] mt-[1%] text-right z-10 flex-shrink-0">
+        <h1 className="font-karantina text-white font-bold drop-shadow-lg leading-none"
+            style={{ fontSize: 'clamp(1.8rem, 5.5vw, 4.5rem)' }}>
           ברוכים הבאים והבאות
         </h1>
-        <h2 className="font-karantina text-white font-bold drop-shadow-lg"
-            style={{ fontSize: 'clamp(1.4rem, 4vw, 3.2rem)' }}>
+        <h2 className="font-karantina text-white font-bold drop-shadow-lg leading-none mt-1"
+            style={{ fontSize: 'clamp(1.2rem, 3.5vw, 3rem)' }}>
           למכללה הלאומית לאיתנות ישראלית
         </h2>
       </div>
 
-      {/* Main content card - centered, fills remaining space */}
-      <div className="flex-1 flex flex-col items-center px-[4%] mt-[2%] pb-[12%] min-h-0">
-        <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl w-full max-w-[560px] flex flex-col overflow-hidden"
-             style={{ maxHeight: '100%' }}>
-          {/* Card top row */}
-          <div className="flex justify-between items-center px-5 pt-4 pb-2 flex-shrink-0">
+      {/* White card */}
+      <div className="flex-1 mx-[3%] mt-[2%] mb-[13%] z-10 min-h-0">
+        <div className="bg-white/92 backdrop-blur-sm rounded-3xl shadow-2xl h-full flex flex-col overflow-hidden relative">
+
+          {/* Decorations */}
+          <div className="absolute top-0 left-0 w-[35%] pointer-events-none opacity-70">
+            <img src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/69b22dfa6_orange.png" alt="" className="w-full" />
+          </div>
+          <div className="absolute bottom-0 right-0 w-[35%] pointer-events-none opacity-70">
+            <img src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/09589c8ed_blue.png" alt="" className="w-full" />
+          </div>
+
+          {/* Card header: menu + logo */}
+          <div className="flex justify-between items-center px-[5%] pt-[3%] pb-[2%] flex-shrink-0 relative z-10">
             <button className="flex items-center justify-center">
               <img
                 src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/10285006f_menu-btn.png"
                 alt="תפריט"
-                style={{ width: 'clamp(24px, 3vw, 36px)', height: 'clamp(24px, 3vw, 36px)' }}
+                style={{ width: 'clamp(22px, 3vw, 36px)' }}
                 className="object-contain"
               />
             </button>
             <img
               src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/b4fb5c195_logo.png"
               alt="Logo"
-              style={{ height: 'clamp(48px, 7vh, 80px)' }}
+              style={{ height: 'clamp(44px, 6.5vh, 72px)' }}
               className="object-contain"
             />
           </div>
 
-          {/* Buttons - scrollable if needed */}
-          <div className="overflow-y-auto px-4 pb-4 flex-1">
-            <HomeButtons />
+          {/* Buttons - fill remaining space evenly */}
+          <div className="flex-1 flex flex-col justify-evenly px-[5%] pb-[3%] relative z-10 min-h-0">
+            {BUTTONS.map((btn, i) => (
+              <button
+                key={i}
+                className="flex items-center gap-3 rounded-full px-[4%] transition-all duration-200 shadow hover:shadow-md hover:brightness-110 w-full"
+                style={{
+                  backgroundColor: '#1a5f7a',
+                  paddingTop: '1.5%',
+                  paddingBottom: '1.5%',
+                }}
+              >
+                <span className="flex-1 text-right text-white font-assistant font-bold" style={{ fontSize: 'clamp(0.8rem, 1.8vw, 1.15rem)' }}>
+                  {btn.label}
+                </span>
+                <div className="rounded-full bg-white flex items-center justify-center flex-shrink-0"
+                     style={{ width: 'clamp(32px, 4vw, 46px)', height: 'clamp(32px, 4vw, 46px)' }}>
+                  <img src={btn.icon} alt="" style={{ width: '60%', height: '60%' }} className="object-contain" />
+                </div>
+              </button>
+            ))}
+
+            <div className="text-center">
+              <span className="text-[#1a5f7a] font-assistant font-semibold cursor-pointer hover:underline underline" style={{ fontSize: 'clamp(0.7rem, 1.2vw, 0.95rem)' }}>
+                עוד מוצרים דיגיטליים &gt;
+              </span>
+            </div>
+
+            <button
+              className="flex items-center gap-3 rounded-full px-[4%] transition-all duration-200 shadow hover:shadow-md hover:brightness-110 w-full"
+              style={{
+                backgroundColor: '#1a5f7a',
+                paddingTop: '1.5%',
+                paddingBottom: '1.5%',
+              }}
+            >
+              <span className="flex-1 text-right text-white font-assistant font-bold" style={{ fontSize: 'clamp(0.8rem, 1.8vw, 1.15rem)' }}>
+                {EXTRA_BUTTON.label}
+              </span>
+              <div className="rounded-full bg-white flex items-center justify-center flex-shrink-0"
+                   style={{ width: 'clamp(32px, 4vw, 46px)', height: 'clamp(32px, 4vw, 46px)' }}>
+                <img src={EXTRA_BUTTON.icon} alt="" style={{ width: '60%', height: '60%' }} className="object-contain" />
+              </div>
+            </button>
+
+            <div className="text-center">
+              <span className="text-[#1a5f7a] font-assistant font-semibold cursor-pointer hover:underline underline" style={{ fontSize: 'clamp(0.7rem, 1.2vw, 0.95rem)' }}>
+                עוד מאגרים למצבי חירום &gt;
+              </span>
+            </div>
           </div>
         </div>
       </div>
 
       {/* AI character - bottom left */}
-      <div className="absolute bottom-[10%] left-[3%] z-20">
+      <div className="absolute z-20" style={{ bottom: '10%', left: '4%' }}>
         <button
           onClick={() => setShowAiPopup(!showAiPopup)}
-          style={{ width: 'clamp(56px, 7vw, 88px)', height: 'clamp(56px, 7vw, 88px)' }}
+          style={{ width: 'clamp(50px, 7vw, 82px)', height: 'clamp(50px, 7vw, 82px)' }}
           className="rounded-full overflow-hidden border-4 border-white shadow-xl hover:scale-105 transition-transform"
         >
           <img
@@ -82,26 +148,26 @@ export default function Home({ onNavigateToVideo }) {
       </div>
 
       {/* Text image bottom center */}
-      <div className="absolute bottom-[4%] left-1/2 -translate-x-1/2 z-10">
+      <div className="absolute left-1/2 -translate-x-1/2 z-10" style={{ bottom: '4%' }}>
         <img
           src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/b7ce82468_text-pic.png"
           alt=""
-          style={{ height: 'clamp(24px, 3vh, 48px)' }}
+          style={{ height: 'clamp(18px, 2.5vh, 38px)' }}
           className="object-contain opacity-80"
         />
       </div>
 
-      {/* Bottom-left navigation buttons */}
-      <div className="absolute bottom-[2%] left-[3%] flex items-center gap-3 z-20">
+      {/* Bottom-right navigation buttons */}
+      <div className="absolute z-20 flex items-center gap-3" style={{ bottom: '2%', right: '4%' }}>
         <button
           onClick={onNavigateToVideo}
-          style={{ width: 'clamp(44px, 5vw, 64px)', height: 'clamp(44px, 5vw, 64px)' }}
+          style={{ width: 'clamp(40px, 5.5vw, 62px)', height: 'clamp(40px, 5.5vw, 62px)' }}
           className="rounded-full overflow-hidden shadow-lg hover:scale-110 transition-transform"
         >
           <img src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/509cead3e_video-btn.png" alt="וידאו" className="w-full h-full object-cover" />
         </button>
         <button
-          style={{ width: 'clamp(44px, 5vw, 64px)', height: 'clamp(44px, 5vw, 64px)' }}
+          style={{ width: 'clamp(40px, 5.5vw, 62px)', height: 'clamp(40px, 5.5vw, 62px)' }}
           className="rounded-full overflow-hidden shadow-lg hover:scale-110 transition-transform"
         >
           <img src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/5d2d4d14b_home-btn.png" alt="בית" className="w-full h-full object-cover" />
