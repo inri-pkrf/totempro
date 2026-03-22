@@ -145,7 +145,7 @@ export default function Home({ onNavigateToVideo }) {
       </div>
 
       {/* Image bottom center */}
-      <div className="absolute left-1/2 -translate-x-1/2 z-10" style={{ bottom: '3%' }}>
+      <div className="absolute left-1/2 -translate-x-1/2 z-10 flex justify-center" style={{ bottom: '3%' }}>
         <img
           src="https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/b840f9407_0.png"
           alt=""
