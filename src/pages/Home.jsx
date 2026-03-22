@@ -26,7 +26,7 @@ export default function Home({ onNavigateToVideo }) {
       dir="rtl">
       
       {/* Top: date/time */}
-      <div className="flex justify-end items-start px-[5%] pt-[2%] z-20 flex-shrink-0" style={{ opacity: showAiPopup ? 0.3 : 1, transition: 'opacity 0.3s' }}>
+      <div className="flex justify-end items-start px-[5%] pt-[2%] z-20 flex-shrink-0">
         <DateTimeDisplay />
       </div>
 
@@ -135,7 +135,7 @@ export default function Home({ onNavigateToVideo }) {
       <div className="mb-[2.125rem] pl-[7%] absolute z-20" style={{ bottom: '6.5%', left: 'calc(3% - 10px)' }}>
         <button
           onClick={() => setShowAiPopup(!showAiPopup)}
-          style={{ width: 'clamp(100px, 15vw, 180px)', height: 'clamp(100px, 15vw, 180px)', opacity: showAiPopup ? 1 : 1, transition: 'opacity 0.3s' }}
+          style={{ width: 'clamp(100px, 15vw, 180px)', height: 'clamp(100px, 15vw, 180px)' }}
           className="scale-105">
           
           <img
@@ -150,7 +150,7 @@ export default function Home({ onNavigateToVideo }) {
       </div>
 
       {/* Image bottom center */}
-      <div className="absolute left-1/2 -translate-x-1/2 z-10 flex justify-center" style={{ bottom: '3%', opacity: showAiPopup ? 0.3 : 1, transition: 'opacity 0.3s' }}>
+      <div className="absolute left-1/2 -translate-x-1/2 z-10 flex justify-center" style={{ bottom: '3%' }}>
         <img
           src="https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/b840f9407_0.png"
           alt=""
