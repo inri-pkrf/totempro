@@ -133,8 +133,8 @@ export default function Home({ onNavigateToVideo }) {
       <div className="absolute z-20" style={{ bottom: '10%', left: '4%' }}>
         <button
           onClick={() => setShowAiPopup(!showAiPopup)}
-          style={{ width: 'clamp(50px, 7vw, 82px)', height: 'clamp(50px, 7vw, 82px)' }}
-          className="rounded-full overflow-hidden border-4 border-white shadow-xl hover:scale-105 transition-transform"
+          style={{ width: 'clamp(70px, 10vw, 120px)', height: 'clamp(70px, 10vw, 120px)' }}
+          className="rounded-full overflow-hidden shadow-xl hover:scale-105 transition-transform"
         >
           <img
             src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/641c5ea98_ai-btn.png"
