@@ -132,7 +132,7 @@ export default function Home({ onNavigateToVideo }) {
       </div>
 
       {/* AI character - bottom left */}
-      <div className="absolute z-20" style={{ bottom: '10%', left: '4%' }}>
+      <div className="absolute z-20" style={{ bottom: '5%', left: '8%' }}>
         <button
           onClick={() => setShowAiPopup(!showAiPopup)}
           style={{ width: 'clamp(100px, 15vw, 180px)', height: 'clamp(100px, 15vw, 180px)' }}
