@@ -87,13 +87,13 @@ export default function Home({ onNavigateToVideo }) {
                   paddingBottom: '1.5%',
                 }}
               >
-                <span className="flex-1 text-white font-assistant font-bold" style={{ fontSize: 'clamp(0.8rem, 1.8vw, 1.15rem)' }}>
-                  {btn.label}
-                </span>
                 <div className="rounded-full bg-white flex items-center justify-center flex-shrink-0"
                      style={{ width: 'clamp(32px, 4vw, 46px)', height: 'clamp(32px, 4vw, 46px)' }}>
                   <img src={btn.icon} alt="" style={{ width: '60%', height: '60%' }} className="object-contain" />
                 </div>
+                <span className="flex-1 text-white font-assistant font-bold" style={{ fontSize: 'clamp(0.8rem, 1.8vw, 1.15rem)' }}>
+                  {btn.label}
+                </span>
               </button>
             ))}
 
