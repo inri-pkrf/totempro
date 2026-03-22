@@ -98,7 +98,7 @@ export default function Home({ onNavigateToVideo }) {
               </button>
             ))}
 
-            <div className="text-center" style={{ marginBottom: '-2%' }}>
+            <div className="text-center" style={{ marginTop: '-1.5%', marginBottom: '0' }}>
               <span className="text-[#1a5f7a] font-assistant font-semibold cursor-pointer hover:underline underline" style={{ fontSize: 'clamp(0.7rem, 1.2vw, 0.95rem)' }}>
                 עוד מוצרים דיגיטליים &gt;
               </span>
@@ -110,7 +110,6 @@ export default function Home({ onNavigateToVideo }) {
                 backgroundColor: '#1a5f7a',
                 paddingTop: '1.5%',
                 paddingBottom: '1.5%',
-                marginTop: '-2%',
               }}
             >
               <div className="rounded-full bg-white flex items-center justify-center flex-shrink-0"
