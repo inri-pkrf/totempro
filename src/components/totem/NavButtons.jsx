@@ -12,7 +12,7 @@ export default function NavButtons({ onNavigateToVideo, onNavigateHome }) {
       </button>
       <button
         onClick={onNavigateHome}
-        style={{ width: 'clamp(40px, 5.5vw, 62px)', height: 'clamp(40px, 5.5vw, 62px)' }}
+        style={{ width: 'clamp(35px, 5vw, 55px)', height: 'clamp(35px, 5vw, 55px)' }}
         className="rounded-full overflow-hidden shadow-lg hover:scale-110 transition-transform"
       >
         <img src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/5d2d4d14b_home-btn.png" alt="בית" className="w-full h-full object-cover" />
