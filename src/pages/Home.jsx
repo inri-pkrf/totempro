@@ -121,7 +121,7 @@ export default function Home({ onNavigateToVideo }) {
               </span>
             </button>
 
-            <div className="text-center" style={{ marginTop: '-6%' }}>
+            <div className="text-center" style={{ marginTop: '-3%' }}>
               <span className="text-[#1a5f7a] font-assistant font-semibold cursor-pointer hover:underline underline" style={{ fontSize: 'clamp(0.7rem, 1.2vw, 0.95rem)' }}>
                 עוד מאגרים למצבי חירום &gt;
               </span>
