@@ -6,7 +6,7 @@ import NavButtons from '../components/totem/NavButtons';
 
 const COLOR_SCREEN_COUNT = 4;
 const COLOR_DURATION = 5000;
-const HOME_DURATION = 60000;
+const HOME_DURATION = 300000;
 
 export default function TotemController() {
   const [currentView, setCurrentView] = useState('home');
