@@ -134,7 +134,7 @@ export default function Home({ onNavigateToVideo }) {
           className="scale-105">
           
           <img
-            src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/641c5ea98_ai-btn.png"
+            src="https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/b87c0ca55_ai.png"
             alt="AI" className="w-full h-full object-cover" />
           
           
