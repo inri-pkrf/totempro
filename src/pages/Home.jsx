@@ -77,7 +77,7 @@ export default function Home({ onNavigateToVideo }) {
           </div>
 
           {/* Buttons - fill remaining space evenly */}
-          <div className="flex-1 flex flex-col justify-evenly px-[5%] pb-[3%] relative z-10 min-h-0 gap-[0%]" dir="rtl">
+          <div className="flex-1 flex flex-col justify-center px-[5%] pb-[3%] relative z-10 min-h-0 gap-[2%]" dir="rtl">
             {BUTTONS.map((btn, i) =>
             <button
               key={i}
