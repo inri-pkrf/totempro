@@ -44,7 +44,7 @@ export default function Home({ onNavigateToVideo }) {
 
       {/* White card */}
       <div className="flex-1 mx-[3%] mt-[4%] mb-[15%] z-10 min-h-0 flex justify-center">
-        <div className="bg-white/90 px-1 backdrop-blur-sm shadow-2xl h-full flex flex-col overflow-hidden relative w-[92%]" style={{ borderRadius: '70px', maxHeight: '100vh' }}>
+        <div className="bg-white/90 px-1 backdrop-blur-sm shadow-2xl h-full flex flex-col overflow-hidden relative w-[92%]" style={{ borderRadius: '70px', maxHeight: '95vh' }}>
 
           {/* Decorations */}
           <div className="absolute top-0 left-0 w-[35%] pointer-events-none opacity-70">
