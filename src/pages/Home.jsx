@@ -36,7 +36,7 @@ export default function Home({ onNavigateToVideo }) {
         style={{ fontSize: 'clamp(2.7rem, 8vw, 6.5rem)' }}>
           ברוכים הבאים והבאות
         </h1>
-        <h2 className="font-karantina text-white font-bold drop-shadow-lg leading-none mt-1"
+        <h2 className="font-karantina text-white font-normal drop-shadow-lg leading-none mt-1"
         style={{ fontSize: 'clamp(2rem, 6vw, 5.5rem)' }}>
           למכללה הלאומית לאיתנות ישראלית
         </h2>
