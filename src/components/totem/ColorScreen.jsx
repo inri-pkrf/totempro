@@ -42,7 +42,7 @@ export default function ColorScreen({ screenIndex }) {
       </div>
 
       {/* Center text */}
-      <div className="flex-1 flex flex-col items-center justify-center px-[6%]">
+      <div className="flex-1 flex flex-col items-center justify-center px-[6%]" style={{ marginTop: '-5%' }}>
         {screen.lines.map((line, i) => (
           <h1
             key={i}
