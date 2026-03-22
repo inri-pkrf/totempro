@@ -35,8 +35,8 @@ export default function DateTimeDisplay() {
   return (
     <div className="text-left text-white" dir="rtl">
       <div className="flex items-baseline gap-3 font-assistant">
-        <span className="font-bold" style={{ fontSize: 'clamp(0.9rem, 2.25vw, 1.65rem)' }}>{hours}:{minutes}</span>
-        <span style={{ fontSize: 'clamp(0.9rem, 2.25vw, 1.65rem)' }}>{day}.{month}.{year}</span>
+        <span className="font-bold" style={{ fontSize: 'clamp(0.7rem, 1.75vw, 1.25rem)' }}>{hours}:{minutes}</span>
+        <span style={{ fontSize: 'clamp(0.7rem, 1.75vw, 1.25rem)' }}>{day}.{month}.{year}</span>
       </div>
       <div className="font-assistant opacity-90" style={{ fontSize: 'clamp(0.6rem, 1.3vw, 0.8rem)' }}>
         {dayName} | {hebrewDate}
