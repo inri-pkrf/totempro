@@ -10,7 +10,7 @@ export default function VideoScreen({ onEnded }) {
   }, []);
 
   return (
-    <div className="w-full h-full bg-black flex items-center justify-center">
+    <div className="w-screen h-screen bg-black overflow-hidden">
       <video
         ref={videoRef}
         className="w-full h-full object-cover"
