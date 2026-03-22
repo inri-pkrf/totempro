@@ -14,6 +14,7 @@ module.exports = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		spacing: {
+  			8.5: '2.125rem',
   			9: '2.25rem'
   		},
   		colors: {
