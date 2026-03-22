@@ -9,8 +9,8 @@ const BUTTONS = [
 { label: 'הכשרות למשרדי הממשלה', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/64e9c981f_icon3-4.png' },
 { label: 'הכשרות לרשויות המקומיות', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/64e9c981f_icon3-4.png' },
 { label: 'עזר ניהול מצבי חירום', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/28dfee8ee_icon5.png' },
-{ label: "מאגר 'שאגת הארי'", icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/01ea85710_icon6.png' }
-];
+{ label: "מאגר 'שאגת הארי'", icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/01ea85710_icon6.png' }];
+
 
 export default function Home({ onNavigateToVideo }) {
   const [showAiPopup, setShowAiPopup] = useState(false);
@@ -55,7 +55,7 @@ export default function Home({ onNavigateToVideo }) {
           </div>
 
           {/* Card header: logo + menu */}
-          <div className="flex justify-between items-center px-[5%] pt-[3%] pb-[2%] flex-shrink-0 relative z-10">
+          <div className="mx-2 pt-[3%] pb-[2%] px-[5%] flex justify-between items-center flex-shrink-0 relative z-10">
             <img
               src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/b4fb5c195_logo.png"
               alt="Logo"
