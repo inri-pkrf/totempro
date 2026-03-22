@@ -148,30 +148,13 @@ export default function Home({ onNavigateToVideo }) {
       </div>
 
       {/* Text image bottom center */}
-      <div className="absolute left-1/2 -translate-x-1/2 z-10" style={{ bottom: '4%' }}>
+      <div className="absolute left-1/2 -translate-x-1/2 z-10" style={{ bottom: '3%' }}>
         <img
           src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/b7ce82468_text-pic.png"
           alt=""
-          style={{ height: 'clamp(18px, 2.5vh, 38px)' }}
+          style={{ height: 'clamp(30px, 4.5vh, 65px)' }}
           className="object-contain opacity-80"
         />
-      </div>
-
-      {/* Bottom-right navigation buttons */}
-      <div className="absolute z-20 flex items-center gap-3" style={{ bottom: '2%', right: '4%' }}>
-        <button
-          onClick={onNavigateToVideo}
-          style={{ width: 'clamp(40px, 5.5vw, 62px)', height: 'clamp(40px, 5.5vw, 62px)' }}
-          className="rounded-full overflow-hidden shadow-lg hover:scale-110 transition-transform"
-        >
-          <img src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/509cead3e_video-btn.png" alt="וידאו" className="w-full h-full object-cover" />
-        </button>
-        <button
-          style={{ width: 'clamp(40px, 5.5vw, 62px)', height: 'clamp(40px, 5.5vw, 62px)' }}
-          className="rounded-full overflow-hidden shadow-lg hover:scale-110 transition-transform"
-        >
-          <img src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/5d2d4d14b_home-btn.png" alt="בית" className="w-full h-full object-cover" />
-        </button>
       </div>
     </div>
   );
