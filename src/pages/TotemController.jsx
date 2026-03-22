@@ -3,14 +3,30 @@ import Home from './Home';
 import ColorScreen from '../components/totem/ColorScreen';
 import VideoScreen from '../components/totem/VideoScreen';
 
-// States: 'home' | 'color-0' | 'color-1' | 'color-2' | 'color-3' | 'video'
 const COLOR_SCREEN_COUNT = 4;
-const COLOR_DURATION = 5000; // 5 seconds per color screen
-const HOME_DURATION = 60000; // 60 seconds on home
+const COLOR_DURATION = 5000;
+const HOME_DURATION = 60000;
+
+const TOTEM_W = 1080;
+const TOTEM_H = 1920;
 
 export default function TotemController() {
   const [currentView, setCurrentView] = useState('home');
+  const [scale, setScale] = useState(1);
   const timerRef = useRef(null);
+  const containerRef = useRef(null);
+
+  // Responsive scaling to fit any screen
+  useEffect(() => {
+    const updateScale = () => {
+      const scaleX = window.innerWidth / TOTEM_W;
+      const scaleY = window.innerHeight / TOTEM_H;
+      setScale(Math.min(scaleX, scaleY));
+    };
+    updateScale();
+    window.addEventListener('resize', updateScale);
+    return () => window.removeEventListener('resize', updateScale);
+  }, []);
 
   const clearTimer = () => {
     if (timerRef.current) {
@@ -60,8 +76,20 @@ export default function TotemController() {
   }, [startCycle]);
 
   return (
-    <div className="w-screen h-screen flex items-center justify-center bg-black overflow-hidden">
-      <div className="w-[1920px] h-[1080px] relative overflow-hidden" style={{ transform: 'scale(var(--totem-scale, 1))', transformOrigin: 'center center' }}>
+    <div
+      className="w-screen h-screen bg-black flex items-center justify-center overflow-hidden"
+    >
+      <div
+        style={{
+          width: TOTEM_W,
+          height: TOTEM_H,
+          transform: `scale(${scale})`,
+          transformOrigin: 'center center',
+          position: 'relative',
+          overflow: 'hidden',
+          flexShrink: 0,
+        }}
+      >
         {currentView === 'home' && (
           <Home onNavigateToVideo={handleNavigateToVideo} />
         )}
@@ -69,11 +97,8 @@ export default function TotemController() {
         {currentView.startsWith('color-') && (
           <div className="w-full h-full relative">
             <ColorScreen screenIndex={parseInt(currentView.split('-')[1])} />
-            {/* Bottom nav on color screens too */}
-            <div className="absolute bottom-4 left-4 flex items-center gap-3 z-20">
-              <button
-                className="w-14 h-14 rounded-full overflow-hidden shadow-lg hover:scale-110 transition-transform"
-              >
+            <div className="absolute bottom-6 left-6 flex items-center gap-4 z-20">
+              <button className="w-16 h-16 rounded-full overflow-hidden shadow-lg hover:scale-110 transition-transform">
                 <img
                   src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/509cead3e_video-btn.png"
                   alt="וידאו"
@@ -82,7 +107,7 @@ export default function TotemController() {
               </button>
               <button
                 onClick={handleNavigateHome}
-                className="w-14 h-14 rounded-full overflow-hidden shadow-lg hover:scale-110 transition-transform"
+                className="w-16 h-16 rounded-full overflow-hidden shadow-lg hover:scale-110 transition-transform"
               >
                 <img
                   src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/5d2d4d14b_home-btn.png"

@@ -8,7 +8,7 @@ export default function Home({ onNavigateToVideo }) {
 
   return (
     <div
-      className="w-[1920px] h-[1080px] relative overflow-hidden"
+      className="w-full h-full relative overflow-hidden"
       style={{
         backgroundImage: `url(https://media.base44.com/images/public/user_6885e537f90714e91be36212/93d0b0613_bg-pic.jpg)`,
         backgroundSize: 'cover',
@@ -16,29 +16,28 @@ export default function Home({ onNavigateToVideo }) {
       }}
       dir="rtl"
     >
-      {/* Top header area */}
-      <div className="absolute top-0 left-0 right-0 flex justify-between items-start p-6 z-20">
+      {/* Top header: date on right, empty on left */}
+      <div className="absolute top-0 left-0 right-0 flex justify-between items-start px-8 pt-6 z-20">
+        <div /> {/* spacer */}
         <DateTimeDisplay />
-        <div />
       </div>
 
-      {/* Title */}
-      <div className="absolute top-6 left-0 right-0 text-center z-10">
-        <h1 className="font-karantina text-white text-6xl font-bold drop-shadow-lg leading-tight">
+      {/* Title top-right area (below date) */}
+      <div className="absolute top-24 right-8 left-8 text-right z-10">
+        <h1 className="font-karantina text-white text-7xl font-bold drop-shadow-lg leading-tight">
           ברוכים הבאים והבאות
         </h1>
-        <h2 className="font-karantina text-white text-4xl font-bold drop-shadow-lg mt-1">
+        <h2 className="font-karantina text-white text-5xl font-bold drop-shadow-lg mt-1">
           למכללה הלאומית לאיתנות ישראלית
         </h2>
       </div>
 
-      {/* Main content card */}
-      <div className="absolute top-[160px] left-1/2 -translate-x-1/2 w-[520px] z-10">
+      {/* Main content card - centered */}
+      <div className="absolute top-[320px] left-1/2 -translate-x-1/2 w-[620px] z-10">
         <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-2xl relative">
-          {/* Logo top right */}
-          <div className="flex justify-between items-start mb-4">
-            {/* Menu button top left */}
-            <button className="w-10 h-10 flex items-center justify-center">
+          {/* Card top row: menu on left, logo on right */}
+          <div className="flex justify-between items-center mb-5">
+            <button className="w-12 h-12 flex items-center justify-center">
               <img
                 src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/10285006f_menu-btn.png"
                 alt="תפריט"
@@ -48,7 +47,7 @@ export default function Home({ onNavigateToVideo }) {
             <img
               src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/b4fb5c195_logo.png"
               alt="Logo"
-              className="h-16 object-contain"
+              className="h-20 object-contain"
             />
           </div>
 
@@ -57,37 +56,39 @@ export default function Home({ onNavigateToVideo }) {
         </div>
       </div>
 
-      {/* AI character - bottom left of card area */}
-      <div className="absolute bottom-[180px] left-[calc(50%-260px)] z-20">
-        <button
-          onClick={() => setShowAiPopup(!showAiPopup)}
-          className="w-20 h-20 rounded-full overflow-hidden border-4 border-white shadow-xl hover:scale-105 transition-transform"
-        >
-          <img
-            src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/641c5ea98_ai-btn.png"
-            alt="AI"
-            className="w-full h-full object-cover"
-          />
-        </button>
+      {/* AI character bottom-left of card */}
+      <div className="absolute bottom-[260px] left-[calc(50%-310px)] z-20">
+        <div className="relative">
+          <button
+            onClick={() => setShowAiPopup(!showAiPopup)}
+            className="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-xl hover:scale-105 transition-transform"
+          >
+            <img
+              src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/641c5ea98_ai-btn.png"
+              alt="AI"
+              className="w-full h-full object-cover"
+            />
+          </button>
+          {showAiPopup && (
+            <AiPopup isOpen={showAiPopup} onClose={() => setShowAiPopup(false)} />
+          )}
+        </div>
       </div>
 
-      {/* AI Popup */}
-      <AiPopup isOpen={showAiPopup} onClose={() => setShowAiPopup(false)} />
-
-      {/* Text image at bottom */}
-      <div className="absolute bottom-[80px] left-1/2 -translate-x-1/2 z-10">
+      {/* Text image at bottom center */}
+      <div className="absolute bottom-[140px] left-1/2 -translate-x-1/2 z-10">
         <img
           src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/b7ce82468_text-pic.png"
           alt=""
-          className="h-10 object-contain opacity-80"
+          className="h-12 object-contain opacity-80"
         />
       </div>
 
-      {/* Bottom right navigation buttons */}
-      <div className="absolute bottom-4 left-4 flex items-center gap-3 z-20">
+      {/* Bottom-left navigation buttons */}
+      <div className="absolute bottom-8 left-8 flex items-center gap-4 z-20">
         <button
           onClick={onNavigateToVideo}
-          className="w-14 h-14 rounded-full overflow-hidden shadow-lg hover:scale-110 transition-transform"
+          className="w-16 h-16 rounded-full overflow-hidden shadow-lg hover:scale-110 transition-transform"
         >
           <img
             src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/509cead3e_video-btn.png"
@@ -95,7 +96,7 @@ export default function Home({ onNavigateToVideo }) {
             className="w-full h-full object-cover"
           />
         </button>
-        <button className="w-14 h-14 rounded-full overflow-hidden shadow-lg hover:scale-110 transition-transform">
+        <button className="w-16 h-16 rounded-full overflow-hidden shadow-lg hover:scale-110 transition-transform">
           <img
             src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/5d2d4d14b_home-btn.png"
             alt="בית"
