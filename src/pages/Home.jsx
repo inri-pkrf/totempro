@@ -13,7 +13,7 @@ const BUTTONS = [
 
 const EXTRA_BUTTON = {
   label: "מאגר 'שאגת הארי'",
-  icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/28dfee8ee_icon5.png'
+  icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/01ea85710_icon6.png'
 };
 
 export default function Home({ onNavigateToVideo }) {
