@@ -43,7 +43,7 @@ export default function Home({ onNavigateToVideo }) {
       </div>
 
       {/* White card */}
-      <div className="flex-1 mx-[3%] mt-[8%] mb-[20%] z-10 min-h-0 flex justify-center">
+      <div className="flex-1 mx-[3%] mt-[2%] mb-[20%] z-10 min-h-0 flex justify-center">
         <div className="bg-white/90 backdrop-blur-sm shadow-2xl h-full flex flex-col overflow-hidden relative w-[92%]" style={{ borderRadius: '70px', maxHeight: '80vh' }}>
 
           {/* Decorations */}
