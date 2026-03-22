@@ -134,7 +134,7 @@ export default function Home({ onNavigateToVideo }) {
       <div className="absolute z-20" style={{ bottom: '10%', left: '4%' }}>
         <button
           onClick={() => setShowAiPopup(!showAiPopup)}
-          style={{ width: 'clamp(70px, 10vw, 120px)', height: 'clamp(70px, 10vw, 120px)' }}
+          style={{ width: 'clamp(100px, 15vw, 180px)', height: 'clamp(100px, 15vw, 180px)' }}
           className="rounded-full overflow-hidden shadow-xl hover:scale-105 transition-transform"
         >
           <img
