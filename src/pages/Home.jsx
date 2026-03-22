@@ -123,17 +123,16 @@ export default function Home({ onNavigateToVideo }) {
         </div>
       </div>
 
-      {/* AI character - bottom left corner of white card */}
-      <div className="mb-[2.125rem] pl-[7%] absolute z-20" style={{ bottom: '6.5%', left: 'calc(3% - 10px)' }}>
+      {/* AI character - bottom left corner */}
+      <div className="absolute z-20" style={{ bottom: '18%', left: '3%' }}>
         <button
           onClick={() => setShowAiPopup(!showAiPopup)}
-          style={{ width: 'clamp(100px, 15vw, 180px)', height: 'clamp(100px, 15vw, 180px)' }}
-          className="scale-105">
+          style={{ width: 'clamp(80px, 12vw, 140px)', height: 'clamp(80px, 12vw, 140px)' }}
+          className="hover:scale-110 transition-transform">
           
           <img
             src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/641c5ea98_ai-btn.png"
-            alt="AI" className="w-full h-full object-cover" />
-          
+            alt="AI" className="w-full h-full object-cover rounded-full shadow-lg" />
           
         </button>
         {showAiPopup &&
