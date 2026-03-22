@@ -110,6 +110,7 @@ export default function Home({ onNavigateToVideo }) {
                 backgroundColor: '#1a5f7a',
                 paddingTop: '1.5%',
                 paddingBottom: '1.5%',
+                marginTop: '-2%',
               }}
             >
               <div className="rounded-full bg-white flex items-center justify-center flex-shrink-0"
