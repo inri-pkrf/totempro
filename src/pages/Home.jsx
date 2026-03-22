@@ -73,7 +73,7 @@ export default function Home({ onNavigateToVideo }) {
           </div>
 
           {/* Buttons - fill remaining space evenly */}
-          <div className="mx-auto mb-8 flex-1 flex flex-col justify-center items-center relative z-10 min-h-0 gap-[2.4%] w-full" dir="rtl">
+          <div className="mx-auto mb-8 flex-1 flex flex-col justify-center items-center relative z-10 min-h-0 gap-[2.4%] w-[85%]" dir="rtl">
             {BUTTONS.slice(0, 5).map((btn, i) =>
             <button
               key={i}
