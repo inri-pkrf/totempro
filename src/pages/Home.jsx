@@ -98,7 +98,7 @@ export default function Home({ onNavigateToVideo }) {
               </button>
             ))}
 
-            <div className="text-center">
+            <div className="text-center" style={{ marginBottom: '-2%' }}>
               <span className="text-[#1a5f7a] font-assistant font-semibold cursor-pointer hover:underline underline" style={{ fontSize: 'clamp(0.7rem, 1.2vw, 0.95rem)' }}>
                 עוד מוצרים דיגיטליים &gt;
               </span>
