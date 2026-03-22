@@ -34,7 +34,7 @@ export default function Home({ onNavigateToVideo }) {
       </div>
 
       {/* Title */}
-      <div className="px-[5%] mt-[1%] text-right z-10 flex-shrink-0">
+      <div className="px-[5%] mt-[1%] text-center z-10 flex-shrink-0">
         <h1 className="font-karantina text-white font-bold drop-shadow-lg leading-none"
             style={{ fontSize: 'clamp(1.8rem, 5.5vw, 4.5rem)' }}>
           ברוכים הבאים והבאות
