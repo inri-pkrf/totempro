@@ -129,7 +129,7 @@ export default function Home({ onNavigateToVideo }) {
       {/* Dark background overlay */}
       {showAiPopup && (
         <div 
-          className="fixed inset-0 z-10" 
+          className="fixed inset-0 z-40" 
           style={{ backgroundColor: 'rgba(0, 0, 0, 0.4)' }}
           onClick={() => setShowAiPopup(false)}
         />
