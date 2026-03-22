@@ -107,7 +107,7 @@ export default function Home({ onNavigateToVideo }) {
             <button
               className="flex items-center gap-3 rounded-full px-[4%] transition-all duration-200 shadow hover:shadow-md hover:brightness-110 w-full"
               style={{
-                backgroundColor: '#1a5f7a',
+                background: 'linear-gradient(to right, #003A57, #007FBD)',
                 paddingTop: '1.5%',
                 paddingBottom: '1.5%'
               }}>
