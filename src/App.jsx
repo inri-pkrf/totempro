@@ -6,6 +6,7 @@ import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import TotemController from './pages/TotemController';
+import UploadVideo from './pages/UploadVideo';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -31,6 +32,7 @@ const AuthenticatedApp = () => {
     <Routes>
       <Route path="/" element={<TotemController />} />
       <Route path="/TotemController" element={<TotemController />} />
+      <Route path="/UploadVideo" element={<UploadVideo />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
