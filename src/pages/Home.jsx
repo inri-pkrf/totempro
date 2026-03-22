@@ -43,7 +43,7 @@ export default function Home({ onNavigateToVideo }) {
       </div>
 
       {/* White card */}
-      <div className="flex-1 mx-[3%] mt-[8%] mb-[20%] z-10 min-h-0 flex justify-center">
+      <div className="flex-1 mx-[3%] mt-[8%] mb-[8%] z-10 min-h-0 flex justify-center">
         <div className="bg-white/90 backdrop-blur-sm shadow-2xl h-full flex flex-col overflow-hidden relative w-[92%]" style={{ borderRadius: '70px', maxHeight: '80vh' }}>
 
           {/* Decorations */}
@@ -127,7 +127,7 @@ export default function Home({ onNavigateToVideo }) {
       </div>
 
       {/* AI character - bottom left corner of white card */}
-      <div className="mb-[2.125rem] pl-[7%] absolute z-20" style={{ bottom: 'calc(13% - 50px)', left: 'calc(3% - 10px)' }}>
+      <div className="mb-[2.125rem] pl-[7%] absolute z-20" style={{ bottom: 'calc(25% - 50px)', left: 'calc(3% - 10px)' }}>
         <button
           onClick={() => setShowAiPopup(!showAiPopup)}
           style={{ width: 'clamp(100px, 15vw, 180px)', height: 'clamp(100px, 15vw, 180px)' }}
