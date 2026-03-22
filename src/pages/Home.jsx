@@ -154,6 +154,7 @@ export default function Home({ onNavigateToVideo }) {
         
         
       </div>
-    </div>);
+      </div>
+      </div>);
 
-}
+      }
