@@ -31,21 +31,23 @@ export default function ColorScreen({ screenIndex }) {
       dir="rtl"
     >
       {/* Header */}
-      <div className="flex justify-between items-start p-6">
+      <div className="flex justify-between items-start px-[4%] pt-[3%]">
         <DateTimeDisplay light />
         <img
           src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/faed9b115_white-logo.png"
           alt="Logo"
-          className="h-16 object-contain"
+          style={{ height: 'clamp(40px, 6vh, 72px)' }}
+          className="object-contain"
         />
       </div>
 
       {/* Center text */}
-      <div className="flex-1 flex flex-col items-center justify-center px-8">
+      <div className="flex-1 flex flex-col items-center justify-center px-[6%]">
         {screen.lines.map((line, i) => (
           <h1
             key={i}
-            className="font-karantina text-white text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-center mb-4"
+            className="font-karantina text-white font-bold leading-tight text-center"
+            style={{ fontSize: 'clamp(2rem, 7vw, 5.5rem)', marginBottom: '1.5%' }}
           >
             {line}
           </h1>

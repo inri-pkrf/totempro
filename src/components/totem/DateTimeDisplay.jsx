@@ -16,7 +16,7 @@ function getHebrewDate() {
   }
 }
 
-export default function DateTimeDisplay({ light = false }) {
+export default function DateTimeDisplay() {
   const [now, setNow] = useState(new Date());
 
   useEffect(() => {
@@ -32,15 +32,13 @@ export default function DateTimeDisplay({ light = false }) {
   const dayName = hebrewDays[now.getDay()];
   const hebrewDate = getHebrewDate();
 
-  const textColor = light ? 'text-white' : 'text-white';
-
   return (
-    <div className={`text-right ${textColor}`} dir="rtl">
+    <div className="text-right text-white" dir="rtl">
       <div className="flex items-baseline gap-2 font-assistant">
-        <span className="text-2xl font-bold">{hours}:{minutes}</span>
-        <span className="text-lg">{day}.{month}.{year}</span>
+        <span className="font-bold" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.8rem)' }}>{hours}:{minutes}</span>
+        <span style={{ fontSize: 'clamp(0.8rem, 1.8vw, 1.3rem)' }}>{day}.{month}.{year}</span>
       </div>
-      <div className="text-sm font-assistant opacity-90">
+      <div className="font-assistant opacity-90" style={{ fontSize: 'clamp(0.65rem, 1.2vw, 1rem)' }}>
         {dayName} | {hebrewDate}
       </div>
     </div>
