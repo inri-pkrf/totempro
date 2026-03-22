@@ -148,6 +148,8 @@ export default function Home({ onNavigateToVideo }) {
         )}
       </div>
 
+      <NavButtons onNavigateToVideo={onNavigateToVideo} onNavigateHome={() => {}} />
+
       {/* Text image bottom center */}
       <div className="absolute left-1/2 -translate-x-1/2 z-10" style={{ bottom: '3%' }}>
         <img
