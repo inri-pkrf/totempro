@@ -130,8 +130,8 @@ export default function Home({ onNavigateToVideo }) {
       <div className="mb-[2.125rem] pl-[7%] absolute z-20" style={{ bottom: '6.5%', left: 'calc(8% - 10px)', borderRadius: '100px' }}>
         <button
           onClick={() => setShowAiPopup(!showAiPopup)}
-          style={{ width: 'clamp(60px, 10vw, 100px)', height: 'clamp(60px, 10vw, 100px)' }}
-          className="scale-105">
+          style={{ width: 'clamp(60px, 10vw, 100px)', height: 'clamp(60px, 10vw, 100px)', borderRadius: '100px' }}
+          className="scale-105 overflow-hidden">
           
           <img
             src="https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/b87c0ca55_ai.png"
