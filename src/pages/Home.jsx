@@ -144,7 +144,7 @@ export default function Home({ onNavigateToVideo }) {
         }
       </div>
 
-      {/* Text image bottom center */}
+      {/* Image bottom center */}
       <div className="absolute left-1/2 -translate-x-1/2 z-10" style={{ bottom: '3%' }}>
         <img
           src="https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/b840f9407_0.png"
