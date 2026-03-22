@@ -32,13 +32,13 @@ export default function ColorScreen({ screenIndex }) {
     >
       {/* Header */}
       <div className="flex justify-between items-start px-[4%] pt-[3%]">
-        <DateTimeDisplay light />
         <img
           src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/faed9b115_white-logo.png"
           alt="Logo"
           style={{ height: 'clamp(40px, 6vh, 72px)' }}
           className="object-contain"
         />
+        <DateTimeDisplay light />
       </div>
 
       {/* Center text */}
