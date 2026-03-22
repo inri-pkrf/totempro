@@ -51,7 +51,7 @@ export default function TotemController() {
   const handleNavigateHome = useCallback(() => startCycle(), [startCycle]);
 
   return (
-    <div className="w-screen h-screen bg-black overflow-hidden mx-auto" style={{ maxWidth: '640px' }}>
+    <div className="w-screen h-screen bg-black overflow-hidden">
       {currentView === 'home' && (
         <Home onNavigateToVideo={handleNavigateToVideo} />
       )}
