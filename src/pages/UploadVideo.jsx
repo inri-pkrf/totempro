@@ -14,8 +14,13 @@ export default function UploadVideo() {
     try {
       const formData = new FormData();
       formData.append('video', file);
-      const response = await base44.functions.invoke('uploadVideo', formData);
-      setResult(response.data.file_url);
+      const response = await fetch('/api/functions/uploadVideo', {
+        method: 'POST',
+        body: formData
+      });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error);
+      setResult(data.file_url);
       setFile(null);
     } catch (error) {
       alert('Upload failed: ' + error.message);
