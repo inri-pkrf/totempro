@@ -55,7 +55,7 @@ export default function MoreDatabases({ onBack }) {
           </div>
 
           {/* Title inside card */}
-          <div className="text-center relative z-10 flex-shrink-0 px-[5%] mt-[6%]">
+          <div className="text-center relative z-10 flex-shrink-0 px-[5%] mt-[2%]">
             <h2 className="font-karantina font-normal leading-none"
               style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', color: '#003A57' }}>
               מאגרים למצבי חירום
