@@ -84,7 +84,7 @@ export default function MoreDatabases({ onBack }) {
                 onClick={onBack}
                 className="font-assistant font-bold text-primary hover:underline"
                 style={{ fontSize: 'clamp(0.8rem, 1.5vw, 1rem)' }}>
-                &gt; חזרה
+                חזרה &gt;
               </button>
             </div>
           </div>
