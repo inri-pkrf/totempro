@@ -116,7 +116,7 @@ export default function Home({ onNavigateToVideo }) {
             )}
 
             <div className="text-center" style={{ marginTop: '-4%', marginBottom: '0' }}>
-              <span className="text-[#1a5f7a] font-assistant font-semibold cursor-pointer hover:underline underline" style={{ fontSize: 'clamp(0.7rem, 1.2vw, 0.95rem)' }}>
+              <span onClick={() => setShowMoreProducts(true)} className="text-[#1a5f7a] font-assistant font-semibold cursor-pointer hover:underline underline" style={{ fontSize: 'clamp(0.7rem, 1.2vw, 0.95rem)' }}>
                 עוד מוצרים דיגיטליים &gt;
               </span>
             </div>
