@@ -58,25 +58,13 @@ export default function MoreDatabases({ onBack }) {
           {/* Buttons */}
           <div className="mx-auto mb-4 flex-1 flex flex-col justify-center items-center relative z-10 min-h-0 gap-[3%] w-[85%]" dir="rtl">
             {BUTTONS.map((btn, i) => (
-              <button
+              <AnimatedButton
                 key={i}
-                disabled={!btn.url}
+                label={btn.label}
+                icon={btn.icon}
                 onClick={() => btn.url && window.open(btn.url, '_blank')}
-                className="flex items-center gap-3 rounded-full px-[4%] transition-all duration-200 shadow hover:shadow-md hover:brightness-110 w-full max-w-[85%] mx-auto"
-                style={{
-                  background: 'linear-gradient(to right, #003A57, #007FBD)',
-                  paddingTop: '1.5%',
-                  paddingBottom: '1.5%',
-                  opacity: btn.url ? 1 : 0.85
-                }}>
-                <div className="rounded-full bg-white flex items-center justify-center flex-shrink-0"
-                  style={{ width: 'clamp(32px, 4vw, 46px)', height: 'clamp(32px, 4vw, 46px)' }}>
-                  <img src={btn.icon} alt="" style={{ width: '60%', height: '60%' }} className="object-contain" />
-                </div>
-                <span className="flex-1 text-white font-assistant font-bold" style={{ fontSize: 'clamp(0.8rem, 1.8vw, 1.15rem)' }}>
-                  {btn.label}
-                </span>
-              </button>
+                disabled={!btn.url}
+              />
             ))}
 
             {/* Back button below buttons, centered */}
