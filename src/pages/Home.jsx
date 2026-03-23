@@ -92,13 +92,13 @@ export default function Home({ onNavigateToVideo }) {
             {BUTTONS.slice(0, 5).map((btn, i) =>
             <button
               key={i}
+              onClick={() => handleButtonClick(btn)}
               className="flex items-center gap-3 rounded-full px-[4%] transition-all duration-200 shadow hover:shadow-md hover:brightness-110 w-full max-w-[85%] mx-auto"
               style={{
                 background: 'linear-gradient(to right, #003A57, #007FBD)',
                 paddingTop: '1.5%',
                 paddingBottom: '1.5%'
               }}>
-              
                 <div className="rounded-full bg-white flex items-center justify-center flex-shrink-0"
               style={{ width: 'clamp(32px, 4vw, 46px)', height: 'clamp(32px, 4vw, 46px)' }}>
                   <img src={btn.icon} alt="" style={{ width: '60%', height: '60%' }} className="object-contain" />
@@ -116,13 +116,13 @@ export default function Home({ onNavigateToVideo }) {
             </div>
 
             <button
+              onClick={() => handleButtonClick(BUTTONS[5])}
               className="flex items-center gap-3 rounded-full px-[4%] transition-all duration-200 shadow hover:shadow-md hover:brightness-110 w-full max-w-[85%] mx-auto"
               style={{
                 background: 'linear-gradient(to right, #003A57, #007FBD)',
                 paddingTop: '1.5%',
                 paddingBottom: '1.5%'
               }}>
-              
                 <div className="rounded-full bg-white flex items-center justify-center flex-shrink-0"
               style={{ width: 'clamp(32px, 4vw, 46px)', height: 'clamp(32px, 4vw, 46px)' }}>
                   <img src={BUTTONS[5].icon} alt="" style={{ width: '60%', height: '60%' }} className="object-contain" />
@@ -133,11 +133,23 @@ export default function Home({ onNavigateToVideo }) {
               </button>
 
             <div className="text-center" style={{ marginTop: '-4%' }}>
-              <span className="text-[#1a5f7a] font-assistant font-semibold cursor-pointer hover:underline underline" style={{ fontSize: 'clamp(0.7rem, 1.2vw, 0.95rem)' }}>
+              <span onClick={() => setShowMoreDatabases(true)} className="text-[#1a5f7a] font-assistant font-semibold cursor-pointer hover:underline underline" style={{ fontSize: 'clamp(0.7rem, 1.2vw, 0.95rem)' }}>
                 עוד מאגרים למצבי חירום &gt;
               </span>
             </div>
           </div>
+
+          {/* Lion alert dialog */}
+          {showLionAlert && (
+            <div className="absolute inset-0 z-50 flex items-center justify-center bg-black/40 rounded-[70px]" onClick={() => setShowLionAlert(false)}>
+              <div className="bg-white rounded-3xl shadow-2xl p-8 mx-8 text-center" dir="rtl" onClick={e => e.stopPropagation()}>
+                <div className="text-4xl mb-3">🦁</div>
+                <h3 className="font-karantina text-2xl text-primary mb-2">בהכנה…</h3>
+                <p className="font-assistant text-gray-600 mb-4">בנתיים תוכלו לצפות במאגרים הנוספים למצבי חירום</p>
+                <button onClick={() => setShowLionAlert(false)} className="bg-primary text-white font-assistant font-bold px-6 py-2 rounded-full hover:brightness-110 transition">סגור</button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
