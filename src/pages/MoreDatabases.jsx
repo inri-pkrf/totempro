@@ -69,7 +69,7 @@ export default function MoreDatabases({ onBack }) {
                   opacity: btn.url ? 1 : 0.85
                 }}>
                 <div className="rounded-full bg-white flex items-center justify-center flex-shrink-0"
-                  style={{ width: 'clamp(32px, 4vw, 46px)', height: 'clamp(32px, 4vw, 46px)', boxShadow: 'inset 0 2px 6px rgba(0,0,0,0.2)' }}>
+                  style={{ width: 'clamp(32px, 4vw, 46px)', height: 'clamp(32px, 4vw, 46px)', boxShadow: 'inset 0 4px 10px rgba(0,0,0,0.35), inset 0 -2px 4px rgba(255,255,255,0.8)' }}>
                   <img src={btn.icon} alt="" style={{ width: '60%', height: '60%' }} className="object-contain" />
                 </div>
                 <span className="flex-1 text-white font-assistant font-bold" style={{ fontSize: 'clamp(0.8rem, 1.8vw, 1.15rem)' }}>
