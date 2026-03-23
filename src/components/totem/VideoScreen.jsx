@@ -9,7 +9,7 @@ export default function VideoScreen({ onEnded }) {
     }
   }, []);
 
-  const videoUrl = "https://base44.app/api/apps/69bfa8f7c160ff3fb92ea9a6/files/mp/public/69bfa8f7c160ff3fb92ea9a6/aa4a9a054_introVid.mp4";
+  const videoUrl = "https://base44.app/api/apps/69bfa8f7c160ff3fb92ea9a6/files/mp/public/69bfa8f7c160ff3fb92ea9a6/89e34bf6b_.mp4";
 
   return (
     <div className="w-screen h-screen bg-black overflow-hidden">
