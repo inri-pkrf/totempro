@@ -62,7 +62,7 @@ export default function MoreProducts({ onBack }) {
                 key={i}
                 disabled={!btn.url}
                 onClick={() => btn.url && window.open(btn.url, '_blank')}
-                className="flex items-center gap-3 rounded-full px-[4%] transition-all duration-200 shadow hover:shadow-md hover:brightness-110 active:scale-95 active:brightness-125 w-full max-w-[85%] mx-auto"
+                className="flex items-center gap-3 rounded-full px-[4%] transition-all duration-200 shadow hover:shadow-md hover:brightness-110 active:scale-95 active:brightness-150 w-full max-w-[85%] mx-auto"
                 style={{
                   background: 'linear-gradient(to right, #003A57, #007FBD)',
                   paddingTop: '1.5%',
