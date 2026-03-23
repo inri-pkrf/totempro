@@ -4,6 +4,7 @@ import AiPopup from '../components/totem/AiPopup';
 import NavButtons from '../components/totem/NavButtons';
 import MoreDatabases from './MoreDatabases';
 import MoreProducts from './MoreProducts';
+import AnimatedButton from '../components/totem/AnimatedButton';
 
 const BUTTONS = [
 { label: 'אתר המכללה', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png', url: 'https://inri.orc.org.il/' },
