@@ -32,6 +32,10 @@ export default function Home({ onNavigateToVideo }) {
     return <MoreDatabases onBack={() => setShowMoreDatabases(false)} />;
   }
 
+  if (showMoreProducts) {
+    return <MoreProducts onBack={() => setShowMoreProducts(false)} />;
+  }
+
   return (
     <div
       className="w-screen h-screen relative overflow-hidden flex flex-col"
