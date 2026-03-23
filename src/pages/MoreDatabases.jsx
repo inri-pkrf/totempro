@@ -88,7 +88,7 @@ export default function MoreDatabases({ onBack }) {
           </div>
 
           {/* Back button - bottom center */}
-          <div className="flex justify-center pt-[3%] pb-[8%] relative z-10 flex-shrink-0" dir="rtl">
+          <div className="flex justify-center pt-[3%] pb-[3%] relative z-10 flex-shrink-0 mt-[-4%]" dir="rtl">
             <button
               onClick={onBack}
               className="font-assistant font-bold text-primary hover:underline"
