@@ -68,9 +68,10 @@ export default function MoreDatabases({ onBack }) {
                   paddingBottom: '1.5%',
                   opacity: btn.url ? 1 : 0.85
                 }}>
-                <div className="rounded-full bg-white flex items-center justify-center flex-shrink-0"
-                  style={{ width: 'clamp(32px, 4vw, 46px)', height: 'clamp(32px, 4vw, 46px)', boxShadow: 'inset 0 4px 10px rgba(0,0,0,0.35), inset 0 -2px 4px rgba(255,255,255,0.8)' }}>
-                  <img src={btn.icon} alt="" style={{ width: '60%', height: '60%' }} className="object-contain" />
+                <div className="relative flex-shrink-0 flex items-center justify-center"
+                  style={{ width: 'clamp(32px, 4vw, 46px)', height: 'clamp(32px, 4vw, 46px)' }}>
+                  <img src="https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/ee0d19f49_circle-icon.png" alt="" className="absolute inset-0 w-full h-full object-contain" />
+                  <img src={btn.icon} alt="" style={{ width: '55%', height: '55%' }} className="object-contain relative z-10" />
                 </div>
                 <span className="flex-1 text-white font-assistant font-bold" style={{ fontSize: 'clamp(0.8rem, 1.8vw, 1.15rem)' }}>
                   {btn.label}
