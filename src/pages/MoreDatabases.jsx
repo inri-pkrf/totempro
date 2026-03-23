@@ -55,7 +55,7 @@ export default function MoreDatabases({ onBack }) {
           </div>
 
           {/* Title inside card */}
-          <div className="text-center relative z-10 flex-shrink-0 px-[5%] mt-[2%]">
+          <div className="text-center relative z-10 flex-shrink-0 px-[5%] mt-[6%]">
             <h2 className="font-karantina font-normal leading-none"
               style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', color: '#003A57' }}>
               מאגרים למצבי חירום
@@ -63,7 +63,7 @@ export default function MoreDatabases({ onBack }) {
           </div>
 
           {/* Buttons */}
-          <div className="mx-auto flex-1 flex flex-col justify-start items-center relative z-10 min-h-0 gap-[3%] w-[85%] pt-[5%]" dir="rtl">
+          <div className="mx-auto flex-1 flex flex-col justify-center items-center relative z-10 min-h-0 gap-[3%] w-[85%]" dir="rtl">
             {BUTTONS.map((btn, i) => (
               <button
                 key={i}
