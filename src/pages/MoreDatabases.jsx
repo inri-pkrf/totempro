@@ -25,6 +25,14 @@ export default function MoreDatabases({ onBack }) {
         <DateTimeDisplay />
       </div>
 
+      {/* Title */}
+      <div className="px-[5%] mt-[1%] text-center z-10 flex-shrink-0">
+        <h1 className="font-karantina text-white font-normal drop-shadow-lg leading-none"
+          style={{ fontSize: 'clamp(3.2rem, 9.5vw, 7.5rem)' }}>
+          מאגרים למצבי חירום
+        </h1>
+      </div>
+
       {/* White card */}
       <div className="flex-1 mt-[4%] z-10 min-h-0 flex justify-center px-[10%]" style={{ marginBottom: 'clamp(60px, 22%, 200px)' }}>
         <div className="bg-white/90 px-1 backdrop-blur-sm shadow-2xl h-full flex flex-col overflow-hidden relative w-full" style={{ borderRadius: '70px', maxHeight: '90vh' }}>
@@ -44,14 +52,6 @@ export default function MoreDatabases({ onBack }) {
               alt="Logo"
               style={{ height: 'clamp(44px, 6.5vh, 72px)' }}
               className="object-contain" />
-          </div>
-
-          {/* Title inside card */}
-          <div className="text-center px-[5%] flex-shrink-0 relative z-10">
-            <h1 className="font-karantina font-normal leading-none"
-              style={{ fontSize: 'clamp(2.5rem, 7vw, 6rem)', color: '#003A57' }}>
-              מאגרים למצבי חירום
-            </h1>
           </div>
 
           {/* Buttons */}
