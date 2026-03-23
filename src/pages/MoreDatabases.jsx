@@ -3,8 +3,8 @@ import DateTimeDisplay from '../components/totem/DateTimeDisplay';
 import AiPopup from '../components/totem/AiPopup';
 
 const BUTTONS = [
-  { label: 'מאגר חרבות ברזל', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/01ea85710_icon6.png', url: null },
-  { label: 'מאגר עם כלביא', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/01ea85710_icon6.png', url: null },
+  { label: "מאגר 'חרבות ברזל'", icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/01ea85710_icon6.png', url: null },
+  { label: "מאגר 'עם כלביא'", icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/01ea85710_icon6.png', url: null },
 ];
 
 export default function MoreDatabases({ onBack }) {
