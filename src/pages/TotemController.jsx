@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
+import { AnimatePresence } from 'framer-motion';
 import Home from './Home';
 import ColorScreen from '../components/totem/ColorScreen';
 import VideoScreen from '../components/totem/VideoScreen';
