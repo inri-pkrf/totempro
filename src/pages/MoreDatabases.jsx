@@ -45,23 +45,25 @@ export default function MoreDatabases({ onBack }) {
             <img src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/09589c8ed_blue.png" alt="" className="w-full" />
           </div>
 
-          {/* Card header: logo + back button */}
-          <div className="mx-2 pt-[3%] pb-[2%] px-[5%] flex justify-between items-center flex-shrink-0 relative z-10 gap-2">
+          {/* Card header: logo only */}
+          <div className="mx-2 pt-[3%] pb-[2%] px-[5%] flex justify-start items-center flex-shrink-0 relative z-10">
             <img
               src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/b4fb5c195_logo.png"
               alt="Logo"
               style={{ height: 'clamp(44px, 6.5vh, 72px)' }}
               className="object-contain" />
-            <button
-              onClick={onBack}
-              className="font-assistant font-bold text-primary hover:underline"
-              style={{ fontSize: 'clamp(0.8rem, 1.5vw, 1rem)' }}>
-              &lt; חזרה
-            </button>
+          </div>
+
+          {/* Title inside card */}
+          <div className="text-center relative z-10 flex-shrink-0 px-[5%]">
+            <h2 className="font-karantina font-normal leading-none"
+              style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', color: '#003A57' }}>
+              מאגרים למצבי חירום
+            </h2>
           </div>
 
           {/* Buttons */}
-          <div className="mx-auto mb-8 flex-1 flex flex-col justify-center items-center relative z-10 min-h-0 gap-[3%] w-[85%]" dir="rtl">
+          <div className="mx-auto flex-1 flex flex-col justify-center items-center relative z-10 min-h-0 gap-[3%] w-[85%]" dir="rtl">
             {BUTTONS.map((btn, i) => (
               <button
                 key={i}
@@ -83,6 +85,16 @@ export default function MoreDatabases({ onBack }) {
                 </span>
               </button>
             ))}
+          </div>
+
+          {/* Back button - bottom center */}
+          <div className="flex justify-center pb-[5%] relative z-10 flex-shrink-0">
+            <button
+              onClick={onBack}
+              className="font-assistant font-bold text-primary hover:underline"
+              style={{ fontSize: 'clamp(0.9rem, 1.8vw, 1.2rem)' }}>
+              &lt; חזרה
+            </button>
           </div>
         </div>
       </div>
