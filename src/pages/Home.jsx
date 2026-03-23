@@ -4,7 +4,6 @@ import AiPopup from '../components/totem/AiPopup';
 import NavButtons from '../components/totem/NavButtons';
 import MoreDatabases from './MoreDatabases';
 import MoreProducts from './MoreProducts';
-import AnimatedButton from '../components/totem/AnimatedButton';
 
 const BUTTONS = [
 { label: 'אתר המכללה', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png', url: 'https://inri.orc.org.il/' },
@@ -97,12 +96,23 @@ export default function Home({ onNavigateToVideo }) {
           {/* Buttons - fill remaining space evenly */}
           <div className="mx-auto mb-8 flex-1 flex flex-col justify-center items-center relative z-10 min-h-0 gap-[2.4%] w-[85%]" dir="rtl">
             {BUTTONS.slice(0, 5).map((btn, i) =>
-              <AnimatedButton
-                key={i}
-                label={btn.label}
-                icon={btn.icon}
-                onClick={() => handleButtonClick(btn)}
-              />
+            <button
+              key={i}
+              onClick={() => handleButtonClick(btn)}
+              className="flex items-center gap-3 rounded-full px-[4%] transition-all duration-200 shadow hover:shadow-md hover:brightness-110 w-full max-w-[85%] mx-auto"
+              style={{
+                background: 'linear-gradient(to right, #003A57, #007FBD)',
+                paddingTop: '1.5%',
+                paddingBottom: '1.5%'
+              }}>
+                <div className="rounded-full bg-white flex items-center justify-center flex-shrink-0"
+              style={{ width: 'clamp(32px, 4vw, 46px)', height: 'clamp(32px, 4vw, 46px)' }}>
+                  <img src={btn.icon} alt="" style={{ width: '60%', height: '60%' }} className="object-contain" />
+                </div>
+                <span className="flex-1 text-white font-assistant font-bold" style={{ fontSize: 'clamp(0.8rem, 1.8vw, 1.15rem)' }}>
+                  {btn.label}
+                </span>
+              </button>
             )}
 
             <div className="text-center" style={{ marginTop: '-4%', marginBottom: '0' }}>
@@ -111,11 +121,22 @@ export default function Home({ onNavigateToVideo }) {
               </span>
             </div>
 
-            <AnimatedButton
-              label={BUTTONS[5].label}
-              icon={BUTTONS[5].icon}
+            <button
               onClick={() => handleButtonClick(BUTTONS[5])}
-            />
+              className="flex items-center gap-3 rounded-full px-[4%] transition-all duration-200 shadow hover:shadow-md hover:brightness-110 w-full max-w-[85%] mx-auto"
+              style={{
+                background: 'linear-gradient(to right, #003A57, #007FBD)',
+                paddingTop: '1.5%',
+                paddingBottom: '1.5%'
+              }}>
+                <div className="rounded-full bg-white flex items-center justify-center flex-shrink-0"
+              style={{ width: 'clamp(32px, 4vw, 46px)', height: 'clamp(32px, 4vw, 46px)' }}>
+                  <img src={BUTTONS[5].icon} alt="" style={{ width: '60%', height: '60%' }} className="object-contain" />
+                </div>
+                <span className="flex-1 text-white font-assistant font-bold" style={{ fontSize: 'clamp(0.8rem, 1.8vw, 1.15rem)' }}>
+                  {BUTTONS[5].label}
+                </span>
+              </button>
 
             <div className="text-center" style={{ marginTop: '-4%' }}>
               <span onClick={() => setShowMoreDatabases(true)} className="text-[#1a5f7a] font-assistant font-semibold cursor-pointer hover:underline underline" style={{ fontSize: 'clamp(0.7rem, 1.2vw, 0.95rem)' }}>
