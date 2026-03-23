@@ -63,7 +63,7 @@ export default function MoreDatabases({ onBack }) {
           </div>
 
           {/* Buttons */}
-          <div className="mx-auto flex-1 flex flex-col justify-end items-center relative z-10 min-h-0 gap-[3%] w-[85%] pb-[5%]" dir="rtl">
+          <div className="mx-auto flex-1 flex flex-col justify-center items-center relative z-10 min-h-0 gap-[3%] w-[85%]" dir="rtl">
             {BUTTONS.map((btn, i) => (
               <button
                 key={i}
@@ -88,7 +88,7 @@ export default function MoreDatabases({ onBack }) {
           </div>
 
           {/* Back button - bottom center */}
-          <div className="flex justify-center pb-[3%] relative z-10 flex-shrink-0" dir="rtl">
+          <div className="flex justify-center pt-[3%] pb-[3%] relative z-10 flex-shrink-0 mt-[-4%]" dir="rtl">
             <button
               onClick={onBack}
               className="font-assistant font-bold text-primary hover:underline"
