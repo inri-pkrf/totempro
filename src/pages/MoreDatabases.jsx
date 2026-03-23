@@ -88,12 +88,12 @@ export default function MoreDatabases({ onBack }) {
           </div>
 
           {/* Back button - bottom center */}
-          <div className="flex justify-center pb-[5%] relative z-10 flex-shrink-0">
+          <div className="flex justify-center pt-[3%] pb-[8%] relative z-10 flex-shrink-0" dir="rtl">
             <button
               onClick={onBack}
               className="font-assistant font-bold text-primary hover:underline"
               style={{ fontSize: 'clamp(0.9rem, 1.8vw, 1.2rem)' }}>
-              &lt; חזרה
+              חזרה &gt;
             </button>
           </div>
         </div>
