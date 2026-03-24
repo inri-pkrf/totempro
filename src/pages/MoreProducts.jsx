@@ -3,9 +3,8 @@ import DateTimeDisplay from '../components/totem/DateTimeDisplay';
 import AiPopup from '../components/totem/AiPopup';
 
 const BUTTONS = [
-  { label: 'מוצר דיגיטלי 1', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png', url: null },
-  { label: 'מוצר דיגיטלי 2', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png', url: null },
-  { label: 'מוצר דיגיטלי 3', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png', url: null },
+  { label: 'החברה הישראלית', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png', url: 'https://inri-pkrf.github.io/israeli-society-copy/' },
+  { label: 'הצגת המכללה', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png', url: 'https://inri-pkrf.github.io/know-college/' },
 ];
 
 export default function MoreProducts({ onBack }) {
