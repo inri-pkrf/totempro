@@ -65,7 +65,7 @@ export default function Home({ onNavigateToVideo }) {
       dir="rtl">
 
       {/* Top: date/time */}
-      <div className="flex justify-end items-start px-[5%] z-20 flex-shrink-0" style={{ paddingTop: '2vh', transform: 'scale(1.25)', transformOrigin: 'top right' }}>
+      <div className="flex justify-end items-start px-[5%] z-20 flex-shrink-0" style={{ paddingTop: '2vh' }}>
         <DateTimeDisplay />
       </div>
 
