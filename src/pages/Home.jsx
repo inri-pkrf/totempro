@@ -1,18 +1,41 @@
 import React, { useState } from 'react';
 import DateTimeDisplay from '../components/totem/DateTimeDisplay';
 import AiPopup from '../components/totem/AiPopup';
-import NavButtons from '../components/totem/NavButtons';
 import MoreDatabases from './MoreDatabases';
 import MoreProducts from './MoreProducts';
 
 const BUTTONS = [
-{ label: 'אתר המכללה', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png', url: 'https://inri.orc.org.il/' },
-{ label: 'הספרייה הלאומית לחירום', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/711382d76_icon2.png', url: 'https://inri.orc.org.il/%D7%94%D7%A1%D7%A4%D7%A8%D7%99%D7%99%D7%94-%D7%94%D7%9C%D7%90%D7%95%D7%9E%D7%99%D7%AA-%D7%9C%D7%97%D7%99%D7%A8%D7%95%D7%9D/' },
-{ label: 'הכשרות למשרדי הממשלה', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/64e9c981f_icon3-4.png', url: 'https://inri.orc.org.il/%D7%A4%D7%A2%D7%99%D7%9C%D7%95%D7%99%D7%95%D7%AA-%D7%94%D7%9E%D7%9B%D7%9C%D7%9C%D7%94/%D7%94%D7%9B%D7%A9%D7%A8%D7%AA-%D7%9E%D7%A0%D7%94%D7%9C%D7%99%D7%9D-%D7%95%D7%9E%D7%A0%D7%94%D7%9C%D7%95%D7%AA-%D7%91%D7%9E%D7%A9%D7%A8%D7%93%D7%99-%D7%9E%D7%9E%D7%A9%D7%9C%D7%94-%D7%95%D7%A8%D7%A9%D7%95%D7%99%D7%95%D7%AA-%D7%99%D7%99%D7%A2%D7%95%D7%93%D7%99%D7%95%D7%AA/' },
-{ label: 'הכשרות לרשויות המקומיות', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/64e9c981f_icon3-4.png', url: 'https://inri.orc.org.il/%D7%A4%D7%A2%D7%99%D7%9C%D7%95%D7%99%D7%95%D7%AA-%D7%94%D7%9E%D7%9B%D7%9C%D7%9C%D7%94/%D7%94%D7%9B%D7%A9%D7%A8%D7%AA-%D7%9E%D7%A0%D7%94%D7%9C%D7%99%D7%9D-%D7%91%D7%A8%D7%A9%D7%95%D7%99%D7%95%D7%AA-%D7%9E%D7%A7%D7%95%D7%9E%D7%99%D7%95%D7%AA/' },
-{ label: 'עזר לניהול מצבי חירום', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/28dfee8ee_icon5.png', url: 'https://inri-pkrf.github.io/assessment2026/' },
-{ label: "מאגר 'שאגת הארי'", icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/01ea85710_icon6.png', url: null }];
+  { label: 'אתר המכללה', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png', url: 'https://inri.orc.org.il/' },
+  { label: 'הספרייה הלאומית לחירום', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/711382d76_icon2.png', url: 'https://inri.orc.org.il/%D7%94%D7%A1%D7%A4%D7%A8%D7%99%D7%99%D7%94-%D7%94%D7%9C%D7%90%D7%95%D7%9E%D7%99%D7%AA-%D7%9C%D7%97%D7%99%D7%A8%D7%95%D7%9D/' },
+  { label: 'הכשרות למשרדי הממשלה', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/64e9c981f_icon3-4.png', url: 'https://inri.orc.org.il/%D7%A4%D7%A2%D7%99%D7%9C%D7%95%D7%99%D7%95%D7%AA-%D7%94%D7%9E%D7%9B%D7%9C%D7%9C%D7%94/%D7%94%D7%9B%D7%A9%D7%A8%D7%AA-%D7%9E%D7%A0%D7%94%D7%9C%D7%99%D7%9D-%D7%95%D7%9E%D7%A0%D7%94%D7%9C%D7%95%D7%AA-%D7%91%D7%9E%D7%A9%D7%A8%D7%93%D7%99-%D7%9E%D7%9E%D7%A9%D7%9C%D7%94-%D7%95%D7%A8%D7%A9%D7%95%D7%99%D7%95%D7%AA-%D7%99%D7%99%D7%A2%D7%95%D7%93%D7%99%D7%95%D7%AA/' },
+  { label: 'הכשרות לרשויות המקומיות', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/64e9c981f_icon3-4.png', url: 'https://inri.orc.org.il/%D7%A4%D7%A2%D7%99%D7%9C%D7%95%D7%99%D7%95%D7%AA-%D7%94%D7%9E%D7%9B%D7%9C%D7%9C%D7%94/%D7%94%D7%9B%D7%A9%D7%A8%D7%AA-%D7%9E%D7%A0%D7%94%D7%9C%D7%99%D7%9D-%D7%91%D7%A8%D7%A9%D7%95%D7%99%D7%95%D7%AA-%D7%9E%D7%A7%D7%95%D7%9E%D7%99%D7%95%D7%AA/' },
+  { label: 'עזר לניהול מצבי חירום', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/28dfee8ee_icon5.png', url: 'https://inri-pkrf.github.io/assessment2026/' },
+  { label: "מאגר 'שאגת הארי'", icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/01ea85710_icon6.png', url: null }
+];
 
+const CIRCLE_IMG = 'https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/ee0d19f49_circle-icon.png';
+
+function TotemButton({ btn, onClick }) {
+  return (
+    <button
+      onClick={() => onClick(btn)}
+      className="flex items-center rounded-full transition-all duration-200 hover:brightness-110 active:scale-95 active:brightness-150 w-full"
+      style={{
+        background: 'linear-gradient(to right, #003A57, #007FBD)',
+        padding: '2vh 4%',
+        gap: '3%',
+        boxShadow: '0 6px 20px rgba(0, 58, 87, 0.55), 0 2px 8px rgba(0,0,0,0.3)'
+      }}>
+      <div className="relative flex-shrink-0 flex items-center justify-center" style={{ width: '6vh', height: '6vh', minWidth: '36px', minHeight: '36px' }}>
+        <img src={CIRCLE_IMG} alt="" className="absolute inset-0 w-full h-full object-contain" />
+        <img src={btn.icon} alt="" style={{ width: '55%', height: '55%' }} className="object-contain relative z-10" />
+      </div>
+      <span className="flex-1 text-white font-assistant font-bold text-right" style={{ fontSize: 'clamp(0.85rem, 2.2vh, 1.4rem)' }}>
+        {btn.label}
+      </span>
+    </button>
+  );
+}
 
 export default function Home({ onNavigateToVideo }) {
   const [showAiPopup, setShowAiPopup] = useState(false);
@@ -28,13 +51,8 @@ export default function Home({ onNavigateToVideo }) {
     }
   };
 
-  if (showMoreDatabases) {
-    return <MoreDatabases onBack={() => setShowMoreDatabases(false)} />;
-  }
-
-  if (showMoreProducts) {
-    return <MoreProducts onBack={() => setShowMoreProducts(false)} />;
-  }
+  if (showMoreDatabases) return <MoreDatabases onBack={() => setShowMoreDatabases(false)} />;
+  if (showMoreProducts) return <MoreProducts onBack={() => setShowMoreProducts(false)} />;
 
   return (
     <div
@@ -45,105 +63,82 @@ export default function Home({ onNavigateToVideo }) {
         backgroundPosition: 'center top'
       }}
       dir="rtl">
-      
+
       {/* Top: date/time */}
-      <div className="flex justify-end items-start px-[5%] pt-[2%] z-20 flex-shrink-0">
+      <div className="flex justify-end items-start px-[5%] z-20 flex-shrink-0" style={{ paddingTop: '2vh' }}>
         <DateTimeDisplay />
       </div>
 
       {/* Title */}
-      <div className="px-[5%] mt-[1%] text-center z-10 flex-shrink-0">
+      <div className="px-[5%] text-center z-10 flex-shrink-0" style={{ marginTop: '1vh' }}>
         <h1 className="font-karantina text-white font-normal drop-shadow-lg leading-none"
-        style={{ fontSize: 'clamp(3.2rem, 9.5vw, 7.5rem)' }}>
+          style={{ fontSize: 'clamp(2rem, 7vh, 7.5rem)' }}>
           ברוכים הבאים והבאות
         </h1>
-        <h2 className="font-karantina text-white font-normal drop-shadow-lg leading-none mt-1"
-        style={{ fontSize: 'clamp(2.5rem, 7.5vw, 6.5rem)' }}>
+        <h2 className="font-karantina text-white font-normal drop-shadow-lg leading-none"
+          style={{ fontSize: 'clamp(1.5rem, 5.5vh, 6.5rem)', marginTop: '0.5vh' }}>
           למכללה הלאומית לאיתנות ישראלית
         </h2>
       </div>
 
       {/* White card */}
-      <div className="flex-1 mt-[4%] z-10 min-h-0 flex justify-center px-[10%]" style={{ marginBottom: 'clamp(60px, 22%, 200px)' }}>
-        <div className="bg-white/90 px-1 backdrop-blur-sm shadow-2xl h-full flex flex-col overflow-hidden relative w-full" style={{ borderRadius: '70px', maxHeight: '90vh' }}>
+      <div
+        className="flex-1 z-10 min-h-0 flex justify-center px-[8%]"
+        style={{ marginTop: '2vh', marginBottom: 'clamp(50px, 15vh, 160px)' }}>
+        <div
+          className="bg-white/90 backdrop-blur-sm shadow-2xl h-full flex flex-col overflow-hidden relative w-full"
+          style={{ borderRadius: '5vh', maxHeight: '85vh' }}>
 
           {/* Decorations */}
-          <div className="absolute top-0 left-0 w-[35%] pointer-events-none opacity-70">
+          <div className="absolute top-0 left-0 w-[30%] pointer-events-none opacity-70">
             <img src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/69b22dfa6_orange.png" alt="" className="w-full" />
           </div>
-          <div className="absolute bottom-0 right-0 w-[35%] pointer-events-none opacity-70">
+          <div className="absolute bottom-0 right-0 w-[30%] pointer-events-none opacity-70">
             <img src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/09589c8ed_blue.png" alt="" className="w-full" />
           </div>
 
           {/* Card header: logo + menu */}
-          <div className="mx-2 pt-[3%] pb-[2%] px-[5%] flex justify-between items-center flex-shrink-0 relative z-10 gap-2">
+          <div className="flex justify-between items-center flex-shrink-0 relative z-10" style={{ padding: '2vh 5%' }}>
             <img
               src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/b4fb5c195_logo.png"
               alt="Logo"
-              style={{ height: 'clamp(44px, 6.5vh, 72px)' }}
+              style={{ height: 'clamp(36px, 7vh, 72px)' }}
               className="object-contain" />
-            
             <button className="flex items-center justify-center">
               <img
                 src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/10285006f_menu-btn.png"
                 alt="תפריט"
-                style={{ width: 'clamp(44px, 6vw, 72px)' }}
+                style={{ width: 'clamp(36px, 6vh, 72px)' }}
                 className="object-contain" />
-              
             </button>
           </div>
 
-          {/* Buttons - fill remaining space evenly */}
-          <div className="mx-auto mb-8 flex-1 flex flex-col justify-center items-center relative z-10 min-h-0 gap-[2.8%] w-[90%]" dir="rtl">
-            {BUTTONS.slice(0, 5).map((btn, i) =>
-            <button
-              key={i}
-              onClick={() => handleButtonClick(btn)}
-              className="flex items-center gap-4 rounded-full px-[5%] transition-all duration-200 hover:brightness-110 active:scale-95 active:brightness-150 w-full max-w-[90%] mx-auto"
-              style={{
-                background: 'linear-gradient(to right, #003A57, #007FBD)',
-                paddingTop: '2.8%',
-                paddingBottom: '2.8%',
-                boxShadow: '0 8px 24px rgba(0, 58, 87, 0.55), 0 2px 8px rgba(0,0,0,0.3)'
-              }}>
-                <div className="relative flex-shrink-0 flex items-center justify-center"
-              style={{ width: 'clamp(40px, 5.5vw, 62px)', height: 'clamp(40px, 5.5vw, 62px)' }}>
-                  <img src="https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/ee0d19f49_circle-icon.png" alt="" className="absolute inset-0 w-full h-full object-contain" />
-                  <img src={btn.icon} alt="" style={{ width: '55%', height: '55%' }} className="object-contain relative z-10" />
-                </div>
-                <span className="flex-1 text-white font-assistant font-bold" style={{ fontSize: 'clamp(1rem, 2.2vw, 1.4rem)' }}>
-                  {btn.label}
-                </span>
-              </button>
-            )}
+          {/* Buttons */}
+          <div
+            className="mx-auto flex-1 flex flex-col justify-center items-center relative z-10 min-h-0 w-[88%]"
+            style={{ gap: '1.8vh', paddingBottom: '2vh' }}
+            dir="rtl">
 
-            <div className="text-center" style={{ marginTop: '-3%', marginBottom: '0' }}>
-              <span onClick={() => setShowMoreProducts(true)} className="text-[#1a5f7a] font-assistant font-semibold cursor-pointer hover:underline underline" style={{ fontSize: 'clamp(0.8rem, 1.4vw, 1.1rem)' }}>
+            {BUTTONS.slice(0, 5).map((btn, i) => (
+              <TotemButton key={i} btn={btn} onClick={handleButtonClick} />
+            ))}
+
+            <div className="text-center" style={{ marginTop: '-0.5vh' }}>
+              <span
+                onClick={() => setShowMoreProducts(true)}
+                className="text-[#1a5f7a] font-assistant font-semibold cursor-pointer underline hover:opacity-80"
+                style={{ fontSize: 'clamp(0.7rem, 1.8vh, 1.1rem)' }}>
                 עוד מוצרים דיגיטליים &gt;
               </span>
             </div>
 
-            <button
-              onClick={() => handleButtonClick(BUTTONS[5])}
-              className="flex items-center gap-4 rounded-full px-[5%] transition-all duration-200 hover:brightness-110 active:scale-95 active:brightness-150 w-full max-w-[90%] mx-auto"
-              style={{
-                background: 'linear-gradient(to right, #003A57, #007FBD)',
-                paddingTop: '2.8%',
-                paddingBottom: '2.8%',
-                boxShadow: '0 8px 24px rgba(0, 58, 87, 0.55), 0 2px 8px rgba(0,0,0,0.3)'
-              }}>
-                <div className="relative flex-shrink-0 flex items-center justify-center"
-              style={{ width: 'clamp(40px, 5.5vw, 62px)', height: 'clamp(40px, 5.5vw, 62px)' }}>
-                  <img src="https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/ee0d19f49_circle-icon.png" alt="" className="absolute inset-0 w-full h-full object-contain" />
-                  <img src={BUTTONS[5].icon} alt="" style={{ width: '55%', height: '55%' }} className="object-contain relative z-10" />
-                </div>
-                <span className="flex-1 text-white font-assistant font-bold" style={{ fontSize: 'clamp(1rem, 2.2vw, 1.4rem)' }}>
-                  {BUTTONS[5].label}
-                </span>
-              </button>
+            <TotemButton btn={BUTTONS[5]} onClick={handleButtonClick} />
 
-            <div className="text-center" style={{ marginTop: '-3%' }}>
-              <span onClick={() => setShowMoreDatabases(true)} className="text-[#1a5f7a] font-assistant font-semibold cursor-pointer hover:underline underline" style={{ fontSize: 'clamp(0.8rem, 1.4vw, 1.1rem)' }}>
+            <div className="text-center" style={{ marginTop: '-0.5vh' }}>
+              <span
+                onClick={() => setShowMoreDatabases(true)}
+                className="text-[#1a5f7a] font-assistant font-semibold cursor-pointer underline hover:opacity-80"
+                style={{ fontSize: 'clamp(0.7rem, 1.8vh, 1.1rem)' }}>
                 עוד מאגרים למצבי חירום &gt;
               </span>
             </div>
@@ -151,7 +146,7 @@ export default function Home({ onNavigateToVideo }) {
 
           {/* Lion alert dialog */}
           {showLionAlert && (
-            <div className="absolute inset-0 z-50 flex items-center justify-center bg-black/40 rounded-[70px]" onClick={() => setShowLionAlert(false)}>
+            <div className="absolute inset-0 z-50 flex items-center justify-center bg-black/40 rounded-[5vh]" onClick={() => setShowLionAlert(false)}>
               <div className="bg-white rounded-3xl shadow-2xl p-8 mx-8 text-center" dir="rtl" onClick={e => e.stopPropagation()}>
                 <div className="text-4xl mb-3">🦁</div>
                 <h3 className="font-karantina text-2xl text-primary mb-2">בהכנה…</h3>
@@ -163,33 +158,24 @@ export default function Home({ onNavigateToVideo }) {
         </div>
       </div>
 
-      {/* AI character - bottom left corner of page */}
-      <div className="absolute z-20" style={{ bottom: '-1%', left: '2%', borderRadius: '100px' }}>
+      {/* AI character */}
+      <div className="absolute z-20" style={{ bottom: '-1%', left: '2%' }}>
         <button
           onClick={() => setShowAiPopup(!showAiPopup)}
-          style={{ width: 'clamp(60px, 10vw, 100px)', height: 'clamp(60px, 10vw, 100px)' }}
-          className="scale-105">
-          
-          <img
-            src="https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/b87c0ca55_ai.png"
-            alt="AI" className="w-full h-full object-cover" />
-          
-          
+          style={{ width: 'clamp(55px, 9vh, 100px)', height: 'clamp(55px, 9vh, 100px)' }}>
+          <img src="https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/b87c0ca55_ai.png" alt="AI" className="w-full h-full object-cover" />
         </button>
-        {showAiPopup &&
-        <AiPopup isOpen={showAiPopup} onClose={() => setShowAiPopup(false)} />
-        }
+        {showAiPopup && <AiPopup isOpen={showAiPopup} onClose={() => setShowAiPopup(false)} />}
       </div>
 
-      {/* Image bottom center */}
+      {/* Bottom center image */}
       <div className="absolute left-1/2 -translate-x-1/2 z-10 flex justify-center" style={{ bottom: '3%' }}>
         <img
           src="https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/b840f9407_0.png"
           alt=""
-          style={{ height: 'clamp(30px, 15vh, 60px)', maxWidth: '120%' }} className="my-4 opacity-100 object-contain" />
-        
-        
+          style={{ height: 'clamp(25px, 8vh, 60px)' }}
+          className="object-contain" />
       </div>
-    </div>);
-
+    </div>
+  );
 }
