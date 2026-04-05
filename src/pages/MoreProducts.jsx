@@ -45,13 +45,20 @@ export default function MoreProducts({ onBack }) {
             <img src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/09589c8ed_blue.png" alt="" className="w-full" />
           </div>
 
-          {/* Card header: logo */}
+          {/* Card header: logo + menu */}
           <div className="flex justify-between items-center flex-shrink-0 relative z-10" style={{ padding: '1.2vh 5%' }}>
             <img
               src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/b4fb5c195_logo.png"
               alt="Logo"
               style={{ height: 'clamp(40px, 7vh, 75px)' }}
               className="object-contain" />
+            <button className="flex items-center justify-center">
+              <img
+                src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/10285006f_menu-btn.png"
+                alt="תפריט"
+                style={{ width: 'clamp(48px, 8vh, 96px)' }}
+                className="object-contain" />
+            </button>
           </div>
 
           {/* Buttons */}
