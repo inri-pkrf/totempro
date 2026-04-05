@@ -102,7 +102,7 @@ export default function Home({ onNavigateToVideo }) {
             <img
               src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/b4fb5c195_logo.png"
               alt="Logo"
-              style={{ height: 'clamp(28px, 5vh, 55px)' }}
+              style={{ height: 'clamp(40px, 7vh, 75px)' }}
               className="object-contain" />
             <button className="flex items-center justify-center">
               <img
