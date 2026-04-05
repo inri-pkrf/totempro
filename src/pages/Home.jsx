@@ -22,15 +22,15 @@ function TotemButton({ btn, onClick }) {
       className="flex items-center rounded-full transition-all duration-200 hover:brightness-110 active:scale-95 active:brightness-150 w-full"
       style={{
         background: 'linear-gradient(to right, #003A57, #007FBD)',
-        padding: '1.2vh 4%',
+        padding: '0.7vh 4%',
         gap: '3%',
         boxShadow: '0 6px 20px rgba(0, 58, 87, 0.55), 0 2px 8px rgba(0,0,0,0.3)'
       }}>
-      <div className="relative flex-shrink-0 flex items-center justify-center" style={{ width: '4.5vh', height: '4.5vh', minWidth: '28px', minHeight: '28px' }}>
+      <div className="relative flex-shrink-0 flex items-center justify-center" style={{ width: '3.5vh', height: '3.5vh', minWidth: '22px', minHeight: '22px' }}>
         <img src={CIRCLE_IMG} alt="" className="absolute inset-0 w-full h-full object-contain" />
         <img src={btn.icon} alt="" style={{ width: '55%', height: '55%' }} className="object-contain relative z-10" />
       </div>
-      <span className="flex-1 text-white font-assistant font-bold text-right" style={{ fontSize: 'clamp(0.8rem, 1.8vh, 1.2rem)' }}>
+      <span className="flex-1 text-white font-assistant font-bold text-right" style={{ fontSize: 'clamp(0.7rem, 1.4vh, 1rem)' }}>
         {btn.label}
       </span>
     </button>
@@ -98,11 +98,11 @@ export default function Home({ onNavigateToVideo }) {
           </div>
 
           {/* Card header: logo + menu */}
-          <div className="flex justify-between items-center flex-shrink-0 relative z-10" style={{ padding: '2vh 5%' }}>
+          <div className="flex justify-between items-center flex-shrink-0 relative z-10" style={{ padding: '1.2vh 5%' }}>
             <img
               src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/b4fb5c195_logo.png"
               alt="Logo"
-              style={{ height: 'clamp(36px, 7vh, 72px)' }}
+              style={{ height: 'clamp(28px, 5vh, 55px)' }}
               className="object-contain" />
             <button className="flex items-center justify-center">
               <img
@@ -116,7 +116,7 @@ export default function Home({ onNavigateToVideo }) {
           {/* Buttons */}
           <div
             className="mx-auto flex-1 flex flex-col justify-center items-center relative z-10 min-h-0 w-[88%]"
-            style={{ gap: '1.8vh', paddingBottom: '2vh' }}
+            style={{ gap: '1vh', paddingBottom: '1vh' }}
             dir="rtl">
 
             {BUTTONS.slice(0, 5).map((btn, i) => (
