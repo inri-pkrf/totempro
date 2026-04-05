@@ -22,7 +22,7 @@ function TotemButton({ btn, onClick }) {
       className="flex items-center rounded-full transition-all duration-200 hover:brightness-110 active:scale-95 active:brightness-150 w-full"
       style={{
         background: 'linear-gradient(to right, #003A57, #007FBD)',
-        padding: '1vh 4%',
+        padding: '0.6vh 4%',
         gap: '3%',
         boxShadow: '0 6px 20px rgba(0, 58, 87, 0.55), 0 2px 8px rgba(0,0,0,0.3)'
       }}>
@@ -116,7 +116,7 @@ export default function Home({ onNavigateToVideo }) {
           {/* Buttons */}
           <div
             className="mx-auto flex-1 flex flex-col justify-center items-center relative z-10 min-h-0 w-[88%]"
-            style={{ gap: '1vh', paddingBottom: '1vh' }}
+            style={{ gap: '1.6vh', paddingBottom: '1vh' }}
             dir="rtl">
 
             {BUTTONS.slice(0, 5).map((btn, i) => (
