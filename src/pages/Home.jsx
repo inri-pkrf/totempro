@@ -22,15 +22,15 @@ function TotemButton({ btn, onClick }) {
       className="flex items-center rounded-full transition-all duration-200 hover:brightness-110 active:scale-95 active:brightness-150 w-full"
       style={{
         background: 'linear-gradient(to right, #003A57, #007FBD)',
-        padding: '0.6vh 4%',
-        gap: '3%',
+        padding: '0.4vh 3%',
+        gap: '2%',
         boxShadow: '0 6px 20px rgba(0, 58, 87, 0.55), 0 2px 8px rgba(0,0,0,0.3)'
       }}>
-      <div className="relative flex-shrink-0 flex items-center justify-center" style={{ width: '5vh', height: '5vh', minWidth: '30px', minHeight: '30px' }}>
+      <div className="relative flex-shrink-0 flex items-center justify-center" style={{ width: '4vh', height: '4vh', minWidth: '28px', minHeight: '28px' }}>
         <img src={CIRCLE_IMG} alt="" className="absolute inset-0 w-full h-full object-contain" />
         <img src={btn.icon} alt="" style={{ width: '55%', height: '55%' }} className="object-contain relative z-10" />
       </div>
-      <span className="flex-1 text-white font-assistant font-medium text-center" style={{ fontSize: 'clamp(0.9rem, 2vh, 1.3rem)' }}>
+      <span className="flex-1 text-white font-assistant font-medium text-center" style={{ fontSize: 'clamp(0.8rem, 1.6vh, 1.1rem)' }}>
         {btn.label}
       </span>
     </button>
