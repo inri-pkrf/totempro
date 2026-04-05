@@ -21,21 +21,21 @@ export default function MoreProducts({ onBack }) {
       dir="rtl">
 
       {/* Top: date/time */}
-      <div className="flex justify-end items-start px-[5%] pt-[2%] z-20 flex-shrink-0">
+      <div className="flex justify-end items-start px-[5%] z-20 flex-shrink-0" style={{ paddingTop: '2vh' }}>
         <DateTimeDisplay />
       </div>
 
       {/* Title */}
-      <div className="px-[5%] mt-[1%] text-center z-10 flex-shrink-0">
+      <div className="px-[5%] text-center z-10 flex-shrink-0" style={{ marginTop: '1vh' }}>
         <h1 className="font-karantina text-white font-normal drop-shadow-lg leading-none"
-          style={{ fontSize: 'clamp(3.2rem, 9.5vw, 7.5rem)' }}>
+          style={{ fontSize: 'clamp(2rem, 7vh, 7.5rem)' }}>
           עוד מוצרים דיגיטליים
         </h1>
       </div>
 
       {/* White card */}
-      <div className="flex-1 mt-[4%] z-10 min-h-0 flex justify-center px-[10%]" style={{ marginBottom: 'clamp(60px, 22%, 200px)' }}>
-        <div className="bg-white/90 px-1 backdrop-blur-sm shadow-2xl h-full flex flex-col overflow-hidden relative w-full" style={{ borderRadius: '70px', maxHeight: '90vh' }}>
+      <div className="flex-1 z-10 min-h-0 flex justify-center px-[8%]" style={{ marginTop: '2vh', marginBottom: 'clamp(50px, 15vh, 160px)' }}>
+        <div className="bg-white/90 backdrop-blur-sm shadow-2xl h-full flex flex-col overflow-hidden relative w-full" style={{ borderRadius: '11vh', maxHeight: '85vh' }}>
 
           {/* Decorations */}
           <div className="absolute top-0 left-0 w-[35%] pointer-events-none opacity-70">
@@ -46,11 +46,11 @@ export default function MoreProducts({ onBack }) {
           </div>
 
           {/* Card header: logo */}
-          <div className="mx-2 pt-[3%] pb-[2%] px-[5%] flex justify-between items-center flex-shrink-0 relative z-10 gap-2">
+          <div className="flex justify-between items-center flex-shrink-0 relative z-10" style={{ padding: '1.2vh 5%' }}>
             <img
               src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/b4fb5c195_logo.png"
               alt="Logo"
-              style={{ height: 'clamp(44px, 6.5vh, 72px)' }}
+              style={{ height: 'clamp(40px, 7vh, 75px)' }}
               className="object-contain" />
           </div>
 
@@ -93,11 +93,10 @@ export default function MoreProducts({ onBack }) {
       </div>
 
       {/* AI character */}
-      <div className="absolute z-20" style={{ bottom: '-1%', left: '2%', borderRadius: '100px' }}>
+      <div className="absolute z-20" style={{ bottom: '0.5vh', left: '2%' }}>
         <button
           onClick={() => setShowAiPopup(!showAiPopup)}
-          style={{ width: 'clamp(60px, 10vw, 100px)', height: 'clamp(60px, 10vw, 100px)' }}
-          className="scale-105">
+          style={{ width: 'clamp(55px, 9vh, 100px)', height: 'clamp(55px, 9vh, 100px)' }}>
           <img
             src="https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/b87c0ca55_ai.png"
             alt="AI" className="w-full h-full object-cover" />
