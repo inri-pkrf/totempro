@@ -82,8 +82,8 @@ export default function MoreProducts({ onBack }) {
               <button
                 onClick={onBack}
                 className="font-assistant font-bold text-primary hover:underline"
-                style={{ fontSize: 'clamp(0.8rem, 1.5vw, 1rem)' }}>
-                חזרה &gt;
+                style={{ fontSize: 'clamp(1rem, 2vh, 1.4rem)' }}>
+                 חזרה &gt;
               </button>
             </div>
           </div>
