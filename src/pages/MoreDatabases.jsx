@@ -55,25 +55,23 @@ export default function MoreDatabases({ onBack }) {
           </div>
 
           {/* Buttons */}
-          <div className="mx-auto mb-4 flex-1 flex flex-col justify-center items-center relative z-10 min-h-0 gap-[3%] w-[85%]" dir="rtl">
+          <div className="mx-auto flex-1 flex flex-col justify-center items-center relative z-10 min-h-0 w-[75%]" style={{ gap: '1.6vh', paddingBottom: '1vh' }} dir="rtl">
             {BUTTONS.map((btn, i) => (
               <button
                 key={i}
-                disabled={!btn.url}
                 onClick={() => btn.url && window.open(btn.url, '_blank')}
-                className="flex items-center gap-3 rounded-full px-[4%] transition-all duration-200 shadow hover:shadow-md hover:brightness-110 active:scale-95 active:brightness-150 w-full max-w-[85%] mx-auto"
+                className="flex items-center rounded-full transition-all duration-200 hover:brightness-110 active:scale-95 active:brightness-150 w-full"
                 style={{
                   background: 'linear-gradient(to right, #003A57, #007FBD)',
-                  paddingTop: '1.5%',
-                  paddingBottom: '1.5%',
-                  opacity: btn.url ? 1 : 0.85
+                  padding: '0.6vh 4%',
+                  gap: '3%',
+                  boxShadow: '0 6px 20px rgba(0, 58, 87, 0.55), 0 2px 8px rgba(0,0,0,0.3)'
                 }}>
-                <div className="relative flex-shrink-0 flex items-center justify-center"
-                  style={{ width: 'clamp(32px, 4vw, 46px)', height: 'clamp(32px, 4vw, 46px)' }}>
+                <div className="relative flex-shrink-0 flex items-center justify-center" style={{ width: '5vh', height: '5vh', minWidth: '30px', minHeight: '30px' }}>
                   <img src="https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/ee0d19f49_circle-icon.png" alt="" className="absolute inset-0 w-full h-full object-contain" />
                   <img src={btn.icon} alt="" style={{ width: '55%', height: '55%' }} className="object-contain relative z-10" />
                 </div>
-                <span className="flex-1 text-white font-assistant font-bold" style={{ fontSize: 'clamp(0.8rem, 1.8vw, 1.15rem)' }}>
+                <span className="flex-1 text-white font-assistant font-medium text-center" style={{ fontSize: 'clamp(0.9rem, 2vh, 1.3rem)' }}>
                   {btn.label}
                 </span>
               </button>
