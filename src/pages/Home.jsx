@@ -94,54 +94,56 @@ export default function Home({ onNavigateToVideo }) {
           </div>
 
           {/* Buttons - fill remaining space evenly */}
-          <div className="mx-auto mb-8 flex-1 flex flex-col justify-center items-center relative z-10 min-h-0 gap-[2.4%] w-[85%]" dir="rtl">
+          <div className="mx-auto mb-8 flex-1 flex flex-col justify-center items-center relative z-10 min-h-0 gap-[2.8%] w-[90%]" dir="rtl">
             {BUTTONS.slice(0, 5).map((btn, i) =>
             <button
               key={i}
               onClick={() => handleButtonClick(btn)}
-              className="flex items-center gap-3 rounded-full px-[4%] transition-all duration-200 shadow hover:shadow-md hover:brightness-110 active:scale-95 active:brightness-150 w-full max-w-[85%] mx-auto"
+              className="flex items-center gap-4 rounded-full px-[5%] transition-all duration-200 hover:brightness-110 active:scale-95 active:brightness-150 w-full max-w-[90%] mx-auto"
               style={{
                 background: 'linear-gradient(to right, #003A57, #007FBD)',
-                paddingTop: '1.5%',
-                paddingBottom: '1.5%'
+                paddingTop: '2.8%',
+                paddingBottom: '2.8%',
+                boxShadow: '0 8px 24px rgba(0, 58, 87, 0.55), 0 2px 8px rgba(0,0,0,0.3)'
               }}>
                 <div className="relative flex-shrink-0 flex items-center justify-center"
-              style={{ width: 'clamp(32px, 4vw, 46px)', height: 'clamp(32px, 4vw, 46px)' }}>
+              style={{ width: 'clamp(40px, 5.5vw, 62px)', height: 'clamp(40px, 5.5vw, 62px)' }}>
                   <img src="https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/ee0d19f49_circle-icon.png" alt="" className="absolute inset-0 w-full h-full object-contain" />
                   <img src={btn.icon} alt="" style={{ width: '55%', height: '55%' }} className="object-contain relative z-10" />
                 </div>
-                <span className="flex-1 text-white font-assistant font-bold" style={{ fontSize: 'clamp(0.8rem, 1.8vw, 1.15rem)' }}>
+                <span className="flex-1 text-white font-assistant font-bold" style={{ fontSize: 'clamp(1rem, 2.2vw, 1.4rem)' }}>
                   {btn.label}
                 </span>
               </button>
             )}
 
-            <div className="text-center" style={{ marginTop: '-4%', marginBottom: '0' }}>
-              <span onClick={() => setShowMoreProducts(true)} className="text-[#1a5f7a] font-assistant font-semibold cursor-pointer hover:underline underline" style={{ fontSize: 'clamp(0.7rem, 1.2vw, 0.95rem)' }}>
+            <div className="text-center" style={{ marginTop: '-3%', marginBottom: '0' }}>
+              <span onClick={() => setShowMoreProducts(true)} className="text-[#1a5f7a] font-assistant font-semibold cursor-pointer hover:underline underline" style={{ fontSize: 'clamp(0.8rem, 1.4vw, 1.1rem)' }}>
                 עוד מוצרים דיגיטליים &gt;
               </span>
             </div>
 
             <button
               onClick={() => handleButtonClick(BUTTONS[5])}
-              className="flex items-center gap-3 rounded-full px-[4%] transition-all duration-200 shadow hover:shadow-md hover:brightness-110 active:scale-95 active:brightness-150 w-full max-w-[85%] mx-auto"
+              className="flex items-center gap-4 rounded-full px-[5%] transition-all duration-200 hover:brightness-110 active:scale-95 active:brightness-150 w-full max-w-[90%] mx-auto"
               style={{
                 background: 'linear-gradient(to right, #003A57, #007FBD)',
-                paddingTop: '1.5%',
-                paddingBottom: '1.5%'
+                paddingTop: '2.8%',
+                paddingBottom: '2.8%',
+                boxShadow: '0 8px 24px rgba(0, 58, 87, 0.55), 0 2px 8px rgba(0,0,0,0.3)'
               }}>
                 <div className="relative flex-shrink-0 flex items-center justify-center"
-              style={{ width: 'clamp(32px, 4vw, 46px)', height: 'clamp(32px, 4vw, 46px)' }}>
+              style={{ width: 'clamp(40px, 5.5vw, 62px)', height: 'clamp(40px, 5.5vw, 62px)' }}>
                   <img src="https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/ee0d19f49_circle-icon.png" alt="" className="absolute inset-0 w-full h-full object-contain" />
                   <img src={BUTTONS[5].icon} alt="" style={{ width: '55%', height: '55%' }} className="object-contain relative z-10" />
                 </div>
-                <span className="flex-1 text-white font-assistant font-bold" style={{ fontSize: 'clamp(0.8rem, 1.8vw, 1.15rem)' }}>
+                <span className="flex-1 text-white font-assistant font-bold" style={{ fontSize: 'clamp(1rem, 2.2vw, 1.4rem)' }}>
                   {BUTTONS[5].label}
                 </span>
               </button>
 
-            <div className="text-center" style={{ marginTop: '-4%' }}>
-              <span onClick={() => setShowMoreDatabases(true)} className="text-[#1a5f7a] font-assistant font-semibold cursor-pointer hover:underline underline" style={{ fontSize: 'clamp(0.7rem, 1.2vw, 0.95rem)' }}>
+            <div className="text-center" style={{ marginTop: '-3%' }}>
+              <span onClick={() => setShowMoreDatabases(true)} className="text-[#1a5f7a] font-assistant font-semibold cursor-pointer hover:underline underline" style={{ fontSize: 'clamp(0.8rem, 1.4vw, 1.1rem)' }}>
                 עוד מאגרים למצבי חירום &gt;
               </span>
             </div>
