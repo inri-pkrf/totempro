@@ -162,7 +162,7 @@ export default function Home({ onNavigateToVideo }) {
       <div className="absolute z-20" style={{ bottom: '-1%', left: '2%' }}>
         <button
           onClick={() => setShowAiPopup(!showAiPopup)}
-          style={{ width: 'clamp(55px, 9vh, 100px)', height: 'clamp(55px, 9vh, 100px)' }}>
+          style={{ width: 'clamp(55px, 9vh, 100px)', height: 'clamp(55px, 9vh, 100px)', padding: '5px' }}>
           <img src="https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/b87c0ca55_ai.png" alt="AI" className="w-full h-full object-cover" />
         </button>
         {showAiPopup && <AiPopup isOpen={showAiPopup} onClose={() => setShowAiPopup(false)} />}
