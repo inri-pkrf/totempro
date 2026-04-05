@@ -123,7 +123,7 @@ export default function Home({ onNavigateToVideo }) {
               <TotemButton key={i} btn={btn} onClick={handleButtonClick} />
             ))}
 
-            <div className="text-left w-full" style={{ marginTop: '-0.5vh' }}>
+            <div className="text-left w-full pl-5" style={{ marginTop: '-0.5vh' }}>
               <span
                 onClick={() => setShowMoreProducts(true)}
                 className="text-[#1a5f7a] font-assistant font-semibold cursor-pointer underline hover:opacity-80"
@@ -134,7 +134,7 @@ export default function Home({ onNavigateToVideo }) {
 
             <TotemButton btn={BUTTONS[5]} onClick={handleButtonClick} />
 
-            <div className="text-left w-full" style={{ marginTop: '-0.5vh' }}>
+            <div className="text-left w-full pl-5" style={{ marginTop: '-0.5vh' }}>
               <span
                 onClick={() => setShowMoreDatabases(true)}
                 className="text-[#1a5f7a] font-assistant font-semibold cursor-pointer underline hover:opacity-80"
