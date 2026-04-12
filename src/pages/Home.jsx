@@ -30,7 +30,7 @@ function TotemButton({ btn, onClick }) {
         <img src={CIRCLE_IMG} alt="" className="absolute inset-0 w-full h-full object-contain" />
         <img src={btn.icon} alt="" style={{ width: '55%', height: '55%' }} className="object-contain relative z-10" />
       </div>
-      <span className="flex-1 text-white font-assistant font-medium text-center" style={{ fontSize: 'clamp(1rem, 2.2vh, 1.5rem)', paddingRight: '8%' }}>
+      <span className="flex-1 text-white font-assistant font-medium text-center" style={{ fontSize: 'clamp(1rem, 2.2vh, 1.5rem)', paddingLeft: '8%' }}>
         {btn.label}
       </span>
     </button>
