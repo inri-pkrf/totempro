@@ -115,7 +115,7 @@ export default function Home({ onNavigateToVideo }) {
 
           {/* Buttons */}
           <div
-            className="mx-auto flex-1 flex flex-col justify-center items-center relative z-10 min-h-0 w-[75%]"
+            className="flex-1 flex flex-col justify-center items-center relative z-10 min-h-0 w-[75%] self-center"
             style={{ gap: '1.6vh', paddingBottom: '1vh' }}
             dir="rtl">
 
