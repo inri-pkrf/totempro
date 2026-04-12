@@ -46,7 +46,7 @@ export default function MoreDatabases({ onBack }) {
           </div>
 
           {/* Card header: logo + menu */}
-          <div className="flex justify-between items-center flex-shrink-0 relative z-10" style={{ padding: '1.2vh 5%' }}>
+          <div className="flex justify-between items-center flex-shrink-0 relative z-10" style={{ padding: '1.2vh 10%' }}>
             <img
               src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/b4fb5c195_logo.png"
               alt="Logo"
