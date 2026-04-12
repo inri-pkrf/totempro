@@ -127,7 +127,7 @@ export default function Home({ onNavigateToVideo }) {
               <span
                 onClick={() => setShowMoreProducts(true)}
                 className="text-[#1a5f7a] font-assistant font-semibold cursor-pointer underline hover:opacity-80"
-                style={{ fontSize: 'clamp(0.7rem, 1.8vh, 1.1rem)' }}>
+                style={{ fontSize: 'clamp(0.9rem, 2.2vh, 1.4rem)' }}>
                 עוד מוצרים דיגיטליים &gt;
               </span>
             </div>
@@ -138,7 +138,7 @@ export default function Home({ onNavigateToVideo }) {
               <span
                 onClick={() => setShowMoreDatabases(true)}
                 className="text-[#1a5f7a] font-assistant font-semibold cursor-pointer underline hover:opacity-80"
-                style={{ fontSize: 'clamp(0.7rem, 1.8vh, 1.1rem)' }}>
+                style={{ fontSize: 'clamp(0.9rem, 2.2vh, 1.4rem)' }}>
                 עוד מאגרים למצבי חירום &gt;
               </span>
             </div>
