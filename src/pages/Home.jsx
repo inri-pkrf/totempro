@@ -173,7 +173,7 @@ export default function Home({ onNavigateToVideo }) {
         <img src="https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/3f10e877e_text.png"
 
         alt=""
-        style={{ height: 'clamp(40px, 12vh, 100px)' }} className="py-1 object-contain" />
+        style={{ height: 'clamp(40px, 12vh, 100px)' }} className="my-3 object-contain" />
         
       </div>
     </div>);
