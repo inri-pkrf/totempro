@@ -115,8 +115,8 @@ export default function Home({ onNavigateToVideo }) {
 
           {/* Buttons */}
           <div
-            className="flex-1 flex flex-col justify-center items-center relative z-10 min-h-0 w-[75%] self-center"
-            style={{ gap: '1.6vh', paddingBottom: '1vh' }}
+            className="absolute inset-0 flex flex-col justify-center items-center z-10 w-[75%] mx-auto"
+            style={{ gap: '1.6vh' }}
             dir="rtl">
 
             {BUTTONS.slice(0, 5).map((btn, i) => (
