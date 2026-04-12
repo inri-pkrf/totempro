@@ -71,12 +71,14 @@ export default function Home({ onNavigateToVideo }) {
 
       {/* Title */}
       <div className="px-[5%] text-center z-10 flex-shrink-0" style={{ marginTop: '1vh' }}>
-        <img
-          src="https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/3f10e877e_text.png"
-          alt="ברוכים הבאים והבאות למכללה הלאומית לאיתנות ישראלית"
-          className="mx-auto w-full object-contain drop-shadow-lg"
-          style={{ maxHeight: 'clamp(60px, 18vh, 200px)' }}
-        />
+        <h1 className="font-karantina text-white font-normal drop-shadow-lg leading-none"
+          style={{ fontSize: 'clamp(2rem, 7vh, 7.5rem)' }}>
+          ברוכים הבאים והבאות
+        </h1>
+        <h2 className="font-karantina text-white font-normal drop-shadow-lg leading-none"
+          style={{ fontSize: 'clamp(1.5rem, 5.5vh, 6.5rem)', marginTop: '0.5vh' }}>
+          למכללה הלאומית לאיתנות ישראלית
+        </h2>
       </div>
 
       {/* White card */}
