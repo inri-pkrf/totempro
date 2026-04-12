@@ -58,7 +58,7 @@ export default function Home({ onNavigateToVideo }) {
     <div
       className="w-screen h-screen relative overflow-hidden flex flex-col"
       style={{
-        backgroundImage: `url(https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/bab9fdccb_bg.png)`,
+        backgroundImage: `url(https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/047eccaaa_bg.png)`,
         backgroundSize: 'cover',
         backgroundPosition: 'center top'
       }}
