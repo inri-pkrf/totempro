@@ -78,7 +78,7 @@ export default function MoreDatabases({ onBack }) {
                   <img src="https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/ee0d19f49_circle-icon.png" alt="" className="absolute inset-0 w-full h-full object-contain" />
                   <img src={btn.icon} alt="" style={{ width: '55%', height: '55%' }} className="object-contain relative z-10" />
                 </div>
-                <span className="flex-1 text-white font-assistant font-medium text-center" style={{ fontSize: 'clamp(0.9rem, 2vh, 1.3rem)' }}>
+                <span className="flex-1 text-white font-assistant font-medium text-center" style={{ fontSize: 'clamp(1rem, 2.2vh, 1.5rem)' }}>
                   {btn.label}
                 </span>
               </button>
