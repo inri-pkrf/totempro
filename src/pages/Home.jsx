@@ -5,13 +5,13 @@ import MoreDatabases from './MoreDatabases';
 import MoreProducts from './MoreProducts';
 
 const BUTTONS = [
-{ label: 'אתר המכללה', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png', url: 'https://inri.orc.org.il/' },
-{ label: 'הספרייה הלאומית לחירום', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/711382d76_icon2.png', url: 'https://inri.orc.org.il/%D7%94%D7%A1%D7%A4%D7%A8%D7%99%D7%99%D7%94-%D7%94%D7%9C%D7%90%D7%95%D7%9E%D7%99%D7%AA-%D7%9C%D7%97%D7%99%D7%A8%D7%95%D7%9D/' },
-{ label: 'הכשרות למשרדי הממשלה', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/64e9c981f_icon3-4.png', url: 'https://inri.orc.org.il/%D7%A4%D7%A2%D7%99%D7%9C%D7%95%D7%99%D7%95%D7%AA-%D7%94%D7%9E%D7%9B%D7%9C%D7%9C%D7%94/%D7%94%D7%9B%D7%A9%D7%A8%D7%AA-%D7%9E%D7%A0%D7%94%D7%9C%D7%99%D7%9D-%D7%95%D7%9E%D7%A0%D7%94%D7%9C%D7%95%D7%AA-%D7%91%D7%9E%D7%A9%D7%A8%D7%93%D7%99-%D7%9E%D7%9E%D7%A9%D7%9C%D7%94-%D7%95%D7%A8%D7%A9%D7%95%D7%99%D7%95%D7%AA-%D7%99%D7%99%D7%A2%D7%95%D7%93%D7%99%D7%95%D7%AA/' },
-{ label: 'הכשרות לרשויות המקומיות', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/64e9c981f_icon3-4.png', url: 'https://inri.orc.org.il/%D7%A4%D7%A2%D7%99%D7%9C%D7%95%D7%99%D7%95%D7%AA-%D7%94%D7%9E%D7%9B%D7%9C%D7%9C%D7%94/%D7%94%D7%9B%D7%A9%D7%A8%D7%AA-%D7%9E%D7%A0%D7%94%D7%9C%D7%99%D7%9D-%D7%91%D7%A8%D7%A9%D7%95%D7%99%D7%95%D7%AA-%D7%9E%D7%A7%D7%95%D7%9E%D7%99%D7%95%D7%AA/' },
-{ label: 'עזר לניהול מצבי חירום', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/28dfee8ee_icon5.png', url: 'https://inri-pkrf.github.io/assessment2026/' },
-{ label: "מאגר 'שאגת הארי'", icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/01ea85710_icon6.png', url: null }];
-
+  { label: 'אתר המכללה', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png', url: 'https://inri.orc.org.il/' },
+  { label: 'הספרייה הלאומית לחירום', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/711382d76_icon2.png', url: 'https://inri.orc.org.il/%D7%94%D7%A1%D7%A4%D7%A8%D7%99%D7%99%D7%94-%D7%94%D7%9C%D7%90%D7%95%D7%9E%D7%99%D7%AA-%D7%9C%D7%97%D7%99%D7%A8%D7%95%D7%9D/' },
+  { label: 'הכשרות למשרדי הממשלה', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/64e9c981f_icon3-4.png', url: 'https://inri.orc.org.il/%D7%A4%D7%A2%D7%99%D7%9C%D7%95%D7%99%D7%95%D7%AA-%D7%94%D7%9E%D7%9B%D7%9C%D7%9C%D7%94/%D7%94%D7%9B%D7%A9%D7%A8%D7%AA-%D7%9E%D7%A0%D7%94%D7%9C%D7%99%D7%9D-%D7%95%D7%9E%D7%A0%D7%94%D7%9C%D7%95%D7%AA-%D7%91%D7%9E%D7%A9%D7%A8%D7%93%D7%99-%D7%9E%D7%9E%D7%A9%D7%9C%D7%94-%D7%95%D7%A8%D7%A9%D7%95%D7%99%D7%95%D7%AA-%D7%99%D7%99%D7%A2%D7%95%D7%93%D7%99%D7%95%D7%AA/' },
+  { label: 'הכשרות לרשויות המקומיות', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/64e9c981f_icon3-4.png', url: 'https://inri.orc.org.il/%D7%A4%D7%A2%D7%99%D7%9C%D7%95%D7%99%D7%95%D7%AA-%D7%94%D7%9E%D7%9B%D7%9C%D7%9C%D7%94/%D7%94%D7%9B%D7%A9%D7%A8%D7%AA-%D7%9E%D7%A0%D7%94%D7%9C%D7%99%D7%9D-%D7%91%D7%A8%D7%A9%D7%95%D7%99%D7%95%D7%AA-%D7%9E%D7%A7%D7%95%D7%9E%D7%99%D7%95%D7%AA/' },
+  { label: 'עזר לניהול מצבי חירום', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/28dfee8ee_icon5.png', url: 'https://inri-pkrf.github.io/assessment2026/' },
+  { label: "מאגר 'שאגת הארי'", icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/01ea85710_icon6.png', url: null }
+];
 
 const CIRCLE_IMG = 'https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/ee0d19f49_circle-icon.png';
 
@@ -33,8 +33,8 @@ function TotemButton({ btn, onClick }) {
       <span className="flex-1 text-white font-assistant font-medium text-center" style={{ fontSize: 'clamp(0.8rem, 1.6vh, 1.1rem)' }}>
         {btn.label}
       </span>
-    </button>);
-
+    </button>
+  );
 }
 
 export default function Home({ onNavigateToVideo }) {
@@ -58,7 +58,7 @@ export default function Home({ onNavigateToVideo }) {
     <div
       className="w-screen h-screen relative overflow-hidden flex flex-col"
       style={{
-        backgroundImage: `url(https://media.base44.com/images/public/user_6885e537f90714e91be36212/93d0b0613_bg-pic.jpg)`,
+        backgroundImage: `url(https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/8f5df9d6f_1.png)`,
         backgroundSize: 'cover',
         backgroundPosition: 'center top'
       }}
@@ -72,11 +72,11 @@ export default function Home({ onNavigateToVideo }) {
       {/* Title */}
       <div className="px-[5%] text-center z-10 flex-shrink-0" style={{ marginTop: '1vh' }}>
         <h1 className="font-karantina text-white font-normal drop-shadow-lg leading-none"
-        style={{ fontSize: 'clamp(2rem, 7vh, 7.5rem)' }}>
+          style={{ fontSize: 'clamp(2rem, 7vh, 7.5rem)' }}>
           ברוכים הבאים והבאות
         </h1>
         <h2 className="font-karantina text-white font-normal drop-shadow-lg leading-none"
-        style={{ fontSize: 'clamp(1.5rem, 5.5vh, 6.5rem)', marginTop: '0.5vh' }}>
+          style={{ fontSize: 'clamp(1.5rem, 5.5vh, 6.5rem)', marginTop: '0.5vh' }}>
           למכללה הלאומית לאיתנות ישראלית
         </h2>
       </div>
@@ -119,9 +119,9 @@ export default function Home({ onNavigateToVideo }) {
             style={{ gap: '1.6vh', paddingBottom: '1vh' }}
             dir="rtl">
 
-            {BUTTONS.slice(0, 5).map((btn, i) =>
-            <TotemButton key={i} btn={btn} onClick={handleButtonClick} />
-            )}
+            {BUTTONS.slice(0, 5).map((btn, i) => (
+              <TotemButton key={i} btn={btn} onClick={handleButtonClick} />
+            ))}
 
             <div className="text-left w-full pl-5" style={{ marginTop: '-0.5vh' }}>
               <span
@@ -145,16 +145,16 @@ export default function Home({ onNavigateToVideo }) {
           </div>
 
           {/* Lion alert dialog */}
-          {showLionAlert &&
-          <div className="absolute inset-0 z-50 flex items-center justify-center bg-black/40 rounded-[5vh]" onClick={() => setShowLionAlert(false)}>
-              <div className="bg-white rounded-3xl shadow-2xl p-8 mx-8 text-center" dir="rtl" onClick={(e) => e.stopPropagation()}>
+          {showLionAlert && (
+            <div className="absolute inset-0 z-50 flex items-center justify-center bg-black/40 rounded-[5vh]" onClick={() => setShowLionAlert(false)}>
+              <div className="bg-white rounded-3xl shadow-2xl p-8 mx-8 text-center" dir="rtl" onClick={e => e.stopPropagation()}>
                 <div className="text-4xl mb-3">🦁</div>
                 <h3 className="font-karantina text-2xl text-primary mb-2">בהכנה…</h3>
                 <p className="font-assistant text-gray-600 mb-4">בנתיים תוכלו לצפות במאגרים הנוספים למצבי חירום</p>
                 <button onClick={() => setShowLionAlert(false)} className="bg-primary text-white font-assistant font-bold px-6 py-2 rounded-full hover:brightness-110 transition">סגור</button>
               </div>
             </div>
-          }
+          )}
         </div>
       </div>
 
@@ -170,12 +170,12 @@ export default function Home({ onNavigateToVideo }) {
 
       {/* Bottom center image */}
       <div className="absolute left-1/2 -translate-x-1/2 z-10 flex justify-center" style={{ bottom: '3%' }}>
-        <img src="https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/3f10e877e_text.png"
-
-        alt=""
-        style={{ height: 'clamp(40px, 12vh, 100px)' }} className="my-3 object-contain" />
-        
+        <img
+          src="https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/b840f9407_0.png"
+          alt=""
+          style={{ height: 'clamp(40px, 12vh, 100px)' }}
+          className="object-contain" />
       </div>
-    </div>);
-
+    </div>
+  );
 }
