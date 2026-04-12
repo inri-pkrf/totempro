@@ -14,7 +14,7 @@ export default function MoreDatabases({ onBack }) {
     <div
       className="w-screen h-screen relative overflow-hidden flex flex-col"
       style={{
-        backgroundImage: `url(https://media.base44.com/images/public/user_6885e537f90714e91be36212/93d0b0613_bg-pic.jpg)`,
+        backgroundImage: `url(https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/bab9fdccb_bg.png)`,
         backgroundSize: 'cover',
         backgroundPosition: 'center top'
       }}
