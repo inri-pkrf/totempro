@@ -102,13 +102,13 @@ export default function Home({ onNavigateToVideo }) {
             <img
               src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/b4fb5c195_logo.png"
               alt="Logo"
-              style={{ height: 'clamp(55px, 10vh, 100px)' }}
+              style={{ height: 'clamp(45px, 8vh, 80px)' }}
               className="object-contain" />
             <button className="flex items-center justify-center">
               <img
                 src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/10285006f_menu-btn.png"
                 alt="תפריט"
-                style={{ width: 'clamp(60px, 11vh, 120px)' }}
+                style={{ width: 'clamp(50px, 9vh, 100px)' }}
                 className="object-contain" />
             </button>
           </div>
