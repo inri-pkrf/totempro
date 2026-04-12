@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function NavButtons({ onNavigateToVideo, onNavigateHome }) {
   return (
-    <div className="fixed z-50 flex items-center gap-1" style={{ bottom: '2%', right: '4%' }}>
+    <div className="fixed z-50 flex items-center gap-4" style={{ bottom: '2%', right: '4%' }}>
       <button
         onClick={onNavigateToVideo}
         style={{ width: 'clamp(55px, 8vw, 85px)', height: 'clamp(55px, 8vw, 85px)', backgroundColor: 'rgba(247, 179, 124, 0.9)' }}
