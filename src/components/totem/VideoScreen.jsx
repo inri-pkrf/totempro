@@ -1,25 +1,27 @@
-import React, { useRef, useEffect } from 'react';
-
-export default function VideoScreen({ onEnded }) {
+export default function VideoScreen({ onEnded, isActive }) {
   const videoRef = useRef(null);
 
   useEffect(() => {
-    if (videoRef.current) {
+    if (isActive && videoRef.current) {
+      videoRef.current.currentTime = 0;
       videoRef.current.play().catch(() => {});
     }
-  }, []);
+  }, [isActive]);
 
   const videoUrl = "https://base44.app/api/apps/69bfa8f7c160ff3fb92ea9a6/files/mp/public/69bfa8f7c160ff3fb92ea9a6/c9c35aa23_4k.mp4";
 
   return (
-    <div className="w-screen h-screen bg-black overflow-hidden">
+    <div
+      className={`absolute inset-0 transition-opacity duration-200 ${
+        isActive ? 'opacity-100' : 'opacity-0 pointer-events-none'
+      }`}
+    >
       <video
         ref={videoRef}
         className="w-full h-full object-cover"
         onEnded={onEnded}
         muted
         playsInline
-        autoPlay
         preload="auto"
       >
         <source src={videoUrl} type="video/mp4" />
