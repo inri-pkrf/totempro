@@ -23,7 +23,7 @@ export default function TotemController() {
     clearTimer();
     setCurrentView('home');
     timerRef.current = setTimeout(() => {
-      setCurrentView('color-0');
+      setCurrentView('video');
     }, HOME_DURATION);
   }, []);
 
