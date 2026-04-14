@@ -47,7 +47,7 @@ export default function TotemController() {
   }, [currentView]);
 
   const handleVideoEnd = useCallback(() => startCycle(), [startCycle]);
-  const handleNavigateToVideo = useCallback(() => { clearTimer(); setCurrentView('color-0'); }, []);
+  const handleNavigateToVideo = useCallback(() => { clearTimer(); setCurrentView('video'); }, []);
   const handleNavigateHome = useCallback(() => startCycle(), [startCycle]);
 
   return (
