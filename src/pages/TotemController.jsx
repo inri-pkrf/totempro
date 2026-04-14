@@ -57,9 +57,10 @@ export default function TotemController() {
       )}
 
 
-      {currentView === 'video' && (
-        <VideoScreen onEnded={handleVideoEnd} />
-      )}
+      <VideoScreen 
+        onEnded={handleVideoEnd} 
+        isActive={currentView === 'video'} 
+      />
 
       <NavButtons onNavigateToVideo={handleNavigateToVideo} onNavigateHome={handleNavigateHome} />
     </div>
