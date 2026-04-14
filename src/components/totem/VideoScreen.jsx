@@ -1,3 +1,4 @@
+import React, { useRef, useEffect } from 'react';
 export default function VideoScreen({ onEnded, isActive }) {
   const videoRef = useRef(null);
 
