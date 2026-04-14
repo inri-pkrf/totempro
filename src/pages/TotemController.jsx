@@ -56,11 +56,6 @@ export default function TotemController() {
         <Home onNavigateToVideo={handleNavigateToVideo} />
       )}
 
-      <AnimatePresence mode="wait">
-        {currentView.startsWith('color-') && (
-          <ColorScreen key={currentView} screenIndex={parseInt(currentView.split('-')[1])} />
-        )}
-      </AnimatePresence>
 
       {currentView === 'video' && (
         <VideoScreen onEnded={handleVideoEnd} />
