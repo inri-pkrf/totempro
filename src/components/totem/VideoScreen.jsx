@@ -19,6 +19,8 @@ export default function VideoScreen({ onEnded }) {
         onEnded={onEnded}
         muted
         playsInline
+        autoPlay
+        preload="auto"
       >
         <source src={videoUrl} type="video/mp4" />
       </video>
