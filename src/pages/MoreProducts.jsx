@@ -5,6 +5,9 @@ import AiPopup from '../components/totem/AiPopup';
 const BUTTONS = [
   { label: 'החברה הישראלית', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png', url: 'https://inri-pkrf.github.io/israeli-society-copy/' },
   { label: 'הצגת המכללה', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png', url: 'https://inri-pkrf.github.io/know-college/' },
+  { label: 'משחק 1', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png', url: 'https://inri-game1.base44.app' },
+  { label: 'משחק 2', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png', url: 'https://inri-game2.base44.app' },
+  { label: 'משחק 3', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png', url: 'https://inri-game3.base44.app' },
 ];
 
 export default function MoreProducts({ onBack }) {
