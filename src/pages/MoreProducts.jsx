@@ -107,7 +107,7 @@ export default function MoreProducts({ onBack, onOpenCarousel }) {
       </div>
 
       {/* Carousel button bottom-left */}
-      <div className="absolute bottom-6 right-6 z-20">
+      <div className="absolute bottom-6 left-6 z-20">
         <button
           onClick={onOpenCarousel}
           className="bg-white/90 hover:bg-white rounded-2xl shadow-lg flex items-center gap-2 px-4 py-2 transition-all active:scale-95"
