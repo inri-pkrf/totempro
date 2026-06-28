@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import DateTimeDisplay from '../components/totem/DateTimeDisplay';
 import AiPopup from '../components/totem/AiPopup';
 
 const DEFAULT_ICON = 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png';
@@ -52,70 +51,54 @@ export default function MoreProducts({ onBack }) {
 
   return (
     <div
-      className="w-screen h-screen relative overflow-hidden flex flex-col"
-      style={{
-        backgroundImage: `url(https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/8f5df9d6f_1.png)`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center top'
-      }}
+      className="w-screen h-screen relative overflow-hidden flex flex-col bg-white"
       dir="rtl">
 
-      {/* Top: date/time */}
-      <div className="flex justify-end items-start px-[5%] z-20 flex-shrink-0" style={{ paddingTop: '2vh' }}>
-        <DateTimeDisplay />
+      {/* Decorations */}
+      <div className="absolute top-0 left-0 w-[20%] pointer-events-none opacity-40 z-0">
+        <img src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/69b22dfa6_orange.png" alt="" className="w-full" />
+      </div>
+      <div className="absolute bottom-0 right-0 w-[20%] pointer-events-none opacity-40 z-0">
+        <img src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/09589c8ed_blue.png" alt="" className="w-full" />
+      </div>
+
+      {/* Header: logo + back */}
+      <div className="flex justify-between items-center flex-shrink-0 relative z-10" style={{ padding: '1.5vh 4%' }}>
+        <img
+          src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/b4fb5c195_logo.png"
+          alt="Logo"
+          style={{ height: 'clamp(40px, 7vh, 75px)' }}
+          className="object-contain" />
+        <button
+          onClick={onBack}
+          className="font-assistant font-bold text-primary hover:underline flex items-center gap-2"
+          style={{ fontSize: 'clamp(1rem, 2.5vh, 1.6rem)' }}>
+          חזרה &gt;
+        </button>
       </div>
 
       {/* Title */}
-      <div className="px-[5%] text-center z-10 flex-shrink-0" style={{ marginTop: '1vh' }}>
-        <h1 className="font-karantina text-white font-normal drop-shadow-lg leading-none"
-          style={{ fontSize: 'clamp(2rem, 7vh, 7.5rem)' }}>
+      <div className="text-center z-10 flex-shrink-0" style={{ marginTop: '0.5vh' }}>
+        <h1 className="font-karantina text-[#003A57] font-normal leading-none"
+          style={{ fontSize: 'clamp(2rem, 6vh, 6rem)' }}>
           עוד מוצרים דיגיטליים
         </h1>
       </div>
 
-      {/* White card */}
-      <div className="flex-1 z-10 min-h-0 flex justify-center" style={{ marginTop: '2vh', marginBottom: 'clamp(50px, 15vh, 160px)' }}>
-        <div className="bg-white/90 backdrop-blur-sm shadow-2xl h-full flex flex-col overflow-hidden relative w-full" style={{ borderRadius: '11vh' }}>
-
-          {/* Decorations */}
-          <div className="absolute top-0 left-0 w-[25%] pointer-events-none opacity-50">
-            <img src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/69b22dfa6_orange.png" alt="" className="w-full" />
-          </div>
-          <div className="absolute bottom-0 right-0 w-[25%] pointer-events-none opacity-50">
-            <img src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/09589c8ed_blue.png" alt="" className="w-full" />
-          </div>
-
-          {/* Card header: logo + back */}
-          <div className="flex justify-between items-center flex-shrink-0 relative z-10" style={{ padding: '1.2vh 6%' }}>
-            <img
-              src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/b4fb5c195_logo.png"
-              alt="Logo"
-              style={{ height: 'clamp(40px, 7vh, 75px)' }}
-              className="object-contain" />
-            <button
-              onClick={onBack}
-              className="font-assistant font-bold text-primary hover:underline flex items-center gap-2"
-              style={{ fontSize: 'clamp(1rem, 2.5vh, 1.6rem)' }}>
-              חזרה &gt;
-            </button>
-          </div>
-
-          {/* Products grid */}
-          <div className="flex-1 min-h-0 relative z-10" style={{ padding: '1vh 6% 2vh' }}>
-            <div
-              className="grid w-full h-full mx-auto"
-              style={{
-                gridTemplateColumns: 'repeat(5, 1fr)',
-                gridTemplateRows: 'repeat(4, 1fr)',
-                gap: '1.6vh 1.5%',
-                maxWidth: '95%'
-              }}
-            >
-              {PRODUCTS.map((product, i) => (
-                <ProductCard key={i} product={product} />
-              ))}
-            </div>
-          </div>
+      {/* Products grid */}
+      <div className="flex-1 min-h-0 relative z-10" style={{ padding: '1.5vh 4% 2vh' }}>
+        <div
+          className="grid w-full h-full mx-auto"
+          style={{
+            gridTemplateColumns: 'repeat(5, 1fr)',
+            gridTemplateRows: 'repeat(4, 1fr)',
+            gap: '1.6vh 1.5%',
+            maxWidth: '96%'
+          }}
+        >
+          {PRODUCTS.map((product, i) => (
+            <ProductCard key={i} product={product} />
+          ))}
         </div>
       </div>
 
@@ -129,14 +112,6 @@ export default function MoreProducts({ onBack }) {
             alt="AI" className="w-full h-full object-cover" />
         </button>
         {showAiPopup && <AiPopup isOpen={showAiPopup} onClose={() => setShowAiPopup(false)} />}
-      </div>
-
-      {/* Image bottom center */}
-      <div className="absolute left-1/2 -translate-x-1/2 z-10 flex justify-center" style={{ bottom: '3%' }}>
-        <img
-          src="https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/b840f9407_0.png"
-          alt=""
-          style={{ height: 'clamp(30px, 15vh, 60px)', maxWidth: '120%' }} className="my-4 opacity-100 object-contain" />
       </div>
     </div>
   );
