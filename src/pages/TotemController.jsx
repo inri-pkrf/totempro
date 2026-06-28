@@ -2,8 +2,10 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { Maximize, Minimize } from 'lucide-react';
 import Home from './Home';
+import MoreProducts from './MoreProducts';
 import VideoScreen from '../components/totem/VideoScreen';
 import NavButtons from '../components/totem/NavButtons';
+import ProductsCarousel from './ProductsCarousel';
 
 const COLOR_SCREEN_COUNT = 4;
 const COLOR_DURATION = 5000;
@@ -14,6 +16,7 @@ export default function TotemController() {
   const [homeKey, setHomeKey] = useState(0);
   const [showMoreProducts, setShowMoreProducts] = useState(false);
   const [showMoreDatabases, setShowMoreDatabases] = useState(false);
+  const [showCarousel, setShowCarousel] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(!!document.fullscreenElement);
   const containerRef = useRef(null);
   const timerRef = useRef(null);
@@ -75,11 +78,11 @@ export default function TotemController() {
 
   const handleVideoEnd = useCallback(() => startCycle(), [startCycle]);
   const handleNavigateToVideo = useCallback(() => { clearTimer(); setCurrentView('video'); }, []);
-  const handleNavigateHome = useCallback(() => { setHomeKey(k => k + 1); setShowMoreProducts(false); setShowMoreDatabases(false); startCycle(); }, [startCycle]);
+  const handleNavigateHome = useCallback(() => { setHomeKey(k => k + 1); setShowMoreProducts(false); setShowMoreDatabases(false); setShowCarousel(false); startCycle(); }, [startCycle]);
 
   return (
     <div ref={containerRef} className="w-screen h-screen bg-black overflow-hidden">
-      {currentView === 'home' && (
+      {currentView === 'home' && !showCarousel && (
         <Home
           key={homeKey}
           onNavigateToVideo={handleNavigateToVideo}
@@ -91,13 +94,26 @@ export default function TotemController() {
         />
       )}
 
+      {showMoreProducts && !showCarousel && (
+        <MoreProducts
+          onBack={() => { setShowMoreProducts(false); handleNavigateHome(); }}
+          onOpenCarousel={() => setShowCarousel(true)}
+        />
+      )}
+
+      {showCarousel && (
+        <ProductsCarousel
+          onBackToGrid={() => setShowCarousel(false)}
+        />
+      )}
+
 
       <VideoScreen 
         onEnded={handleVideoEnd} 
         isActive={currentView === 'video'} 
       />
 
-      <NavButtons onNavigateToVideo={handleNavigateToVideo} onNavigateHome={handleNavigateHome} />
+      {!showCarousel && <NavButtons onNavigateToVideo={handleNavigateToVideo} onNavigateHome={handleNavigateHome} />}
 
       {!showMoreProducts && !showMoreDatabases && (
         <button

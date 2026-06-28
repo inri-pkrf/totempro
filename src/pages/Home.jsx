@@ -50,7 +50,6 @@ export default function Home({ onNavigateToVideo, onNavigateHome, showMoreProduc
   };
 
   if (showMoreDatabases) return <MoreDatabases onBack={() => { setShowMoreDatabases(false); onNavigateHome?.(); }} />;
-  if (showMoreProducts) return <MoreProducts onBack={() => { setShowMoreProducts(false); onNavigateHome?.(); }} />;
 
   return (
     <div

@@ -1,5 +1,6 @@
 import React from 'react';
 import FullscreenButton from '../components/totem/FullscreenButton';
+import { GripHorizontal, LayoutGrid } from 'lucide-react';
 
 const DEFAULT_ICON = 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png';
 
@@ -53,7 +54,7 @@ function ProductCard({ product }) {
   );
 }
 
-export default function MoreProducts({ onBack }) {
+export default function MoreProducts({ onBack, onOpenCarousel }) {
   return (
     <div
       className="w-screen h-screen relative overflow-hidden flex flex-col bg-white"
@@ -89,7 +90,7 @@ export default function MoreProducts({ onBack }) {
       </div>
 
       {/* Products grid */}
-      <div className="flex-1 min-h-0 relative z-10" style={{ padding: '3vh 4% 2vh' }}>
+      <div className="flex-1 min-h-0 relative z-10" style={{ padding: '2.5vh 4% 1vh' }}>
         <div
           className="grid w-full mx-auto"
           style={{
@@ -103,6 +104,18 @@ export default function MoreProducts({ onBack }) {
             <ProductCard key={i} product={product} />
           ))}
         </div>
+      </div>
+
+      {/* Carousel button bottom-left */}
+      <div className="absolute bottom-6 right-6 z-20">
+        <button
+          onClick={onOpenCarousel}
+          className="bg-white/90 hover:bg-white rounded-2xl shadow-lg flex items-center gap-2 px-4 py-2 transition-all active:scale-95"
+          style={{ color: '#003A57' }}
+        >
+          <LayoutGrid className="w-5 h-5" />
+          <span className="font-assistant font-semibold text-sm">תצוגת קרוסלה</span>
+        </button>
       </div>
 
     </div>
