@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import AiPopup from '../components/totem/AiPopup';
+import React from 'react';
+import FullscreenButton from '../components/totem/FullscreenButton';
 
 const DEFAULT_ICON = 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png';
 
@@ -47,8 +47,6 @@ function ProductCard({ product }) {
 }
 
 export default function MoreProducts({ onBack }) {
-  const [showAiPopup, setShowAiPopup] = useState(false);
-
   return (
     <div
       className="w-screen h-screen relative overflow-hidden flex flex-col bg-white"
@@ -69,12 +67,10 @@ export default function MoreProducts({ onBack }) {
           alt="Logo"
           style={{ height: 'clamp(40px, 7vh, 75px)' }}
           className="object-contain" />
-        <button
-          onClick={onBack}
-          className="font-assistant font-bold text-primary hover:underline flex items-center gap-2"
-          style={{ fontSize: 'clamp(1rem, 2.5vh, 1.6rem)' }}>
-          חזרה &gt;
-        </button>
+        <FullscreenButton
+          className="bg-[#003A57] text-white shadow-lg"
+          style={{ width: 'clamp(45px, 7vh, 70px)', height: 'clamp(45px, 7vh, 70px)' }}
+        />
       </div>
 
       {/* Title */}
@@ -102,17 +98,6 @@ export default function MoreProducts({ onBack }) {
         </div>
       </div>
 
-      {/* AI character */}
-      <div className="absolute z-20" style={{ bottom: '0.5vh', left: '2%' }}>
-        <button
-          onClick={() => setShowAiPopup(!showAiPopup)}
-          style={{ width: 'clamp(55px, 9vh, 100px)', height: 'clamp(55px, 9vh, 100px)' }}>
-          <img
-            src="https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/b87c0ca55_ai.png"
-            alt="AI" className="w-full h-full object-cover" />
-        </button>
-        {showAiPopup && <AiPopup isOpen={showAiPopup} onClose={() => setShowAiPopup(false)} />}
-      </div>
     </div>
   );
 }
