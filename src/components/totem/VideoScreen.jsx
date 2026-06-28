@@ -13,7 +13,7 @@ export default function VideoScreen({ onEnded, isActive }) {
 
   return (
     <div
-      className={`absolute inset-0 transition-opacity duration-200 ${
+      className={`absolute inset-0 z-50 transition-opacity duration-200 ${
         isActive ? 'opacity-100' : 'opacity-0 pointer-events-none'
       }`}
     >

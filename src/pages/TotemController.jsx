@@ -116,12 +116,13 @@ export default function TotemController() {
         />
       )}
 
+      <NavButtons onNavigateToVideo={handleNavigateToVideo} onNavigateHome={handleNavigateHome} />
+
+      {/* Video overlays everything */}
       <VideoScreen 
         onEnded={handleVideoEnd} 
         isActive={currentView === 'video'} 
       />
-
-      <NavButtons onNavigateToVideo={handleNavigateToVideo} onNavigateHome={handleNavigateHome} />
 
       {!showMoreProducts && !showMoreDatabases && (
         <button
