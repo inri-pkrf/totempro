@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import FullscreenButton from '../components/totem/FullscreenButton';
 import { ChevronLeft, ChevronRight, LayoutGrid } from 'lucide-react';
 
@@ -27,42 +28,57 @@ const PRODUCTS = [
   { title: 'מוצר 20', subtitle: 'מוצר זה כרגע בהכנה - שווה לחכות', icon: DEFAULT_ICON, url: null },
 ];
 
-function CenterCard({ product }) {
+const CARD_BG = 'linear-gradient(135deg, #003A57, #007FBD)';
+
+function CenterCard({ product, direction }) {
   return (
-    <div
-      className="product-card flex flex-col items-center justify-start text-center rounded-2xl overflow-hidden transition-all duration-200 group flex-shrink-0"
+    <motion.div
+      key={product.title}
+      custom={direction}
+      variants={{
+        enter: (dir) => ({ x: dir > 0 ? 300 : -300, opacity: 0, scale: 0.85 }),
+        center: { x: 0, opacity: 1, scale: 1 },
+        exit: (dir) => ({ x: dir > 0 ? -300 : 300, opacity: 0, scale: 0.85 }),
+      }}
+      initial="enter"
+      animate="center"
+      exit="exit"
+      transition={{ duration: 0.35, ease: 'easeInOut' }}
+      className="flex flex-col items-center justify-start text-center rounded-2xl overflow-hidden flex-shrink-0"
       style={{
         width: 'min(55vw, 480px)',
         height: 'min(57vh, 480px)',
         padding: '3vh 6% 1.5vh',
         gap: '0.6vh',
+        background: CARD_BG,
         boxShadow: '0 8px 32px rgba(0,58,87,0.35), 0 4px 12px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.2)',
         transform: 'perspective(800px) rotateX(2deg)',
         borderBottom: '3px solid rgba(0,0,0,0.15)'
       }}
     >
       <div className="flex items-center justify-center flex-shrink-0" style={{ width: 'clamp(50px, 8vh, 75px)', height: 'clamp(50px, 8vh, 75px)' }}>
-        <img src={product.icon} alt="" className="w-full h-full object-contain brightness-0 invert group-active:filter-none transition-all duration-150" />
+        <img src={product.icon} alt="" className="w-full h-full object-contain brightness-0 invert" />
       </div>
-      <h3 className="font-assistant font-bold text-white group-active:text-[#003A57] leading-tight transition-colors duration-150" style={{ fontSize: 'clamp(1.1rem, 2.8vh, 1.6rem)' }}>
+      <h3 className="font-assistant font-bold text-white leading-tight" style={{ fontSize: 'clamp(1.1rem, 2.8vh, 1.6rem)' }}>
         {product.title}
       </h3>
-      <p className="font-assistant text-white/80 group-active:text-gray-500 leading-tight transition-colors duration-150" style={{ fontSize: 'clamp(0.8rem, 1.8vh, 1rem)' }}>
+      <p className="font-assistant text-white/80 leading-tight" style={{ fontSize: 'clamp(0.8rem, 1.8vh, 1rem)' }}>
         {product.subtitle}
       </p>
-    </div>
+    </motion.div>
   );
 }
 
 function SideCard({ product }) {
   return (
     <div
-      className="product-card flex flex-col items-center justify-center text-center rounded-2xl overflow-hidden transition-all duration-200 flex-shrink-0 opacity-60 scale-[0.8] pointer-events-none"
+      className="flex flex-col items-center justify-center text-center rounded-2xl overflow-hidden flex-shrink-0 opacity-60 scale-[0.8] pointer-events-none"
       style={{
         width: 'min(28vw, 260px)',
         height: 'min(42vh, 370px)',
         padding: '2vh 5% 1vh',
         gap: '0.4vh',
+        background: CARD_BG,
         boxShadow: '0 8px 32px rgba(0,58,87,0.35), 0 4px 12px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.2)',
         transform: 'perspective(800px) rotateX(2deg)',
         borderBottom: '3px solid rgba(0,0,0,0.15)'
@@ -83,12 +99,14 @@ function SideCard({ product }) {
 
 export default function ProductsCarousel({ onBackToGrid }) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
   const touchStartX = useRef(null);
   const touchEndX = useRef(null);
 
   const total = PRODUCTS.length;
 
-  const goTo = (index) => {
+  const goTo = (index, dir) => {
+    setDirection(dir);
     if (index < 0) setCurrentIndex(total - 1);
     else if (index >= total) setCurrentIndex(0);
     else setCurrentIndex(index);
@@ -100,8 +118,8 @@ export default function ProductsCarousel({ onBackToGrid }) {
     if (!touchStartX.current || !touchEndX.current) return;
     const diff = touchStartX.current - touchEndX.current;
     if (Math.abs(diff) > 40) {
-      if (diff > 0) goTo(currentIndex + 1);
-      else goTo(currentIndex - 1);
+      if (diff > 0) goTo(currentIndex + 1, 1);
+      else goTo(currentIndex - 1, -1);
     }
     touchStartX.current = null;
     touchEndX.current = null;
@@ -128,15 +146,8 @@ export default function ProductsCarousel({ onBackToGrid }) {
 
       {/* Header */}
       <div className="flex justify-between items-center flex-shrink-0 relative z-10" style={{ padding: '1.5vh 4%' }}>
-        <img
-          src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/b4fb5c195_logo.png"
-          alt="Logo"
-          style={{ height: 'clamp(40px, 7vh, 75px)' }}
-          className="object-contain" />
-        <FullscreenButton
-          className="bg-white/40 hover:bg-white/50 shadow-lg"
-          style={{ width: 'clamp(45px, 7vh, 70px)', height: 'clamp(45px, 7vh, 70px)', color: '#003A57' }}
-        />
+        <img src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/b4fb5c195_logo.png" alt="Logo" style={{ height: 'clamp(40px, 7vh, 75px)' }} className="object-contain" />
+        <FullscreenButton className="bg-white/40 hover:bg-white/50 shadow-lg" style={{ width: 'clamp(45px, 7vh, 70px)', height: 'clamp(45px, 7vh, 70px)', color: '#003A57' }} />
       </div>
 
       {/* Title */}
@@ -151,7 +162,9 @@ export default function ProductsCarousel({ onBackToGrid }) {
         <div className="flex items-center justify-center w-full h-full">
           <SideCard product={PRODUCTS[prevIndex]} />
           <div className="flex-shrink-0 relative z-10" style={{ margin: '0 min(-1vw, -8px)' }}>
-            <CenterCard product={PRODUCTS[currentIndex]} />
+            <AnimatePresence mode="popLayout" custom={direction}>
+              <CenterCard key={PRODUCTS[currentIndex].title + currentIndex} product={PRODUCTS[currentIndex]} direction={direction} />
+            </AnimatePresence>
           </div>
           <SideCard product={PRODUCTS[nextIndex]} />
         </div>
@@ -160,23 +173,23 @@ export default function ProductsCarousel({ onBackToGrid }) {
       {/* Navigation arrows at bottom */}
       <div className="absolute bottom-12 left-0 right-0 z-20 flex items-center justify-between px-[8%]">
         <button
-          onClick={() => goTo(currentIndex + 1)}
-          className="flex items-center justify-center rounded-full transition-all hover:scale-110 active:scale-95"
+          onClick={() => goTo(currentIndex + 1, 1)}
+          className="flex items-center justify-center rounded-full transition-all hover:scale-110 active:scale-95 cursor-pointer"
           style={{ width: 'clamp(44px, 6vh, 64px)', height: 'clamp(44px, 6vh, 64px)' }}
         >
           <ChevronRight className="w-full h-full" style={{ color: '#003A57', strokeWidth: 2.5 }} />
         </button>
         <button
           onClick={onBackToGrid}
-          className="bg-white/90 hover:bg-white rounded-2xl shadow-lg flex items-center gap-2 px-4 py-2 transition-all active:scale-95"
+          className="bg-white/90 hover:bg-white rounded-2xl shadow-lg flex items-center gap-2 px-4 py-2 transition-all active:scale-95 cursor-pointer"
           style={{ color: '#003A57' }}
         >
           <LayoutGrid className="w-5 h-5" />
           <span className="font-assistant font-semibold text-sm">תצוגת רשת</span>
         </button>
         <button
-          onClick={() => goTo(currentIndex - 1)}
-          className="flex items-center justify-center rounded-full transition-all hover:scale-110 active:scale-95"
+          onClick={() => goTo(currentIndex - 1, -1)}
+          className="flex items-center justify-center rounded-full transition-all hover:scale-110 active:scale-95 cursor-pointer"
           style={{ width: 'clamp(44px, 6vh, 64px)', height: 'clamp(44px, 6vh, 64px)' }}
         >
           <ChevronLeft className="w-full h-full" style={{ color: '#003A57', strokeWidth: 2.5 }} />
