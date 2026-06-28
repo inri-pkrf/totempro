@@ -37,7 +37,7 @@ function TotemButton({ btn, onClick }) {
   );
 }
 
-export default function Home({ onNavigateToVideo }) {
+export default function Home({ onNavigateToVideo, onNavigateHome }) {
   const [showAiPopup, setShowAiPopup] = useState(false);
   const [showLionAlert, setShowLionAlert] = useState(false);
   const [showMoreDatabases, setShowMoreDatabases] = useState(false);
@@ -51,8 +51,8 @@ export default function Home({ onNavigateToVideo }) {
     }
   };
 
-  if (showMoreDatabases) return <MoreDatabases onBack={() => setShowMoreDatabases(false)} />;
-  if (showMoreProducts) return <MoreProducts onBack={() => setShowMoreProducts(false)} />;
+  if (showMoreDatabases) return <MoreDatabases onBack={() => { setShowMoreDatabases(false); onNavigateHome?.(); }} />;
+  if (showMoreProducts) return <MoreProducts onBack={() => { setShowMoreProducts(false); onNavigateHome?.(); }} />;
 
   return (
     <div

@@ -77,7 +77,7 @@ export default function TotemController() {
   return (
     <div ref={containerRef} className="w-screen h-screen bg-black overflow-hidden">
       {currentView === 'home' && (
-        <Home onNavigateToVideo={handleNavigateToVideo} />
+        <Home onNavigateToVideo={handleNavigateToVideo} onNavigateHome={handleNavigateHome} />
       )}
 
 
