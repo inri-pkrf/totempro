@@ -32,8 +32,8 @@ function ProductCard({ product }) {
       onClick={() => product.url && window.open(product.url, '_blank')}
       className="product-card flex flex-col items-center justify-start text-center rounded-2xl transition-all duration-200 active:scale-95 overflow-hidden group"
       style={{
-        padding: '1.2vh 4%',
-        gap: '0.6vh',
+        padding: '1.4vh 4%',
+        gap: '0.8vh',
         aspectRatio: '1 / 1',
         boxShadow: '0 8px 32px rgba(0,58,87,0.35), 0 4px 12px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.2)',
         transform: 'perspective(800px) rotateX(2deg)',
@@ -46,7 +46,7 @@ function ProductCard({ product }) {
       <h3 className="font-assistant font-bold text-white group-active:text-[#003A57] leading-tight transition-colors duration-150" style={{ fontSize: 'clamp(0.85rem, 1.8vh, 1.15rem)' }}>
         {product.title}
       </h3>
-      <p className="font-assistant text-white/80 group-active:text-gray-500 leading-tight transition-colors duration-150 line-clamp-2" style={{ fontSize: 'clamp(0.7rem, 1.4vh, 0.9rem)' }}>
+      <p className="font-assistant text-white/80 group-active:text-gray-500 leading-tight transition-colors duration-150" style={{ fontSize: 'clamp(0.7rem, 1.4vh, 0.9rem)' }}>
         {product.subtitle}
       </p>
     </button>
