@@ -68,8 +68,8 @@ export default function MoreProducts({ onBack }) {
           style={{ height: 'clamp(40px, 7vh, 75px)' }}
           className="object-contain" />
         <FullscreenButton
-          className="bg-white/40 hover:bg-white/50 text-white shadow-lg"
-          style={{ width: 'clamp(45px, 7vh, 70px)', height: 'clamp(45px, 7vh, 70px)' }}
+          className="bg-white/40 hover:bg-white/50 shadow-lg"
+          style={{ width: 'clamp(45px, 7vh, 70px)', height: 'clamp(45px, 7vh, 70px)', color: '#003A57' }}
         />
       </div>
 
