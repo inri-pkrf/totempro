@@ -30,8 +30,15 @@ function ProductCard({ product }) {
   return (
     <button
       onClick={() => product.url && window.open(product.url, '_blank')}
-      className="product-card flex flex-col items-center justify-start text-center rounded-2xl shadow-md hover:shadow-xl transition-all duration-200 active:scale-95 overflow-hidden group"
-      style={{ padding: '1.2vh 4%', gap: '0.6vh', aspectRatio: '1 / 1' }}
+      className="product-card flex flex-col items-center justify-start text-center rounded-2xl transition-all duration-200 active:scale-95 overflow-hidden group"
+      style={{
+        padding: '1.2vh 4%',
+        gap: '0.6vh',
+        aspectRatio: '1 / 1',
+        boxShadow: '0 8px 32px rgba(0,58,87,0.35), 0 4px 12px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.2)',
+        transform: 'perspective(800px) rotateX(2deg)',
+        borderBottom: '3px solid rgba(0,0,0,0.15)'
+      }}
     >
       <div className="flex items-center justify-center flex-shrink-0" style={{ width: '5vh', height: '5vh', minWidth: '40px', minHeight: '40px' }}>
         <img src={product.icon} alt="" className="w-full h-full object-contain brightness-0 invert group-active:filter-none transition-all duration-150" />
