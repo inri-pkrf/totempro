@@ -2,6 +2,7 @@ import React, { useState, useRef, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import FullscreenButton from '../components/totem/FullscreenButton';
 import NavButtons from '../components/totem/NavButtons';
+import DateTimeDisplay from '../components/totem/DateTimeDisplay';
 import { ChevronLeft, ChevronRight, LayoutGrid } from 'lucide-react';
 
 const DEFAULT_ICON = 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png';
@@ -120,6 +121,11 @@ export default function ProductsCarousel({ onBackToGrid, onNavigateToVideo, onNa
       </div>
       <div className="absolute bottom-0 right-0 w-[20%] pointer-events-none opacity-40 z-0">
         <img src="https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/9fbae749a_Artboard28copy21.png" alt="" className="w-full" style={{ transform: 'rotate(180deg)' }} />
+      </div>
+
+      {/* Date/time overlay */}
+      <div className="fixed top-4 left-4 z-[70]">
+        <DateTimeDisplay />
       </div>
 
       {/* Header */}
