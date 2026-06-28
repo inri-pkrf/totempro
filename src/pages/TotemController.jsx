@@ -6,6 +6,7 @@ import MoreProducts from './MoreProducts';
 import VideoScreen from '../components/totem/VideoScreen';
 import NavButtons from '../components/totem/NavButtons';
 import ProductsCarousel from './ProductsCarousel';
+import MoreDatabases from './MoreDatabases';
 
 const COLOR_SCREEN_COUNT = 4;
 const COLOR_DURATION = 5000;
@@ -107,6 +108,11 @@ export default function TotemController() {
         />
       )}
 
+      {showMoreDatabases && (
+        <MoreDatabases
+          onBack={() => { setShowMoreDatabases(false); handleNavigateHome(); }}
+        />
+      )}
 
       <VideoScreen 
         onEnded={handleVideoEnd} 
