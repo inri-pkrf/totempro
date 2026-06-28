@@ -73,3 +73,12 @@
     font-family: var(--font-assistant);
   }
 }
+
+.product-card {
+  background: linear-gradient(135deg, #003A57, #007FBD);
+  transition: background 0.15s ease;
+}
+
+.product-card:active {
+  background: #ffffff;
+}

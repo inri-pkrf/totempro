@@ -30,16 +30,16 @@ function ProductCard({ product }) {
   return (
     <button
       onClick={() => product.url && window.open(product.url, '_blank')}
-      className="flex flex-col items-center justify-start text-center bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-200 hover:brightness-105 active:scale-95 overflow-hidden"
+      className="product-card flex flex-col items-center justify-start text-center rounded-2xl shadow-md hover:shadow-xl transition-all duration-200 active:scale-95 overflow-hidden group"
       style={{ padding: '1.2vh 4%', gap: '0.6vh', aspectRatio: '1 / 1' }}
     >
       <div className="flex items-center justify-center flex-shrink-0" style={{ width: '5vh', height: '5vh', minWidth: '40px', minHeight: '40px' }}>
         <img src={product.icon} alt="" className="w-full h-full object-contain" />
       </div>
-      <h3 className="font-assistant font-bold text-[#003A57] leading-tight" style={{ fontSize: 'clamp(0.85rem, 1.8vh, 1.15rem)' }}>
+      <h3 className="font-assistant font-bold text-white group-active:text-[#003A57] leading-tight transition-colors duration-150" style={{ fontSize: 'clamp(0.85rem, 1.8vh, 1.15rem)' }}>
         {product.title}
       </h3>
-      <p className="font-assistant text-gray-500 leading-tight" style={{ fontSize: 'clamp(0.7rem, 1.4vh, 0.9rem)' }}>
+      <p className="font-assistant text-white/80 group-active:text-gray-500 leading-tight transition-colors duration-150" style={{ fontSize: 'clamp(0.7rem, 1.4vh, 0.9rem)' }}>
         {product.subtitle}
       </p>
     </button>
