@@ -82,7 +82,7 @@ export default function TotemController() {
 
   return (
     <div ref={containerRef} className="w-screen h-screen bg-black overflow-hidden">
-      {currentView === 'home' && !showCarousel && (
+      {currentView === 'home' && !showMoreProducts && !showMoreDatabases && !showCarousel && (
         <Home
           key={homeKey}
           onNavigateToVideo={handleNavigateToVideo}
