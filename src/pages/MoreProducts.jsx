@@ -56,10 +56,10 @@ export default function MoreProducts({ onBack }) {
 
       {/* Decorations */}
       <div className="absolute top-0 left-0 w-[20%] pointer-events-none opacity-40 z-0">
-        <img src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/69b22dfa6_orange.png" alt="" className="w-full" />
+        <img src="https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/e388f9496_Artboard28copy32.png" alt="" className="w-full" />
       </div>
       <div className="absolute bottom-0 right-0 w-[20%] pointer-events-none opacity-40 z-0">
-        <img src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/09589c8ed_blue.png" alt="" className="w-full" />
+        <img src="https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/9fbae749a_Artboard28copy21.png" alt="" className="w-full" />
       </div>
 
       {/* Header: logo + back */}
