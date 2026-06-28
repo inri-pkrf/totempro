@@ -125,18 +125,22 @@ export default function TotemController() {
         isActive={currentView === 'video'} 
       />
 
-      {/* Overlay: date/time, fullscreen — always above video */}
-      <div className="fixed top-4 left-4 z-[70]">
-        <DateTimeDisplay />
-      </div>
+      {/* Overlay: date/time, fullscreen — home & video only (not MoreProducts/Carousel — they have own fullscreen) */}
+      {!showMoreProducts && !showCarousel && (
+        <>
+          <div className="fixed top-4 left-4 z-[70]">
+            <DateTimeDisplay />
+          </div>
 
-      <button
-        onClick={toggleFullscreen}
-        className="fixed top-4 right-4 z-[70] w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white transition-colors"
-        title={isFullscreen ? 'יציאה ממסך מלא' : 'מסך מלא'}
-      >
-        {isFullscreen ? <Minimize className="w-6 h-6" /> : <Maximize className="w-6 h-6" />}
-      </button>
+          <button
+            onClick={toggleFullscreen}
+            className="fixed top-4 right-4 z-[70] w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white transition-colors"
+            title={isFullscreen ? 'יציאה ממסך מלא' : 'מסך מלא'}
+          >
+            {isFullscreen ? <Minimize className="w-6 h-6" /> : <Maximize className="w-6 h-6" />}
+          </button>
+        </>
+      )}
     </div>
   );
 }
