@@ -29,68 +29,36 @@ const PRODUCTS = [
 ];
 
 const CARD_BG = 'linear-gradient(135deg, #003A57, #007FBD)';
+const CARD_WIDTH = 'min(55vw, 480px)';
+const CARD_HEIGHT = 'min(57vh, 480px)';
+const SIDE_WIDTH = 'min(28vw, 260px)';
+const SIDE_HEIGHT = 'min(42vh, 370px)';
+const GAP = 'clamp(8px, 2vw, 32px)';
 
-function CenterCard({ product, direction }) {
-  return (
-    <motion.div
-      key={product.title}
-      custom={direction}
-      variants={{
-        enter: (dir) => ({ x: dir > 0 ? 300 : -300, opacity: 0, scale: 0.85 }),
-        center: { x: 0, opacity: 1, scale: 1 },
-        exit: (dir) => ({ x: dir > 0 ? -300 : 300, opacity: 0, scale: 0.85 }),
-      }}
-      initial="enter"
-      animate="center"
-      exit="exit"
-      transition={{ duration: 0.35, ease: 'easeInOut' }}
-      className="flex flex-col items-center justify-start text-center rounded-2xl overflow-hidden flex-shrink-0"
-      style={{
-        width: 'min(55vw, 480px)',
-        height: 'min(57vh, 480px)',
-        padding: '3vh 6% 1.5vh',
-        gap: '0.6vh',
-        background: CARD_BG,
-        boxShadow: '0 8px 32px rgba(0,58,87,0.35), 0 4px 12px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.2)',
-        transform: 'perspective(800px) rotateX(2deg)',
-        borderBottom: '3px solid rgba(0,0,0,0.15)'
-      }}
-    >
-      <div className="flex items-center justify-center flex-shrink-0" style={{ width: 'clamp(50px, 8vh, 75px)', height: 'clamp(50px, 8vh, 75px)' }}>
-        <img src={product.icon} alt="" className="w-full h-full object-contain brightness-0 invert" />
-      </div>
-      <h3 className="font-assistant font-bold text-white leading-tight" style={{ fontSize: 'clamp(1.1rem, 2.8vh, 1.6rem)' }}>
-        {product.title}
-      </h3>
-      <p className="font-assistant text-white/80 leading-tight" style={{ fontSize: 'clamp(0.8rem, 1.8vh, 1rem)' }}>
-        {product.subtitle}
-      </p>
-    </motion.div>
-  );
-}
-
-function SideCard({ product }) {
+function Card({ product, isCenter }) {
   return (
     <div
-      className="flex flex-col items-center justify-center text-center rounded-2xl overflow-hidden flex-shrink-0 opacity-60 scale-[0.8] pointer-events-none"
+      className="flex flex-col items-center justify-start text-center rounded-2xl overflow-hidden flex-shrink-0"
       style={{
-        width: 'min(28vw, 260px)',
-        height: 'min(42vh, 370px)',
-        padding: '2vh 5% 1vh',
-        gap: '0.4vh',
+        width: isCenter ? CARD_WIDTH : SIDE_WIDTH,
+        height: isCenter ? CARD_HEIGHT : SIDE_HEIGHT,
+        padding: isCenter ? '3vh 6% 1.5vh' : '2vh 5% 1vh',
+        gap: isCenter ? '0.6vh' : '0.4vh',
         background: CARD_BG,
+        opacity: isCenter ? 1 : 0.6,
         boxShadow: '0 8px 32px rgba(0,58,87,0.35), 0 4px 12px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.2)',
-        transform: 'perspective(800px) rotateX(2deg)',
-        borderBottom: '3px solid rgba(0,0,0,0.15)'
+        transform: isCenter ? 'perspective(800px) rotateX(2deg)' : 'perspective(800px) rotateX(2deg) scale(0.8)',
+        borderBottom: '3px solid rgba(0,0,0,0.15)',
+        pointerEvents: isCenter ? 'auto' : 'none',
       }}
     >
-      <div className="flex items-center justify-center flex-shrink-0" style={{ width: 'clamp(35px, 5vh, 50px)', height: 'clamp(35px, 5vh, 50px)' }}>
+      <div className="flex items-center justify-center flex-shrink-0" style={{ width: isCenter ? 'clamp(50px, 8vh, 75px)' : 'clamp(35px, 5vh, 50px)', height: isCenter ? 'clamp(50px, 8vh, 75px)' : 'clamp(35px, 5vh, 50px)' }}>
         <img src={product.icon} alt="" className="w-full h-full object-contain brightness-0 invert" />
       </div>
-      <h3 className="font-assistant font-bold text-white leading-tight" style={{ fontSize: 'clamp(0.85rem, 1.8vh, 1.1rem)' }}>
+      <h3 className="font-assistant font-bold text-white leading-tight" style={{ fontSize: isCenter ? 'clamp(1.1rem, 2.8vh, 1.6rem)' : 'clamp(0.85rem, 1.8vh, 1.1rem)' }}>
         {product.title}
       </h3>
-      <p className="font-assistant text-white/80 leading-tight" style={{ fontSize: 'clamp(0.65rem, 1.3vh, 0.85rem)' }}>
+      <p className="font-assistant text-white/80 leading-tight" style={{ fontSize: isCenter ? 'clamp(0.8rem, 1.8vh, 1rem)' : 'clamp(0.65rem, 1.3vh, 0.85rem)' }}>
         {product.subtitle}
       </p>
     </div>
@@ -98,19 +66,32 @@ function SideCard({ product }) {
 }
 
 export default function ProductsCarousel({ onBackToGrid }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(0);
+  const [offset, setOffset] = useState(0);
   const touchStartX = useRef(null);
   const touchEndX = useRef(null);
 
   const total = PRODUCTS.length;
 
-  const goTo = (index, dir) => {
-    setDirection(dir);
-    if (index < 0) setCurrentIndex(total - 1);
-    else if (index >= total) setCurrentIndex(0);
-    else setCurrentIndex(index);
+  // We show 3 cards centered around PRODUCTS[offset]
+  // visible = [offset-1, offset, offset+1] (wrapping)
+  const getVisible = () => {
+    const prev = (offset - 1 + total) % total;
+    const next = (offset + 1) % total;
+    return [prev, offset, next];
   };
+
+  const [visibleIndices, setVisibleIndices] = useState(getVisible());
+
+  const goTo = (newOffset) => {
+    const wrapped = ((newOffset % total) + total) % total;
+    setOffset(wrapped);
+    const prev = (wrapped - 1 + total) % total;
+    const next = (wrapped + 1) % total;
+    setVisibleIndices([prev, wrapped, next]);
+  };
+
+  const handlePrev = () => goTo(offset - 1);
+  const handleNext = () => goTo(offset + 1);
 
   const handleTouchStart = (e) => { touchStartX.current = e.touches[0].clientX; };
   const handleTouchMove = (e) => { touchEndX.current = e.touches[0].clientX; };
@@ -118,15 +99,14 @@ export default function ProductsCarousel({ onBackToGrid }) {
     if (!touchStartX.current || !touchEndX.current) return;
     const diff = touchStartX.current - touchEndX.current;
     if (Math.abs(diff) > 40) {
-      if (diff > 0) goTo(currentIndex + 1, 1);
-      else goTo(currentIndex - 1, -1);
+      if (diff > 0) handleNext();
+      else handlePrev();
     }
     touchStartX.current = null;
     touchEndX.current = null;
   };
 
-  const prevIndex = currentIndex === 0 ? total - 1 : currentIndex - 1;
-  const nextIndex = currentIndex === total - 1 ? 0 : currentIndex + 1;
+  const [leftIdx, centerIdx, rightIdx] = visibleIndices;
 
   return (
     <div
@@ -157,23 +137,29 @@ export default function ProductsCarousel({ onBackToGrid }) {
         </h1>
       </div>
 
-      {/* Carousel center area */}
+      {/* Carousel track — all three slide together */}
       <div className="flex-1 relative z-10 flex items-center justify-center min-h-0 overflow-hidden">
-        <div className="flex items-center justify-center w-full h-full">
-          <SideCard product={PRODUCTS[prevIndex]} />
-          <div className="flex-shrink-0 relative z-10" style={{ margin: '0 min(-1vw, -8px)' }}>
-            <AnimatePresence mode="popLayout" custom={direction}>
-              <CenterCard key={PRODUCTS[currentIndex].title + currentIndex} product={PRODUCTS[currentIndex]} direction={direction} />
-            </AnimatePresence>
-          </div>
-          <SideCard product={PRODUCTS[nextIndex]} />
-        </div>
+        <AnimatePresence mode="popLayout" custom={null}>
+          <motion.div
+            key={centerIdx}
+            className="flex items-center justify-center"
+            style={{ gap: GAP }}
+            initial={{ x: 300, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: -300, opacity: 1 }}
+            transition={{ duration: 0.35, ease: 'easeInOut' }}
+          >
+            <Card product={PRODUCTS[leftIdx]} isCenter={false} />
+            <Card product={PRODUCTS[centerIdx]} isCenter={true} />
+            <Card product={PRODUCTS[rightIdx]} isCenter={false} />
+          </motion.div>
+        </AnimatePresence>
       </div>
 
       {/* Navigation arrows at bottom */}
       <div className="absolute bottom-12 left-0 right-0 z-20 flex items-center justify-between px-[8%]">
         <button
-          onClick={() => goTo(currentIndex + 1, 1)}
+          onClick={handleNext}
           className="flex items-center justify-center rounded-full transition-all hover:scale-110 active:scale-95 cursor-pointer"
           style={{ width: 'clamp(44px, 6vh, 64px)', height: 'clamp(44px, 6vh, 64px)' }}
         >
@@ -188,7 +174,7 @@ export default function ProductsCarousel({ onBackToGrid }) {
           <span className="font-assistant font-semibold text-sm">תצוגת רשת</span>
         </button>
         <button
-          onClick={() => goTo(currentIndex - 1, -1)}
+          onClick={handlePrev}
           className="flex items-center justify-center rounded-full transition-all hover:scale-110 active:scale-95 cursor-pointer"
           style={{ width: 'clamp(44px, 6vh, 64px)', height: 'clamp(44px, 6vh, 64px)' }}
         >
