@@ -30,7 +30,7 @@ function ProductCard({ product }) {
   return (
     <button
       onClick={() => product.url && window.open(product.url, '_blank')}
-      className="product-card flex flex-col items-center justify-start text-center rounded-2xl transition-all duration-200 active:scale-95 overflow-hidden group"
+      className="product-card flex flex-col items-center justify-center text-center rounded-2xl transition-all duration-200 active:scale-95 overflow-hidden group"
       style={{
         padding: '1.4vh 4%',
         gap: '0.8vh',
