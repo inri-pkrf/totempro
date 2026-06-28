@@ -11,6 +11,7 @@ const HOME_DURATION = 300000;
 
 export default function TotemController() {
   const [currentView, setCurrentView] = useState('home');
+  const [homeKey, setHomeKey] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(!!document.fullscreenElement);
   const containerRef = useRef(null);
   const timerRef = useRef(null);
@@ -72,12 +73,12 @@ export default function TotemController() {
 
   const handleVideoEnd = useCallback(() => startCycle(), [startCycle]);
   const handleNavigateToVideo = useCallback(() => { clearTimer(); setCurrentView('video'); }, []);
-  const handleNavigateHome = useCallback(() => startCycle(), [startCycle]);
+  const handleNavigateHome = useCallback(() => { setHomeKey(k => k + 1); startCycle(); }, [startCycle]);
 
   return (
     <div ref={containerRef} className="w-screen h-screen bg-black overflow-hidden">
       {currentView === 'home' && (
-        <Home onNavigateToVideo={handleNavigateToVideo} onNavigateHome={handleNavigateHome} />
+        <Home key={homeKey} onNavigateToVideo={handleNavigateToVideo} onNavigateHome={handleNavigateHome} />
       )}
 
 
