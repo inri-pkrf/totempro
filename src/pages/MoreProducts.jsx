@@ -2,13 +2,50 @@ import React, { useState } from 'react';
 import DateTimeDisplay from '../components/totem/DateTimeDisplay';
 import AiPopup from '../components/totem/AiPopup';
 
-const BUTTONS = [
-  { label: 'החברה הישראלית', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png', url: 'https://inri-pkrf.github.io/israeli-society-copy/' },
-  { label: 'הצגת המכללה', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png', url: 'https://inri-pkrf.github.io/know-college/' },
-  { label: 'משחק 1', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png', url: 'https://inri-game1.base44.app' },
-  { label: 'משחק 2', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png', url: 'https://inri-game2.base44.app' },
-  { label: 'משחק 3', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png', url: 'https://inri-game3.base44.app' },
+const DEFAULT_ICON = 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png';
+
+const PRODUCTS = [
+  { title: 'החברה הישראלית', subtitle: 'הכרת החברה ומרכיביה', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png', url: 'https://inri-pkrf.github.io/israeli-society-copy/' },
+  { title: 'הצגת המכללה', subtitle: 'היכרות עם המכללה', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png', url: 'https://inri-pkrf.github.io/know-college/' },
+  { title: 'משחק 1', subtitle: 'משחק אינטראקטיבי', icon: DEFAULT_ICON, url: 'https://inri-game1.base44.app' },
+  { title: 'משחק 2', subtitle: 'משחק אינטראקטיבי', icon: DEFAULT_ICON, url: 'https://inri-game2.base44.app' },
+  { title: 'משחק 3', subtitle: 'משחק אינטראקטיבי', icon: DEFAULT_ICON, url: 'https://inri-game3.base44.app' },
+  { title: 'מוצר 6', subtitle: 'תיאור קצר', icon: DEFAULT_ICON, url: null },
+  { title: 'מוצר 7', subtitle: 'תיאור קצר', icon: DEFAULT_ICON, url: null },
+  { title: 'מוצר 8', subtitle: 'תיאור קצר', icon: DEFAULT_ICON, url: null },
+  { title: 'מוצר 9', subtitle: 'תיאור קצר', icon: DEFAULT_ICON, url: null },
+  { title: 'מוצר 10', subtitle: 'תיאור קצר', icon: DEFAULT_ICON, url: null },
+  { title: 'מוצר 11', subtitle: 'תיאור קצר', icon: DEFAULT_ICON, url: null },
+  { title: 'מוצר 12', subtitle: 'תיאור קצר', icon: DEFAULT_ICON, url: null },
+  { title: 'מוצר 13', subtitle: 'תיאור קצר', icon: DEFAULT_ICON, url: null },
+  { title: 'מוצר 14', subtitle: 'תיאור קצר', icon: DEFAULT_ICON, url: null },
+  { title: 'מוצר 15', subtitle: 'תיאור קצר', icon: DEFAULT_ICON, url: null },
+  { title: 'מוצר 16', subtitle: 'תיאור קצר', icon: DEFAULT_ICON, url: null },
+  { title: 'מוצר 17', subtitle: 'תיאור קצר', icon: DEFAULT_ICON, url: null },
+  { title: 'מוצר 18', subtitle: 'תיאור קצר', icon: DEFAULT_ICON, url: null },
+  { title: 'מוצר 19', subtitle: 'תיאור קצר', icon: DEFAULT_ICON, url: null },
+  { title: 'מוצר 20', subtitle: 'תיאור קצר', icon: DEFAULT_ICON, url: null },
 ];
+
+function ProductCard({ product }) {
+  return (
+    <button
+      onClick={() => product.url && window.open(product.url, '_blank')}
+      className="flex flex-col items-center justify-start text-center bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-200 hover:brightness-105 active:scale-95 overflow-hidden"
+      style={{ padding: '1.2vh 4%', gap: '0.6vh', aspectRatio: '1 / 1' }}
+    >
+      <div className="flex items-center justify-center flex-shrink-0" style={{ width: '5vh', height: '5vh', minWidth: '40px', minHeight: '40px' }}>
+        <img src={product.icon} alt="" className="w-full h-full object-contain" />
+      </div>
+      <h3 className="font-assistant font-bold text-[#003A57] leading-tight" style={{ fontSize: 'clamp(0.85rem, 1.8vh, 1.15rem)' }}>
+        {product.title}
+      </h3>
+      <p className="font-assistant text-gray-500 leading-tight" style={{ fontSize: 'clamp(0.7rem, 1.4vh, 0.9rem)' }}>
+        {product.subtitle}
+      </p>
+    </button>
+  );
+}
 
 export default function MoreProducts({ onBack }) {
   const [showAiPopup, setShowAiPopup] = useState(false);
@@ -41,60 +78,41 @@ export default function MoreProducts({ onBack }) {
         <div className="bg-white/90 backdrop-blur-sm shadow-2xl h-full flex flex-col overflow-hidden relative w-full" style={{ borderRadius: '11vh', maxHeight: '85vh' }}>
 
           {/* Decorations */}
-          <div className="absolute top-0 left-0 w-[35%] pointer-events-none opacity-70">
+          <div className="absolute top-0 left-0 w-[25%] pointer-events-none opacity-50">
             <img src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/69b22dfa6_orange.png" alt="" className="w-full" />
           </div>
-          <div className="absolute bottom-0 right-0 w-[35%] pointer-events-none opacity-70">
+          <div className="absolute bottom-0 right-0 w-[25%] pointer-events-none opacity-50">
             <img src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/09589c8ed_blue.png" alt="" className="w-full" />
           </div>
 
-          {/* Card header: logo + menu */}
-          <div className="flex justify-between items-center flex-shrink-0 relative z-10" style={{ padding: '1.2vh 10%' }}>
+          {/* Card header: logo + back */}
+          <div className="flex justify-between items-center flex-shrink-0 relative z-10" style={{ padding: '1.2vh 6%' }}>
             <img
               src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/b4fb5c195_logo.png"
               alt="Logo"
               style={{ height: 'clamp(40px, 7vh, 75px)' }}
               className="object-contain" />
-            <button className="flex items-center justify-center">
-              <img
-                src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/10285006f_menu-btn.png"
-                alt="תפריט"
-                style={{ width: 'clamp(48px, 8vh, 96px)' }}
-                className="object-contain" />
+            <button
+              onClick={onBack}
+              className="font-assistant font-bold text-primary hover:underline flex items-center gap-2"
+              style={{ fontSize: 'clamp(1rem, 2.5vh, 1.6rem)' }}>
+              חזרה &gt;
             </button>
           </div>
 
-          {/* Buttons */}
-          <div className="mx-auto flex-1 flex flex-col justify-center items-center relative z-10 min-h-0 w-[75%]" style={{ gap: '1.6vh', paddingBottom: '1vh' }} dir="rtl">
-            {BUTTONS.map((btn, i) => (
-              <button
-                key={i}
-                onClick={() => btn.url && window.open(btn.url, '_blank')}
-                className="flex items-center rounded-full transition-all duration-200 hover:brightness-110 active:scale-95 active:brightness-150 w-full"
-                style={{
-                  background: 'linear-gradient(to right, #003A57, #007FBD)',
-                  padding: '0.6vh 4%',
-                  gap: '3%',
-                  boxShadow: '0 6px 20px rgba(0, 58, 87, 0.55), 0 2px 8px rgba(0,0,0,0.3)'
-                }}>
-                <div className="relative flex-shrink-0 flex items-center justify-center" style={{ width: '5vh', height: '5vh', minWidth: '30px', minHeight: '30px' }}>
-                  <img src="https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/ee0d19f49_circle-icon.png" alt="" className="absolute inset-0 w-full h-full object-contain" />
-                  <img src={btn.icon} alt="" style={{ width: '55%', height: '55%' }} className="object-contain relative z-10" />
-                </div>
-                <span className="flex-1 text-white font-assistant font-medium text-center" style={{ fontSize: 'clamp(1.2rem, 3vh, 2rem)', paddingLeft: '8%' }}>
-                  {btn.label}
-                </span>
-              </button>
-            ))}
-
-            {/* Back button */}
-            <div className="flex justify-center w-full mt-[2%]">
-              <button
-                onClick={onBack}
-                className="font-assistant font-bold text-primary hover:underline"
-                style={{ fontSize: 'clamp(1rem, 2.5vh, 1.6rem)' }}>
-                 חזרה &gt;
-              </button>
+          {/* Products grid */}
+          <div className="flex-1 min-h-0 relative z-10 overflow-y-auto" style={{ padding: '1vh 6% 2vh' }}>
+            <div
+              className="grid w-full mx-auto"
+              style={{
+                gridTemplateColumns: 'repeat(5, 1fr)',
+                gap: '1.6vh 1.5%',
+                maxWidth: '95%'
+              }}
+            >
+              {PRODUCTS.map((product, i) => (
+                <ProductCard key={i} product={product} />
+              ))}
             </div>
           </div>
         </div>
