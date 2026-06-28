@@ -88,7 +88,7 @@ export default function MoreProducts({ onBack }) {
           style={{
             gridTemplateColumns: 'repeat(5, 1fr)',
             gridAutoRows: 'min-content',
-            gap: '2.4vh 1.5%',
+            gap: '4vh 1.5%',
             maxWidth: '96%'
           }}
         >
