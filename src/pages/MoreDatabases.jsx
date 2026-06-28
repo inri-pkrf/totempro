@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import DateTimeDisplay from '../components/totem/DateTimeDisplay';
 import AiPopup from '../components/totem/AiPopup';
 
 const BUTTONS = [
@@ -19,11 +18,6 @@ export default function MoreDatabases({ onBack }) {
         backgroundPosition: 'center top'
       }}
       dir="rtl">
-
-      {/* Top: date/time */}
-      <div className="flex justify-end items-start px-[5%] z-20 flex-shrink-0" style={{ paddingTop: '2vh' }}>
-        <DateTimeDisplay />
-      </div>
 
       {/* Title */}
       <div className="px-[5%] text-center z-10 flex-shrink-0" style={{ marginTop: '1vh' }}>
