@@ -1,6 +1,7 @@
 import React, { useState, useRef, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import FullscreenButton from '../components/totem/FullscreenButton';
+import NavButtons from '../components/totem/NavButtons';
 import { ChevronLeft, ChevronRight, LayoutGrid } from 'lucide-react';
 
 const DEFAULT_ICON = 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png';
@@ -144,8 +145,10 @@ export default function ProductsCarousel({ onBackToGrid }) {
         </div>
       </div>
 
-      {/* Navigation arrows at bottom - RTL */}
-      <div className="absolute bottom-12 left-0 right-0 z-20 flex items-center justify-between px-[8%]">
+      {/* NavButtons: home + video (rendered by TotemController via NavButtons) */}
+
+      {/* Carousel navigation - centered bottom */}
+      <div className="absolute bottom-12 left-0 right-0 z-20 flex items-center justify-center gap-4 px-[8%]">
         <button
           onClick={handleNext}
           className="flex items-center justify-center rounded-full transition-all hover:scale-110 active:scale-95 cursor-pointer"

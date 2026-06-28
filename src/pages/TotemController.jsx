@@ -105,6 +105,8 @@ export default function TotemController() {
       {showCarousel && (
         <ProductsCarousel
           onBackToGrid={() => setShowCarousel(false)}
+          onNavigateToVideo={handleNavigateToVideo}
+          onNavigateHome={handleNavigateHome}
         />
       )}
 
@@ -119,7 +121,7 @@ export default function TotemController() {
         isActive={currentView === 'video'} 
       />
 
-      {!showCarousel && <NavButtons onNavigateToVideo={handleNavigateToVideo} onNavigateHome={handleNavigateHome} />}
+      <NavButtons onNavigateToVideo={handleNavigateToVideo} onNavigateHome={handleNavigateHome} />
 
       {!showMoreProducts && !showMoreDatabases && (
         <button
