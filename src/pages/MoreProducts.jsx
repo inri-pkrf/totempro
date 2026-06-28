@@ -40,13 +40,13 @@ function ProductCard({ product }) {
         borderBottom: '3px solid rgba(0,0,0,0.15)'
       }}
     >
-      <div className="flex items-center justify-center flex-shrink-0" style={{ width: '5vh', height: '5vh', minWidth: '40px', minHeight: '40px' }}>
+      <div className="flex items-center justify-center flex-shrink-0" style={{ width: '3.5vh', height: '3.5vh', minWidth: '28px', minHeight: '28px' }}>
         <img src={product.icon} alt="" className="w-full h-full object-contain brightness-0 invert group-active:filter-none transition-all duration-150" />
       </div>
       <h3 className="font-assistant font-bold text-white group-active:text-[#003A57] leading-tight transition-colors duration-150" style={{ fontSize: 'clamp(0.85rem, 1.8vh, 1.15rem)' }}>
         {product.title}
       </h3>
-      <p className="font-assistant text-white/80 group-active:text-gray-500 leading-tight transition-colors duration-150" style={{ fontSize: 'clamp(0.7rem, 1.4vh, 0.9rem)' }}>
+      <p className="font-assistant text-white/80 group-active:text-gray-500 leading-tight transition-colors duration-150 line-clamp-2" style={{ fontSize: 'clamp(0.7rem, 1.4vh, 0.9rem)' }}>
         {product.subtitle}
       </p>
     </button>
