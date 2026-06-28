@@ -59,7 +59,7 @@ export default function MoreProducts({ onBack }) {
         <img src="https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/e388f9496_Artboard28copy32.png" alt="" className="w-full" />
       </div>
       <div className="absolute bottom-0 right-0 w-[20%] pointer-events-none opacity-40 z-0">
-        <img src="https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/9fbae749a_Artboard28copy21.png" alt="" className="w-full" />
+        <img src="https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/9fbae749a_Artboard28copy21.png" alt="" className="w-full" style={{ transform: 'rotate(180deg)' }} />
       </div>
 
       {/* Header: logo + back */}
