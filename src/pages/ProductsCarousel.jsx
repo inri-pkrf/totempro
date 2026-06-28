@@ -66,7 +66,7 @@ function PositionedCard({ product, position }) {
   );
 }
 
-export default function ProductsCarousel({ onBackToGrid }) {
+export default function ProductsCarousel({ onBackToGrid, onNavigateToVideo, onNavigateHome }) {
   const [offset, setOffset] = useState(0);
   const trackX = useRef(0);
   const touchStartX = useRef(null);
@@ -147,7 +147,7 @@ export default function ProductsCarousel({ onBackToGrid }) {
 
       {/* NavButtons: home + video (rendered by TotemController via NavButtons) */}
 
-      {/* Carousel navigation - centered bottom */}
+      {/* Navigation arrows centered */}
       <div className="absolute bottom-12 left-0 right-0 z-20 flex items-center justify-center gap-4 px-[8%]">
         <button
           onClick={handleNext}
@@ -157,19 +157,23 @@ export default function ProductsCarousel({ onBackToGrid }) {
           <ChevronRight className="w-full h-full" style={{ color: '#003A57', strokeWidth: 2.5 }} />
         </button>
         <button
-          onClick={onBackToGrid}
-          className="bg-white/90 hover:bg-white rounded-2xl shadow-lg flex items-center gap-2 px-4 py-2 transition-all active:scale-95 cursor-pointer"
-          style={{ color: '#003A57' }}
-        >
-          <LayoutGrid className="w-5 h-5" />
-          <span className="font-assistant font-semibold text-sm">תצוגת רשת</span>
-        </button>
-        <button
           onClick={handlePrev}
           className="flex items-center justify-center rounded-full transition-all hover:scale-110 active:scale-95 cursor-pointer"
           style={{ width: 'clamp(44px, 6vh, 64px)', height: 'clamp(44px, 6vh, 64px)' }}
         >
           <ChevronLeft className="w-full h-full" style={{ color: '#003A57', strokeWidth: 2.5 }} />
+        </button>
+      </div>
+
+      {/* "תצוגת רשת" button — same position as "תצוגת קרוסלה" in the grid view */}
+      <div className="absolute bottom-6 left-6 z-20">
+        <button
+          onClick={onBackToGrid}
+          className="bg-white/90 hover:bg-white rounded-2xl shadow-lg flex items-center gap-2 px-4 py-2 transition-all active:scale-95"
+          style={{ color: '#003A57' }}
+        >
+          <LayoutGrid className="w-5 h-5" />
+          <span className="font-assistant font-semibold text-sm">תצוגת רשת</span>
         </button>
       </div>
     </div>
