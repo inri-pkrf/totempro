@@ -84,10 +84,10 @@ export default function MoreProducts({ onBack }) {
       {/* Products grid */}
       <div className="flex-1 min-h-0 relative z-10" style={{ padding: '1.5vh 4% 2vh' }}>
         <div
-          className="grid w-full h-full mx-auto"
+          className="grid w-full mx-auto"
           style={{
             gridTemplateColumns: 'repeat(5, 1fr)',
-            gridTemplateRows: 'repeat(4, 1fr)',
+            gridAutoRows: 'min-content',
             gap: '0.2vh 1.5%',
             maxWidth: '96%'
           }}
