@@ -4,12 +4,12 @@ import FullscreenButton from '../components/totem/FullscreenButton';
 const DEFAULT_ICON = 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png';
 
 const PRODUCTS = [
-  { title: 'החברה הישראלית', subtitle: 'הכרת החברה', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png', url: 'https://inri-pkrf.github.io/israeli-society-copy/' },
-  { title: 'הצגת המכללה', subtitle: 'היכרות', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png', url: 'https://inri-pkrf.github.io/know-college/' },
-  { title: 'משחק 1', subtitle: 'משחק', icon: DEFAULT_ICON, url: 'https://inri-game1.base44.app' },
-  { title: 'משחק 2', subtitle: 'משחק', icon: DEFAULT_ICON, url: 'https://inri-game2.base44.app' },
-  { title: 'משחק 3', subtitle: 'משחק', icon: DEFAULT_ICON, url: 'https://inri-game3.base44.app' },
-  { title: 'משחק 4', subtitle: 'משחק', icon: DEFAULT_ICON, url: 'https://game4.base44.app' },
+  { title: 'החברה הישראלית', subtitle: 'הכרת החברה ומרכיביה', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png', url: 'https://inri-pkrf.github.io/israeli-society-copy/' },
+  { title: 'הצגת המכללה', subtitle: 'היכרות עם המכללה', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png', url: 'https://inri-pkrf.github.io/know-college/' },
+  { title: 'משחק 1', subtitle: 'משחק אינטראקטיבי', icon: DEFAULT_ICON, url: 'https://inri-game1.base44.app' },
+  { title: 'משחק 2', subtitle: 'משחק אינטראקטיבי', icon: DEFAULT_ICON, url: 'https://inri-game2.base44.app' },
+  { title: 'משחק 3', subtitle: 'משחק אינטראקטיבי', icon: DEFAULT_ICON, url: 'https://inri-game3.base44.app' },
+  { title: 'משחק 4', subtitle: 'משחק אינטראקטיבי', icon: DEFAULT_ICON, url: 'https://game4.base44.app' },
   { title: 'מוצר 7', subtitle: 'בהכנה', icon: DEFAULT_ICON, url: null },
   { title: 'מוצר 8', subtitle: 'בהכנה', icon: DEFAULT_ICON, url: null },
   { title: 'מוצר 9', subtitle: 'בהכנה', icon: DEFAULT_ICON, url: null },
