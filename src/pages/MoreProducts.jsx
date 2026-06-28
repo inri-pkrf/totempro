@@ -34,7 +34,7 @@ function ProductCard({ product }) {
       style={{
         padding: '1.4vh 4%',
         gap: '0.8vh',
-        height: '10vh',
+        height: '15vh',
         boxShadow: '0 8px 32px rgba(0,58,87,0.35), 0 4px 12px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.2)',
         transform: 'perspective(800px) rotateX(2deg)',
         borderBottom: '3px solid rgba(0,0,0,0.15)'
