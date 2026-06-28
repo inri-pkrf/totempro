@@ -107,7 +107,7 @@ export default function Home({ onNavigateToVideo, onNavigateHome, showMoreProduc
           {/* Buttons */}
           <div
             className="absolute inset-0 flex flex-col justify-center items-center z-10 w-[75%] mx-auto"
-            style={{ gap: '1.6vh' }}
+            style={{ gap: '3.2vh' }}
             dir="rtl">
 
             {BUTTONS.slice(0, 5).map((btn, i) => (
