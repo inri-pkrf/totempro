@@ -74,8 +74,8 @@ export default function MoreProducts({ onBack }) {
       </div>
 
       {/* White card */}
-      <div className="flex-1 z-10 min-h-0 flex justify-center px-[8%]" style={{ marginTop: '2vh', marginBottom: 'clamp(50px, 15vh, 160px)' }}>
-        <div className="bg-white/90 backdrop-blur-sm shadow-2xl h-full flex flex-col overflow-hidden relative w-full" style={{ borderRadius: '11vh', maxHeight: '85vh' }}>
+      <div className="flex-1 z-10 min-h-0 flex justify-center" style={{ marginTop: '2vh', marginBottom: 'clamp(50px, 15vh, 160px)' }}>
+        <div className="bg-white/90 backdrop-blur-sm shadow-2xl h-full flex flex-col overflow-hidden relative w-full" style={{ borderRadius: '11vh' }}>
 
           {/* Decorations */}
           <div className="absolute top-0 left-0 w-[25%] pointer-events-none opacity-50">
@@ -101,11 +101,12 @@ export default function MoreProducts({ onBack }) {
           </div>
 
           {/* Products grid */}
-          <div className="flex-1 min-h-0 relative z-10 overflow-y-auto" style={{ padding: '1vh 6% 2vh' }}>
+          <div className="flex-1 min-h-0 relative z-10" style={{ padding: '1vh 6% 2vh' }}>
             <div
-              className="grid w-full mx-auto"
+              className="grid w-full h-full mx-auto"
               style={{
                 gridTemplateColumns: 'repeat(5, 1fr)',
+                gridTemplateRows: 'repeat(4, 1fr)',
                 gap: '1.6vh 1.5%',
                 maxWidth: '95%'
               }}
