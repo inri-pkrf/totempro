@@ -32,15 +32,15 @@ function ProductCard({ product }) {
       onClick={() => product.url && window.open(product.url, '_blank')}
       className="product-card flex flex-col items-center justify-center text-center rounded-2xl transition-all duration-200 active:scale-95 overflow-hidden group"
       style={{
-        padding: '2.5vh 6%',
-        gap: '1.2vh',
-        minHeight: '14vh',
+        padding: '2vh 6%',
+        gap: '1vh',
+        aspectRatio: '1 / 1',
         boxShadow: '0 8px 32px rgba(0,58,87,0.35), 0 4px 12px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.2)',
         transform: 'perspective(800px) rotateX(2deg)',
         borderBottom: '3px solid rgba(0,0,0,0.15)'
       }}
     >
-      <div className="flex items-center justify-center flex-shrink-0" style={{ width: '4.5vh', height: '4.5vh', minWidth: '32px', minHeight: '32px' }}>
+      <div className="flex items-center justify-center flex-shrink-0" style={{ width: '3.5vh', height: '3.5vh', minWidth: '28px', minHeight: '28px' }}>
         <img src={product.icon} alt="" className="w-full h-full object-contain brightness-0 invert group-active:filter-none transition-all duration-150" />
       </div>
       <h3 className="font-assistant font-bold text-white group-active:text-[#003A57] leading-tight transition-colors duration-150" style={{ fontSize: 'clamp(0.85rem, 1.8vh, 1.15rem)' }}>
@@ -94,7 +94,7 @@ export default function MoreProducts({ onBack }) {
           className="grid w-full mx-auto"
           style={{
             gridTemplateColumns: 'repeat(5, 1fr)',
-            gridAutoRows: 'auto',
+            gridAutoRows: 'min-content',
             gap: '4vh 1.5%',
             maxWidth: '96%'
           }}
