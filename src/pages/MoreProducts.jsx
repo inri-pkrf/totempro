@@ -1,6 +1,5 @@
 import React from 'react';
 import FullscreenButton from '../components/totem/FullscreenButton';
-import DateTimeDisplay from '../components/totem/DateTimeDisplay';
 import { GripHorizontal, LayoutGrid } from 'lucide-react';
 
 const DEFAULT_ICON = 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png';
@@ -60,11 +59,6 @@ export default function MoreProducts({ onBack, onOpenCarousel }) {
     <div
       className="w-screen h-screen relative overflow-hidden flex flex-col bg-white"
       dir="rtl">
-
-      {/* Date/time overlay */}
-      <div className="fixed top-4 left-4 z-[70]">
-        <DateTimeDisplay />
-      </div>
 
       {/* Decorations */}
       <div className="absolute top-0 left-0 w-[20%] pointer-events-none opacity-40 z-0">
