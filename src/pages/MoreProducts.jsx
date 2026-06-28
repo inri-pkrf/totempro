@@ -9,7 +9,7 @@ const PRODUCTS = [
   { title: 'משחק 1', subtitle: 'משחק אינטראקטיבי', icon: DEFAULT_ICON, url: 'https://inri-game1.base44.app' },
   { title: 'משחק 2', subtitle: 'משחק אינטראקטיבי', icon: DEFAULT_ICON, url: 'https://inri-game2.base44.app' },
   { title: 'משחק 3', subtitle: 'משחק אינטראקטיבי', icon: DEFAULT_ICON, url: 'https://inri-game3.base44.app' },
-  { title: 'מוצר 6', subtitle: 'תיאור קצר', icon: DEFAULT_ICON, url: null },
+  { title: 'משחק 4', subtitle: 'משחק אינטראקטיבי', icon: DEFAULT_ICON, url: 'https://game4.base44.app' },
   { title: 'מוצר 7', subtitle: 'תיאור קצר', icon: DEFAULT_ICON, url: null },
   { title: 'מוצר 8', subtitle: 'תיאור קצר', icon: DEFAULT_ICON, url: null },
   { title: 'מוצר 9', subtitle: 'תיאור קצר', icon: DEFAULT_ICON, url: null },
