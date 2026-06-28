@@ -7,6 +7,7 @@ import VideoScreen from '../components/totem/VideoScreen';
 import NavButtons from '../components/totem/NavButtons';
 import ProductsCarousel from './ProductsCarousel';
 import MoreDatabases from './MoreDatabases';
+import DateTimeDisplay from '../components/totem/DateTimeDisplay';
 
 const COLOR_SCREEN_COUNT = 4;
 const COLOR_DURATION = 5000;
@@ -124,15 +125,18 @@ export default function TotemController() {
         isActive={currentView === 'video'} 
       />
 
-      {!showMoreProducts && !showMoreDatabases && (
-        <button
-          onClick={toggleFullscreen}
-          className="absolute top-4 right-4 z-50 w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white transition-colors"
-          title={isFullscreen ? 'יציאה ממסך מלא' : 'מסך מלא'}
-        >
-          {isFullscreen ? <Minimize className="w-6 h-6" /> : <Maximize className="w-6 h-6" />}
-        </button>
-      )}
+      {/* Overlay: date/time, fullscreen — always above video */}
+      <div className="fixed top-4 left-4 z-[70]">
+        <DateTimeDisplay />
+      </div>
+
+      <button
+        onClick={toggleFullscreen}
+        className="fixed top-4 right-4 z-[70] w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white transition-colors"
+        title={isFullscreen ? 'יציאה ממסך מלא' : 'מסך מלא'}
+      >
+        {isFullscreen ? <Minimize className="w-6 h-6" /> : <Maximize className="w-6 h-6" />}
+      </button>
     </div>
   );
 }
