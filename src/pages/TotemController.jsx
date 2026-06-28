@@ -12,6 +12,8 @@ const HOME_DURATION = 300000;
 export default function TotemController() {
   const [currentView, setCurrentView] = useState('home');
   const [homeKey, setHomeKey] = useState(0);
+  const [showMoreProducts, setShowMoreProducts] = useState(false);
+  const [showMoreDatabases, setShowMoreDatabases] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(!!document.fullscreenElement);
   const containerRef = useRef(null);
   const timerRef = useRef(null);
@@ -73,12 +75,20 @@ export default function TotemController() {
 
   const handleVideoEnd = useCallback(() => startCycle(), [startCycle]);
   const handleNavigateToVideo = useCallback(() => { clearTimer(); setCurrentView('video'); }, []);
-  const handleNavigateHome = useCallback(() => { setHomeKey(k => k + 1); startCycle(); }, [startCycle]);
+  const handleNavigateHome = useCallback(() => { setHomeKey(k => k + 1); setShowMoreProducts(false); setShowMoreDatabases(false); startCycle(); }, [startCycle]);
 
   return (
     <div ref={containerRef} className="w-screen h-screen bg-black overflow-hidden">
       {currentView === 'home' && (
-        <Home key={homeKey} onNavigateToVideo={handleNavigateToVideo} onNavigateHome={handleNavigateHome} />
+        <Home
+          key={homeKey}
+          onNavigateToVideo={handleNavigateToVideo}
+          onNavigateHome={handleNavigateHome}
+          showMoreProducts={showMoreProducts}
+          setShowMoreProducts={setShowMoreProducts}
+          showMoreDatabases={showMoreDatabases}
+          setShowMoreDatabases={setShowMoreDatabases}
+        />
       )}
 
 
@@ -89,13 +99,15 @@ export default function TotemController() {
 
       <NavButtons onNavigateToVideo={handleNavigateToVideo} onNavigateHome={handleNavigateHome} />
 
-      <button
-        onClick={toggleFullscreen}
-        className="absolute top-4 right-4 z-50 w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white transition-colors"
-        title={isFullscreen ? 'יציאה ממסך מלא' : 'מסך מלא'}
-      >
-        {isFullscreen ? <Minimize className="w-6 h-6" /> : <Maximize className="w-6 h-6" />}
-      </button>
+      {!showMoreProducts && !showMoreDatabases && (
+        <button
+          onClick={toggleFullscreen}
+          className="absolute top-4 right-4 z-50 w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white transition-colors"
+          title={isFullscreen ? 'יציאה ממסך מלא' : 'מסך מלא'}
+        >
+          {isFullscreen ? <Minimize className="w-6 h-6" /> : <Maximize className="w-6 h-6" />}
+        </button>
+      )}
     </div>
   );
 }

@@ -37,11 +37,9 @@ function TotemButton({ btn, onClick }) {
   );
 }
 
-export default function Home({ onNavigateToVideo, onNavigateHome }) {
+export default function Home({ onNavigateToVideo, onNavigateHome, showMoreProducts, setShowMoreProducts, showMoreDatabases, setShowMoreDatabases }) {
   const [showAiPopup, setShowAiPopup] = useState(false);
   const [showLionAlert, setShowLionAlert] = useState(false);
-  const [showMoreDatabases, setShowMoreDatabases] = useState(false);
-  const [showMoreProducts, setShowMoreProducts] = useState(false);
 
   const handleButtonClick = (btn) => {
     if (btn.url) {
