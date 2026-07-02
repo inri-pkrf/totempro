@@ -7,7 +7,7 @@ const DEFAULT_ICON = 'https://media.base44.com/images/public/user_6885e537f90714
 const PRODUCTS = [
   { title: 'החברה הישראלית', subtitle: 'הכרת החברה ומרכיביה', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png', url: 'https://inri-pkrf.github.io/israeli-society-copy/' },
   { title: 'הצגת המכללה', subtitle: 'לומדת היכרות עם המכללה', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png', url: 'https://inri-pkrf.github.io/know-college/' },
-  { title: 'משחק 1', subtitle: 'משחק אינטראקטיבי גלגל העורף', icon: DEFAULT_ICON, url: 'https://inri-game1.base44.app' },
+  { title: 'משחק 1', subtitle: 'משחק אינטראקטיבי גלגל העורף', icon: DEFAULT_ICON, url: 'https://inri-pkrf.github.io/wheel-game/' },
   { title: 'משחק 2', subtitle: 'משחק אינטראקטיבי התאמת לוגו', icon: DEFAULT_ICON, url: 'https://inri-game2.base44.app' },
   { title: 'משחק 3', subtitle: 'משחק אינטראקטיבי מבצע ציוד', icon: DEFAULT_ICON, url: 'https://inri-game3.base44.app' },
   { title: 'משחק 4', subtitle: 'משחק הזיכרון אינטראקטיבי', icon: DEFAULT_ICON, url: 'https://game4.base44.app' },
