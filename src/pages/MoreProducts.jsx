@@ -106,18 +106,6 @@ export default function MoreProducts({ onBack, onOpenCarousel }) {
         </div>
       </div>
 
-      {/* Carousel button bottom-left */}
-      <div className="absolute bottom-6 left-6 z-20">
-        <button
-          onClick={onOpenCarousel}
-          className="bg-white/90 hover:bg-white rounded-2xl shadow-lg flex items-center gap-2 px-4 py-2 transition-all active:scale-95"
-          style={{ color: '#003A57' }}
-        >
-          <LayoutGrid className="w-5 h-5" />
-          <span className="font-assistant font-semibold text-sm">תצוגת קרוסלה</span>
-        </button>
-      </div>
-
     </div>
   );
 }
