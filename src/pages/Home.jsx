@@ -72,7 +72,7 @@ export default function Home({ onNavigateToVideo, onNavigateHome, showMoreProduc
         style={{ marginTop: '2vh', marginBottom: 'clamp(50px, 15vh, 160px)' }}>
         <div
           className="bg-white/90 backdrop-blur-sm shadow-2xl h-full flex flex-col overflow-hidden relative w-full"
-          style={{ borderRadius: '11vh', maxHeight: '85vh' }}>
+          style={{ borderRadius: '11vh', maxHeight: '72vh' }}>
 
           {/* Decorations */}
           <div className="absolute top-0 left-0 w-[30%] pointer-events-none opacity-70">
