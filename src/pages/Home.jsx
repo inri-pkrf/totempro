@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import AiPopup from '../components/totem/AiPopup';
-import MoreDatabases from './MoreDatabases';
 import MoreProducts from './MoreProducts';
 
 const BUTTONS = [
@@ -9,7 +8,7 @@ const BUTTONS = [
   { label: 'הכשרות למשרדי הממשלה', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/64e9c981f_icon3-4.png', url: 'https://inri.orc.org.il/%D7%A4%D7%A2%D7%99%D7%9C%D7%95%D7%99%D7%95%D7%AA-%D7%94%D7%9E%D7%9B%D7%9C%D7%9C%D7%94/%D7%94%D7%9B%D7%A9%D7%A8%D7%AA-%D7%9E%D7%A0%D7%94%D7%9C%D7%99%D7%9D-%D7%95%D7%9E%D7%A0%D7%94%D7%9C%D7%95%D7%AA-%D7%91%D7%9E%D7%A9%D7%A8%D7%93%D7%99-%D7%9E%D7%9E%D7%A9%D7%9C%D7%94-%D7%95%D7%A8%D7%A9%D7%95%D7%99%D7%95%D7%AA-%D7%99%D7%99%D7%A2%D7%95%D7%93%D7%99%D7%95%D7%AA/' },
   { label: 'הכשרות לרשויות המקומיות', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/64e9c981f_icon3-4.png', url: 'https://inri.orc.org.il/%D7%A4%D7%A2%D7%99%D7%9C%D7%95%D7%99%D7%95%D7%AA-%D7%94%D7%9E%D7%9B%D7%9C%D7%9C%D7%94/%D7%94%D7%9B%D7%A9%D7%A8%D7%AA-%D7%9E%D7%A0%D7%94%D7%9C%D7%99%D7%9D-%D7%91%D7%A8%D7%A9%D7%95%D7%99%D7%95%D7%AA-%D7%9E%D7%A7%D7%95%D7%9E%D7%99%D7%95%D7%AA/' },
   { label: 'עזר לניהול מצבי חירום', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/28dfee8ee_icon5.png', url: 'https://inri-pkrf.github.io/assessment2026/' },
-  { label: "מאגר 'שאגת הארי'", icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/01ea85710_icon6.png', url: null }
+  { label: 'מאגר מצבי חירום', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/01ea85710_icon6.png', url: 'https://inri-war.base44.app' }
 ];
 
 const CIRCLE_IMG = 'https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/ee0d19f49_circle-icon.png';
@@ -36,19 +35,14 @@ function TotemButton({ btn, onClick }) {
   );
 }
 
-export default function Home({ onNavigateToVideo, onNavigateHome, showMoreProducts, setShowMoreProducts, showMoreDatabases, setShowMoreDatabases }) {
+export default function Home({ onNavigateToVideo, onNavigateHome, showMoreProducts, setShowMoreProducts }) {
   const [showAiPopup, setShowAiPopup] = useState(false);
-  const [showLionAlert, setShowLionAlert] = useState(false);
 
   const handleButtonClick = (btn) => {
     if (btn.url) {
       window.open(btn.url, '_blank');
-    } else {
-      setShowLionAlert(true);
     }
   };
-
-  if (showMoreDatabases) return <MoreDatabases onBack={() => { setShowMoreDatabases(false); onNavigateHome?.(); }} />;
 
   return (
     <div
@@ -117,28 +111,7 @@ export default function Home({ onNavigateToVideo, onNavigateHome, showMoreProduc
             </div>
 
             <TotemButton btn={BUTTONS[5]} onClick={handleButtonClick} />
-
-            <div className="text-left w-full pl-5" style={{ marginTop: '-0.5vh' }}>
-              <span
-                onClick={() => setShowMoreDatabases(true)}
-                className="text-[#1a5f7a] font-assistant font-semibold cursor-pointer underline hover:opacity-80"
-                style={{ fontSize: 'clamp(0.9rem, 2.2vh, 1.4rem)' }}>
-                עוד מאגרים למצבי חירום &gt;
-              </span>
-            </div>
           </div>
-
-          {/* Lion alert dialog */}
-          {showLionAlert && (
-            <div className="absolute inset-0 z-50 flex items-center justify-center bg-black/40 rounded-[5vh]" onClick={() => setShowLionAlert(false)}>
-              <div className="bg-white rounded-3xl shadow-2xl p-8 mx-8 text-center" dir="rtl" onClick={e => e.stopPropagation()}>
-                <div className="text-4xl mb-3">🦁</div>
-                <h3 className="font-karantina text-2xl text-primary mb-2">בהכנה…</h3>
-                <p className="font-assistant text-gray-600 mb-4">בנתיים תוכלו לצפות במאגרים הנוספים למצבי חירום</p>
-                <button onClick={() => setShowLionAlert(false)} className="bg-primary text-white font-assistant font-bold px-6 py-2 rounded-full hover:brightness-110 transition">סגור</button>
-              </div>
-            </div>
-          )}
         </div>
       </div>
 

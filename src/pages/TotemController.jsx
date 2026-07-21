@@ -6,7 +6,6 @@ import MoreProducts from './MoreProducts';
 import VideoScreen from '../components/totem/VideoScreen';
 import NavButtons from '../components/totem/NavButtons';
 import ProductsCarousel from './ProductsCarousel';
-import MoreDatabases from './MoreDatabases';
 import DateTimeDisplay from '../components/totem/DateTimeDisplay';
 
 const COLOR_SCREEN_COUNT = 4;
@@ -17,7 +16,6 @@ export default function TotemController() {
   const [currentView, setCurrentView] = useState('home');
   const [homeKey, setHomeKey] = useState(0);
   const [showMoreProducts, setShowMoreProducts] = useState(false);
-  const [showMoreDatabases, setShowMoreDatabases] = useState(false);
   const [showCarousel, setShowCarousel] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(!!document.fullscreenElement);
   const containerRef = useRef(null);
@@ -80,19 +78,17 @@ export default function TotemController() {
 
   const handleVideoEnd = useCallback(() => startCycle(), [startCycle]);
   const handleNavigateToVideo = useCallback(() => { clearTimer(); setCurrentView('video'); }, []);
-  const handleNavigateHome = useCallback(() => { setHomeKey(k => k + 1); setShowMoreProducts(false); setShowMoreDatabases(false); setShowCarousel(false); startCycle(); }, [startCycle]);
+  const handleNavigateHome = useCallback(() => { setHomeKey(k => k + 1); setShowMoreProducts(false); setShowCarousel(false); startCycle(); }, [startCycle]);
 
   return (
     <div ref={containerRef} className="w-screen h-screen bg-black overflow-hidden">
-      {currentView === 'home' && !showMoreProducts && !showMoreDatabases && !showCarousel && (
+      {currentView === 'home' && !showMoreProducts && !showCarousel && (
         <Home
           key={homeKey}
           onNavigateToVideo={handleNavigateToVideo}
           onNavigateHome={handleNavigateHome}
           showMoreProducts={showMoreProducts}
           setShowMoreProducts={setShowMoreProducts}
-          showMoreDatabases={showMoreDatabases}
-          setShowMoreDatabases={setShowMoreDatabases}
         />
       )}
 
@@ -108,12 +104,6 @@ export default function TotemController() {
           onBackToGrid={() => setShowCarousel(false)}
           onNavigateToVideo={handleNavigateToVideo}
           onNavigateHome={handleNavigateHome}
-        />
-      )}
-
-      {showMoreDatabases && (
-        <MoreDatabases
-          onBack={() => { setShowMoreDatabases(false); handleNavigateHome(); }}
         />
       )}
 
