@@ -71,7 +71,7 @@ export default function Home({ onNavigateToVideo, onNavigateHome, showMoreProduc
         className="flex-1 z-10 min-h-0 flex justify-center items-center px-[8%]"
         style={{ marginTop: '2vh', marginBottom: 'clamp(50px, 15vh, 160px)' }}>
         <div
-          className="bg-white/90 backdrop-blur-sm shadow-2xl flex flex-col overflow-hidden relative w-full pt-[3.5vh] pb-[5vh]"
+          className="bg-white/90 backdrop-blur-sm shadow-2xl flex flex-col overflow-hidden relative w-full pt-[4.5vh] pb-[6vh]"
           style={{ borderRadius: '11vh' }}>
 
           {/* Decorations */}
@@ -87,7 +87,7 @@ export default function Home({ onNavigateToVideo, onNavigateHome, showMoreProduc
             <img
               src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/b4fb5c195_logo.png"
               alt="Logo"
-              style={{ height: 'clamp(38px, 6.5vh, 65px)' }}
+              style={{ height: 'clamp(76px, 13vh, 130px)' }}
               className="object-contain" />
           </div>
 
