@@ -71,7 +71,7 @@ export default function Home({ onNavigateToVideo, onNavigateHome, showMoreProduc
         className="flex-1 z-10 min-h-0 flex justify-center items-center px-[8%]"
         style={{ marginTop: '2vh', marginBottom: 'clamp(50px, 15vh, 160px)' }}>
         <div
-          className="bg-white/90 backdrop-blur-sm shadow-2xl flex flex-col overflow-hidden relative w-full py-[2vh]"
+          className="bg-white/90 backdrop-blur-sm shadow-2xl flex flex-col overflow-hidden relative w-full py-[3.5vh]"
           style={{ borderRadius: '11vh' }}>
 
           {/* Decorations */}
