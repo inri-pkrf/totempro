@@ -87,7 +87,7 @@ export default function Home({ onNavigateToVideo, onNavigateHome, showMoreProduc
             <img
               src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/b4fb5c195_logo.png"
               alt="Logo"
-              style={{ height: 'clamp(76px, 13vh, 130px)' }}
+              style={{ height: 'clamp(50px, 9vh, 100px)' }}
               className="object-contain" />
           </div>
 
