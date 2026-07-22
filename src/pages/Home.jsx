@@ -71,8 +71,8 @@ export default function Home({ onNavigateToVideo, onNavigateHome, showMoreProduc
         className="flex-1 z-10 min-h-0 flex justify-center px-[8%]"
         style={{ marginTop: '2vh', marginBottom: 'clamp(50px, 15vh, 160px)' }}>
         <div
-          className="bg-white/90 backdrop-blur-sm shadow-2xl h-full flex flex-col overflow-hidden relative w-full"
-          style={{ borderRadius: '11vh', maxHeight: '72vh' }}>
+          className="bg-white/90 backdrop-blur-sm shadow-2xl flex flex-col overflow-hidden relative w-full"
+          style={{ borderRadius: '11vh' }}>
 
           {/* Decorations */}
           <div className="absolute top-0 left-0 w-[30%] pointer-events-none opacity-70">
@@ -83,7 +83,7 @@ export default function Home({ onNavigateToVideo, onNavigateHome, showMoreProduc
           </div>
 
           {/* Card header: logo */}
-          <div className="flex justify-center items-center flex-shrink-0 relative z-10" style={{ padding: '1.2vh 10%' }}>
+          <div className="flex justify-center items-center flex-shrink-0 relative z-10" style={{ padding: '1vh 10%' }}>
             <img
               src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/b4fb5c195_logo.png"
               alt="Logo"
@@ -93,8 +93,8 @@ export default function Home({ onNavigateToVideo, onNavigateHome, showMoreProduc
 
           {/* Buttons */}
           <div
-            className="absolute inset-0 flex flex-col justify-center items-center z-10 w-[75%] mx-auto"
-            style={{ gap: '1.6vh' }}
+            className="flex flex-col items-center z-10 w-[75%] mx-auto"
+            style={{ gap: '1.6vh', padding: '0.5vh 0 2.5vh' }}
             dir="rtl">
 
             {BUTTONS.slice(0, 5).map((btn, i) => (
