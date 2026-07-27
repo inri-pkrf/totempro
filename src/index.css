@@ -75,7 +75,7 @@
 }
 
 .product-card {
-  background: linear-gradient(135deg, #003A57, #007FBD);
+  background: linear-gradient(135deg, var(--card-grad-from, #003A57), var(--card-grad-to, #007FBD));
   transition: background 0.15s ease;
 }
 

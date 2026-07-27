@@ -114,6 +114,8 @@ export default function MoreProducts({ onBack, onOpenCarousel }) {
           style={{
             background: 'linear-gradient(135deg, rgba(0,127,189,0.08), rgba(0,58,87,0.04))',
             border: '2px solid rgba(0,58,87,0.15)',
+            '--card-grad-from': '#003A57',
+            '--card-grad-to': '#007FBD',
           }}
         />
         <ProductSection
@@ -122,6 +124,8 @@ export default function MoreProducts({ onBack, onOpenCarousel }) {
           style={{
             background: 'linear-gradient(135deg, rgba(0,127,189,0.08), rgba(0,58,87,0.04))',
             border: '2px solid rgba(0,127,189,0.15)',
+            '--card-grad-from': '#007FBD',
+            '--card-grad-to': '#00B4D8',
           }}
         />
         <ProductSection
@@ -130,6 +134,8 @@ export default function MoreProducts({ onBack, onOpenCarousel }) {
           style={{
             background: 'linear-gradient(135deg, rgba(0,127,189,0.08), rgba(0,58,87,0.04))',
             border: '2px dashed rgba(0,58,87,0.12)',
+            '--card-grad-from': '#1A4D6E',
+            '--card-grad-to': '#3A7CA5',
           }}
         />
       </div>
