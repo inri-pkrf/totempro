@@ -124,8 +124,8 @@ export default function MoreProducts({ onBack, onOpenCarousel }) {
           style={{
             background: 'linear-gradient(135deg, rgba(0,127,189,0.08), rgba(0,58,87,0.04))',
             border: '2px solid rgba(0,127,189,0.15)',
-            '--card-grad-from': '#0058bdff',
-            '--card-grad-to': '#09849cff',
+            '--card-grad-from': '#38B38C',
+            '--card-grad-to': '#47d3a6ff',
           }}
         />
         <ProductSection
@@ -134,8 +134,8 @@ export default function MoreProducts({ onBack, onOpenCarousel }) {
           style={{
             background: 'linear-gradient(135deg, rgba(0,127,189,0.08), rgba(0,58,87,0.04))',
             border: '2px dashed rgba(0,58,87,0.12)',
-            '--card-grad-from': '#115b8dff',
-            '--card-grad-to': '#1d74aaff',
+            '--card-grad-from': '#d49d1cff',
+            '--card-grad-to': '#e9d417ff',
           }}
         />
       </div>
