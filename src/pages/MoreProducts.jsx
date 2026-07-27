@@ -1,56 +1,71 @@
 import React from 'react';
 import FullscreenButton from '../components/totem/FullscreenButton';
-import { GripHorizontal, LayoutGrid } from 'lucide-react';
+import { Users, GraduationCap, Disc, Copy, Package, Brain, HelpCircle, Clock } from 'lucide-react';
 
-const DEFAULT_ICON = 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png';
-
-const PRODUCTS = [
-  { title: 'החברה הישראלית', subtitle: 'הכרת החברה ומרכיביה', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png', url: 'https://inri-pkrf.github.io/israeli-society-copy/' },
-  { title: 'הצגת המכללה', subtitle: 'לומדת היכרות עם המכללה', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/cffd7f87c_icon1.png', url: 'https://inri-pkrf.github.io/know-college/' },
-  { title: 'משחק 1', subtitle: 'משחק אינטראקטיבי גלגל העורף', icon: DEFAULT_ICON, url: 'https://inri-pkrf.github.io/wheel-game/' },
-  { title: 'משחק 2', subtitle: 'משחק אינטראקטיבי התאמת לוגו', icon: DEFAULT_ICON, url: 'https://inri-game2.base44.app' },
-  { title: 'משחק 3', subtitle: 'משחק אינטראקטיבי מבצע ציוד', icon: DEFAULT_ICON, url: 'https://inri-game3.base44.app' },
-  { title: 'משחק 4', subtitle: 'משחק הזיכרון אינטראקטיבי', icon: DEFAULT_ICON, url: 'https://game4.base44.app' },
-  { title: 'משחק 5', subtitle: 'טריוויה מדיניות התגוננות', icon: DEFAULT_ICON, url: 'https://defend-smart-ready.base44.app' },
-  { title: 'מוצר 8', subtitle: 'מוצר זה כרגע בהכנה - שווה לחכות', icon: DEFAULT_ICON, url: null },
-  { title: 'מוצר 9', subtitle: 'מוצר זה כרגע בהכנה - שווה לחכות', icon: DEFAULT_ICON, url: null },
-  { title: 'מוצר 10', subtitle: 'מוצר זה כרגע בהכנה - שווה לחכות', icon: DEFAULT_ICON, url: null },
-  { title: 'מוצר 11', subtitle: 'מוצר זה כרגע בהכנה - שווה לחכות', icon: DEFAULT_ICON, url: null },
-  { title: 'מוצר 12', subtitle: 'מוצר זה כרגע בהכנה - שווה לחכות', icon: DEFAULT_ICON, url: null },
-  { title: 'מוצר 13', subtitle: 'מוצר זה כרגע בהכנה - שווה לחכות', icon: DEFAULT_ICON, url: null },
-  { title: 'מוצר 14', subtitle: 'מוצר זה כרגע בהכנה - שווה לחכות', icon: DEFAULT_ICON, url: null },
-  { title: 'מוצר 15', subtitle: 'מוצר זה כרגע בהכנה - שווה לחכות', icon: DEFAULT_ICON, url: null },
-  { title: 'מוצר 16', subtitle: 'מוצר זה כרגע בהכנה - שווה לחכות', icon: DEFAULT_ICON, url: null },
-  { title: 'מוצר 17', subtitle: 'מוצר זה כרגע בהכנה - שווה לחכות', icon: DEFAULT_ICON, url: null },
-  { title: 'מוצר 18', subtitle: 'מוצר זה כרגע בהכנה - שווה לחכות', icon: DEFAULT_ICON, url: null },
-  { title: 'מוצר 19', subtitle: 'מוצר זה כרגע בהכנה - שווה לחכות', icon: DEFAULT_ICON, url: null },
-  { title: 'מוצר 20', subtitle: 'מוצר זה כרגע בהכנה - שווה לחכות', icon: DEFAULT_ICON, url: null },
+const DIGITAL_PRODUCTS = [
+  { title: 'החברה הישראלית', subtitle: 'שיעור דיגיטלי על רבדי החברה הישראלית ומרכיביה', icon: Users, url: 'https://inri-pkrf.github.io/israeli-society-copy/' },
+  { title: 'הצגת המכללה', subtitle: 'לומדת היכרות מעמיקה עם המכללה ומרכיביה השונים', icon: GraduationCap, url: 'https://inri-pkrf.github.io/taz-michlala/' },
 ];
 
+const GAMES = [
+  { title: 'משחק 1', subtitle: 'משחק אינטראקטיבי - גלגל העורף הישראלי', icon: Disc, url: 'https://inri-pkrf.github.io/wheel-game/' },
+  { title: 'משחק 2', subtitle: 'משחק אינטראקטיבי - התאמת לוגואים וסמלים', icon: Copy, url: 'https://inri-game2.base44.app' },
+  { title: 'משחק 3', subtitle: 'משחק אינטראקטיבי - מבצע ציוד והצלה', icon: Package, url: 'https://inri-game3.base44.app' },
+  { title: 'משחק 4', subtitle: 'משחק הזיכרון האינטראקטיבי לאימון יכולות', icon: Brain, url: 'https://game4.base44.app' },
+  { title: 'משחק 5', subtitle: 'טריוויה אינטראקטיבית על מדיניות ההתגוננות', icon: HelpCircle, url: 'https://defend-smart-ready.base44.app' },
+];
+
+const COMING_SOON = Array.from({ length: 13 }, (_, i) => ({
+  title: `מוצר ${i + 8}`,
+  subtitle: 'מוצר זה כרגע בהכנה - שווה לחכות',
+  icon: Clock,
+  url: null,
+}));
+
 function ProductCard({ product }) {
+  const Icon = product.icon;
   return (
     <button
       onClick={() => product.url && window.open(product.url, '_blank')}
-      className="product-card flex flex-col items-center justify-start text-center rounded-2xl transition-all duration-200 active:scale-95 overflow-hidden group"
+      className="product-card flex flex-col items-center justify-center text-center rounded-2xl transition-all duration-200 active:scale-95 overflow-hidden group aspect-square w-full"
       style={{
-        padding: '1.8vh 4% 0.6vh',
-        gap: '0.4vh',
-        height: '15vh',
+        padding: '1.5vh 6%',
+        gap: '0.6vh',
         boxShadow: '0 8px 32px rgba(0,58,87,0.35), 0 4px 12px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.2)',
         transform: 'perspective(800px) rotateX(2deg)',
         borderBottom: '3px solid rgba(0,0,0,0.15)'
       }}
     >
-      <div className="flex items-center justify-center flex-shrink-0" style={{ width: '3.5vh', height: '3.5vh', minWidth: '28px', minHeight: '28px' }}>
-        <img src={product.icon} alt="" className="w-full h-full object-contain brightness-0 invert group-active:filter-none transition-all duration-150" />
-      </div>
+      <Icon className="text-white group-active:text-[#003A57] transition-colors duration-150" style={{ width: 'clamp(28px, 4vh, 48px)', height: 'clamp(28px, 4vh, 48px)' }} strokeWidth={1.5} />
       <h3 className="font-assistant font-bold text-white group-active:text-[#003A57] leading-tight transition-colors duration-150" style={{ fontSize: 'clamp(0.85rem, 1.8vh, 1.15rem)' }}>
         {product.title}
       </h3>
-      <p className="font-assistant text-white/80 group-active:text-gray-500 leading-tight transition-colors duration-150" style={{ fontSize: 'clamp(0.7rem, 1.4vh, 0.9rem)' }}>
+      <p className="font-assistant text-white/80 group-active:text-gray-500 leading-tight transition-colors duration-150" style={{ fontSize: 'clamp(0.7rem, 1.3vh, 0.9rem)' }}>
         {product.subtitle}
       </p>
     </button>
+  );
+}
+
+function ProductSection({ title, products }) {
+  return (
+    <div className="mb-5">
+      <h2 className="font-karantina text-[#003A57] font-normal text-center leading-none mb-3" style={{ fontSize: 'clamp(1.5rem, 4vh, 3.5rem)' }}>
+        {title}
+      </h2>
+      <div
+        className="grid w-full mx-auto"
+        style={{
+          gridTemplateColumns: 'repeat(5, 1fr)',
+          gap: '2.5vh 1.5%',
+          maxWidth: '96%'
+        }}
+      >
+        {products.map((product, i) => (
+          <ProductCard key={i} product={product} />
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -89,21 +104,11 @@ export default function MoreProducts({ onBack, onOpenCarousel }) {
         </h1>
       </div>
 
-      {/* Products grid */}
-      <div className="flex-1 min-h-0 relative z-10" style={{ padding: '2.5vh 4% 1vh' }}>
-        <div
-          className="grid w-full mx-auto"
-          style={{
-            gridTemplateColumns: 'repeat(5, 1fr)',
-            gridAutoRows: 'min-content',
-            gap: '4vh 1.5%',
-            maxWidth: '96%'
-          }}
-        >
-          {PRODUCTS.map((product, i) => (
-            <ProductCard key={i} product={product} />
-          ))}
-        </div>
+      {/* Products content - scrollable */}
+      <div className="flex-1 min-h-0 relative z-10 overflow-y-auto" style={{ padding: '2vh 4% 1vh' }}>
+        <ProductSection title="מוצרים דיגיטליים" products={DIGITAL_PRODUCTS} />
+        <ProductSection title="משחקים" products={GAMES} />
+        <ProductSection title="בקרוב" products={COMING_SOON} />
       </div>
 
     </div>

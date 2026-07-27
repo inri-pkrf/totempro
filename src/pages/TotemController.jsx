@@ -42,6 +42,16 @@ export default function TotemController() {
     return () => document.removeEventListener('fullscreenchange', onFsChange);
   }, [enterFullscreen]);
 
+  // Enter fullscreen on first click (browsers require user gesture)
+  useEffect(() => {
+    const handleClick = () => {
+      enterFullscreen();
+      document.removeEventListener('click', handleClick);
+    };
+    document.addEventListener('click', handleClick);
+    return () => document.removeEventListener('click', handleClick);
+  }, [enterFullscreen]);
+
   const clearTimer = () => {
     if (timerRef.current) {
       clearTimeout(timerRef.current);

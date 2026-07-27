@@ -13,6 +13,8 @@ const BUTTONS = [
 
 const CIRCLE_IMG = 'https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/ee0d19f49_circle-icon.png';
 
+const MORE_PRODUCTS_BTN = { label: 'עוד מוצרים דיגיטליים', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/28dfee8ee_icon5.png' };
+
 function TotemButton({ btn, onClick }) {
   return (
     <button
@@ -97,18 +99,11 @@ export default function Home({ onNavigateToVideo, onNavigateHome, showMoreProduc
             style={{ gap: '1.6vh', padding: '0.5vh 0 2.5vh' }}
             dir="rtl">
 
-            {BUTTONS.slice(0, 5).map((btn, i) => (
+            {BUTTONS.slice(0, 4).map((btn, i) => (
               <TotemButton key={i} btn={btn} onClick={handleButtonClick} />
             ))}
 
-            <div className="text-left w-full pl-5" style={{ marginTop: '-0.5vh' }}>
-              <span
-                onClick={() => setShowMoreProducts(true)}
-                className="text-[#1a5f7a] font-assistant font-semibold cursor-pointer underline hover:opacity-80"
-                style={{ fontSize: 'clamp(0.9rem, 2.2vh, 1.4rem)' }}>
-                עוד מוצרים דיגיטליים &gt;
-              </span>
-            </div>
+            <TotemButton btn={MORE_PRODUCTS_BTN} onClick={() => setShowMoreProducts(true)} />
 
             <TotemButton btn={BUTTONS[5]} onClick={handleButtonClick} />
           </div>
