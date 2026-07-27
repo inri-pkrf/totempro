@@ -112,8 +112,8 @@ export default function MoreProducts({ onBack, onOpenCarousel }) {
           title="מוצרים דיגיטליים"
           products={DIGITAL_PRODUCTS}
           style={{
-            background: 'linear-gradient(135deg, rgba(0,127,189,0.08), rgba(0,58,87,0.04))',
-            border: '2px solid rgba(0,58,87,0.15)',
+            background: 'linear-gradient(135deg, rgba(0, 126, 189, 0.03), rgba(0, 58, 87, 0.02))',
+            border: '2px dashed rgba(0,58,87,0.12)',
             '--card-grad-from': '#003A57',
             '--card-grad-to': '#007FBD',
           }}
@@ -122,8 +122,8 @@ export default function MoreProducts({ onBack, onOpenCarousel }) {
           title="משחקים"
           products={GAMES}
           style={{
-            background: 'linear-gradient(135deg, rgba(0, 189, 101, 0.08),rgba(0, 87, 51, 0.04)))',
-            border: '2px solid rgba(0,127,189,0.15)',
+            background: 'linear-gradient(135deg, rgba(0, 126, 189, 0.03), rgba(0, 58, 87, 0.02))',
+            border: '2px dashed rgba(0,58,87,0.12)',
             '--card-grad-from': '#0f9268ff',
             '--card-grad-to': '#38B38C',
           }}
@@ -132,7 +132,7 @@ export default function MoreProducts({ onBack, onOpenCarousel }) {
           title="בקרוב"
           products={COMING_SOON}
           style={{
-            background: 'linear-gradient(135deg, rgba(189, 154, 0, 0.08), rgba(87, 74, 0, 0.04))',
+            background: 'linear-gradient(135deg, rgba(0, 126, 189, 0.03), rgba(0, 58, 87, 0.02))',
             border: '2px dashed rgba(0,58,87,0.12)',
             '--card-grad-from': '#b17f09ff',
             '--card-grad-to': '#d49d1cff',
