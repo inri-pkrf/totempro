@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import FullscreenButton from '../components/totem/FullscreenButton';
-import ProductViewer from '../components/totem/ProductViewer';
 import { Users, GraduationCap, Disc, Copy, Package, Brain, HelpCircle, Clock } from 'lucide-react';
 
 const DIGITAL_PRODUCTS = [
@@ -23,11 +22,11 @@ const COMING_SOON = Array.from({ length: 10 }, (_, i) => ({
   url: null,
 }));
 
-function ProductCard({ product, onOpen }) {
+function ProductCard({ product }) {
   const Icon = product.icon;
   return (
     <button
-      onClick={() => product.url && onOpen(product)}
+      onClick={() => product.url && window.open(product.url, '_blank')}
       className="product-card flex flex-col items-center justify-center text-center rounded-2xl transition-all duration-200 active:scale-95 overflow-hidden group aspect-square w-full"
       style={{
         padding: '0.6vh 5%',
@@ -47,7 +46,7 @@ function ProductCard({ product, onOpen }) {
   );
 }
 
-function ProductSection({ title, products, style, onOpen }) {
+function ProductSection({ title, products, style }) {
   return (
     <div
       className="rounded-2xl flex flex-col"
@@ -65,7 +64,7 @@ function ProductSection({ title, products, style, onOpen }) {
         }}
       >
         {products.map((product, i) => (
-          <ProductCard key={i} product={product} onOpen={onOpen} />
+          <ProductCard key={i} product={product} />
         ))}
       </div>
     </div>
@@ -73,8 +72,6 @@ function ProductSection({ title, products, style, onOpen }) {
 }
 
 export default function MoreProducts({ onBack, onOpenCarousel }) {
-  const [activeProduct, setActiveProduct] = useState(null);
-
   return (
     <div
       className="w-screen h-screen relative overflow-hidden flex flex-col bg-white"
@@ -114,7 +111,6 @@ export default function MoreProducts({ onBack, onOpenCarousel }) {
         <ProductSection
           title="מוצרים דיגיטליים"
           products={DIGITAL_PRODUCTS}
-          onOpen={setActiveProduct}
           style={{
             background: 'linear-gradient(135deg, rgba(0, 126, 189, 0.03), rgba(0, 58, 87, 0.02))',
             border: '2px dashed rgba(0,58,87,0.12)',
@@ -125,7 +121,6 @@ export default function MoreProducts({ onBack, onOpenCarousel }) {
         <ProductSection
           title="משחקים"
           products={GAMES}
-          onOpen={setActiveProduct}
           style={{
             background: 'linear-gradient(135deg, rgba(0, 126, 189, 0.03), rgba(0, 58, 87, 0.02))',
             border: '2px dashed rgba(0,58,87,0.12)',
@@ -136,7 +131,6 @@ export default function MoreProducts({ onBack, onOpenCarousel }) {
         <ProductSection
           title="בקרוב"
           products={COMING_SOON}
-          onOpen={setActiveProduct}
           style={{
             background: 'linear-gradient(135deg, rgba(0, 126, 189, 0.03), rgba(0, 58, 87, 0.02))',
             border: '2px dashed rgba(0,58,87,0.12)',
@@ -145,14 +139,6 @@ export default function MoreProducts({ onBack, onOpenCarousel }) {
           }}
         />
       </div>
-
-      {activeProduct && (
-        <ProductViewer
-          url={activeProduct.url}
-          title={activeProduct.title}
-          onClose={() => setActiveProduct(null)}
-        />
-      )}
 
     </div>
   );
