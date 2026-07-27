@@ -128,7 +128,7 @@ export default function MoreProducts({ onBack, onOpenCarousel }) {
           title="בקרוב"
           products={COMING_SOON}
           style={{
-            background: 'linear-gradient(135deg, rgba(0,58,87,0.04), rgba(0,127,189,0.03))',
+            background: 'linear-gradient(135deg, rgba(81, 115, 133, 0.04), rgba(132, 171, 190, 0.03))',
             border: '2px dashed rgba(0,58,87,0.12)',
           }}
         />
