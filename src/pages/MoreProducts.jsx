@@ -112,7 +112,7 @@ export default function MoreProducts({ onBack, onOpenCarousel }) {
           title="מוצרים דיגיטליים"
           products={DIGITAL_PRODUCTS}
           style={{
-            background: 'linear-gradient(135deg, rgba(0,58,87,0.08), rgba(0,127,189,0.04))',
+            background: 'linear-gradient(135deg, rgba(13, 90, 129, 0.rgba(27, 140, 197, 0.04)0.04))',
             border: '2px solid rgba(0,58,87,0.15)',
           }}
         />
