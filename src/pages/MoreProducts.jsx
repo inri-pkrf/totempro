@@ -28,7 +28,7 @@ function ProductCard({ product }) {
   const Icon = product.icon;
   return (
     <button
-      onClick={() => product.url && window.open(product.url, '_blank')}
+      onClick={() => product.url && (window.location.href = product.url)}
       className="product-card flex flex-col items-center justify-center text-center rounded-2xl transition-all duration-200 active:scale-95 overflow-hidden group aspect-square w-full"
       style={{
         padding: '0.6vh 5%',
