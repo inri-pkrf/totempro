@@ -13,8 +13,6 @@ const GAMES = [
   { title: 'משחק 3', subtitle: 'משחק אינטראקטיבי - מבצע ציוד והצלה', icon: Package, url: 'https://inri-game3.base44.app' },
   { title: 'משחק 4', subtitle: 'משחק הזיכרון האינטראקטיבי לאימון יכולות', icon: Brain, url: 'https://game4.base44.app' },
   { title: 'משחק 5', subtitle: 'טריוויה אינטראקטיבית על מדיניות ההתגוננות', icon: HelpCircle, url: 'https://defend-smart-ready.base44.app' },
-  { title: 'משחק 6', subtitle: 'לוח הגורלות- תחרות בין קבוצות על מדיניות ההתגוננות', icon: HelpCircle, url: 'https://defend-policy-play.base44.app' },
-
 ];
 
 const COMING_SOON = Array.from({ length: 10 }, (_, i) => ({
@@ -28,7 +26,7 @@ function ProductCard({ product }) {
   const Icon = product.icon;
   return (
     <button
-      onClick={() => product.url && (window.location.href = product.url)}
+      onClick={() => product.url && window.open(product.url, '_blank')}
       className="product-card flex flex-col items-center justify-center text-center rounded-2xl transition-all duration-200 active:scale-95 overflow-hidden group aspect-square w-full"
       style={{
         padding: '0.6vh 5%',
@@ -109,7 +107,7 @@ export default function MoreProducts({ onBack, onOpenCarousel }) {
       </div>
 
       {/* Products - fits screen, no scroll */}
-      <div className="flex-1 min-h-0 relative z-10 flex flex-col justify-center overflow-hidden" style={{ padding: '1vh 3% 1.5vh', gap: '1vh' }}>
+      <div className="flex-1 min-h-0 relative z-10 flex flex-col overflow-hidden" style={{ padding: '1vh 3% 1.5vh', gap: '1vh' }}>
         <ProductSection
           title="מוצרים דיגיטליים"
           products={DIGITAL_PRODUCTS}
