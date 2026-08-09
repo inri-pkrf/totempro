@@ -13,6 +13,8 @@ const GAMES = [
   { title: 'משחק 3', subtitle: 'משחק אינטראקטיבי - מבצע ציוד והצלה', icon: Package, url: 'https://inri-game3.base44.app' },
   { title: 'משחק 4', subtitle: 'משחק הזיכרון האינטראקטיבי לאימון יכולות', icon: Brain, url: 'https://game4.base44.app' },
   { title: 'משחק 5', subtitle: 'טריוויה אינטראקטיבית על מדיניות ההתגוננות', icon: HelpCircle, url: 'https://defend-smart-ready.base44.app' },
+  { title: 'משחק 6', subtitle: 'לוח הגורלות - תחרותבבין קבוצות בנושא מדיניות ההתגוננות', icon: HelpCircle, url: 'https://defend-policy-play.base44.app' },
+
 ];
 
 const COMING_SOON = Array.from({ length: 10 }, (_, i) => ({
