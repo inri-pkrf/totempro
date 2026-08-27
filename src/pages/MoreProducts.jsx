@@ -15,9 +15,9 @@ const GAMES = [
   { title: 'משחק 5', subtitle: 'טריוויה אינטראקטיבית על מדיניות ההתגוננות', icon: HelpCircle, url: 'https://defend-smart-ready.base44.app' },
   { title: 'משחק 6', subtitle: 'לוח הגורלות - תחרות בין קבוצות בנושא מדיניות ההתגוננות', icon: HelpCircle, url: 'https://defend-policy-play.base44.app' },
   { title: 'משחק 7', subtitle: 'אמת או מיתוס - מדיניות ההתגוננות', icon: HelpCircle, url: 'https://fact-myth-quest.base44.app' },
+  { title: 'משחק 8', subtitle: 'דגים הנחיות', icon: HelpCircle, url: 'https://safe-catch-game.base44.app' },
 
 ];
-
 const COMING_SOON = Array.from({ length: 10 }, (_, i) => ({
   title: `מוצר ${i + 8}`,
   subtitle: 'מוצר זה כרגע בהכנה - שווה לחכות',
