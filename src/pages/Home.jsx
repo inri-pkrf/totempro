@@ -13,7 +13,7 @@ const BUTTONS = [
 
 const CIRCLE_IMG = 'https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/ee0d19f49_circle-icon.png';
 
-const MORE_PRODUCTS_BTN = { label: 'עוד מוצרים דיגיטליים', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/28dfee8ee_icon5.png' };
+const MORE_PRODUCTS_BTN = { label: 'מוצרים דיגיטליים', icon: 'https://media.base44.com/images/public/user_6885e537f90714e91be36212/28dfee8ee_icon5.png' };
 
 function TotemButton({ btn, onClick }) {
   return (
