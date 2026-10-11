@@ -1,8 +1,9 @@
 import React from 'react';
 import FullscreenButton from '../components/totem/FullscreenButton';
-import { Users, GraduationCap, Disc, Copy, Package, Brain, HelpCircle, Clock } from 'lucide-react';
+import { Users, GraduationCap, Disc, Copy, Package, Brain, HelpCircle, Clock, Vote } from 'lucide-react';
 
 const DIGITAL_PRODUCTS = [
+  { title: 'סקר איומים', subtitle: 'סקר על האיומים ברשויות השונות', icon: Vote, url: 'https://threat-survey.base44.app' },
   { title: 'החברה הישראלית', subtitle: 'שיעור דיגיטלי על רבדי החברה הישראלית ומרכיביה', icon: Users, url: 'https://inri-pkrf.github.io/israeli-society-copy/' },
   { title: 'הצגת המכללה', subtitle: 'לומדת היכרות מעמיקה עם המכללה ומרכיביה השונים', icon: GraduationCap, url: 'https://inri-pkrf.github.io/taz-michlala/' },
 ];
