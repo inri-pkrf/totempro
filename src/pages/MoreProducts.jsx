@@ -1,17 +1,18 @@
 import React from 'react';
 import FullscreenButton from '../components/totem/FullscreenButton';
-import { Users, GraduationCap, Disc, Copy, Package, Brain, HelpCircle, Clock, Vote } from 'lucide-react';
+import { Users, GraduationCap, Disc, Copy, Package, Brain, HelpCircle, Clock, Vote, Compass } from 'lucide-react';
 
 const DIGITAL_PRODUCTS = [
   { title: 'סקר איומים', subtitle: 'סקר על האיומים ברשויות השונות', icon: Vote, url: 'https://threat-survey-58n9.vercel.app/' },
   { title: 'החברה הישראלית', subtitle: 'שיעור דיגיטלי על רבדי החברה הישראלית ומרכיביה', icon: Users, url: 'https://inri-pkrf.github.io/israeli-society-copy/' },
   { title: 'הצגת המכללה', subtitle: 'לומדת היכרות מעמיקה עם המכללה ומרכיביה השונים', icon: GraduationCap, url: 'https://inri-pkrf.github.io/taz-michlala/' },
+  { title: 'מצפן החלטות', subtitle: 'כלי עזר לקביעת מדיניות התגוננות לאוכלוסייה', icon: Compass, url: null },
 ];
 
 const GAMES = [
   { title: 'משחק 1', subtitle: 'משחק אינטראקטיבי - גלגל העורף הישראלי', icon: Disc, url: 'https://inri-pkrf.github.io/wheel-game/' },
   { title: 'משחק 2', subtitle: 'משחק אינטראקטיבי - התאמת לוגואים וסמלים', icon: Copy, url: 'https://inri-game2.base44.app' },
-  { title: 'משחק 3', subtitle: 'משחק אינטראקטיבי - מבצע ציוד והצלה', icon: Package, url: 'https://inri-game3.base44.app' },
+  { title: 'משחק 3', subtitle: 'משחק אינטראקטיבי - מבצע ציוד והצלה', icon: Package, url: 'https://inri-pkrf.github.io/Equipment-Game-/' },
   { title: 'משחק 4', subtitle: 'משחק הזיכרון האינטראקטיבי לאימון יכולות', icon: Brain, url: 'https://game4.base44.app' },
   { title: 'משחק 5', subtitle: 'טריוויה אינטראקטיבית על מדיניות ההתגוננות', icon: HelpCircle, url: 'https://defend-smart-ready.base44.app' },
   { title: 'משחק 6', subtitle: 'לוח הגורלות - תחרות בין קבוצות בנושא מדיניות ההתגוננות', icon: HelpCircle, url: 'https://defend-policy-play.base44.app' },
