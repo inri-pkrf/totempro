@@ -12,7 +12,7 @@ const GAMES = [
   { title: 'התאמת לוגואים', subtitle: 'התאמת לוגואים וסמלים אינטראקטיבית', icon: 'https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/e2a406f0a_generated_93be0663.png', url: 'https://logo-game-murex.vercel.app' },
   { title: 'מבצע ציוד', subtitle: 'חילוץ והצלה - התאמת הציוד למצב', icon: 'https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/19597f8de_generated_b79768e4.png', url: 'https://inri-pkrf.github.io/Equipment-Game-/' },
   { title: 'משחק הזיכרון', subtitle: 'אימון זיכרון באמצעות כרטיסי התאמה', icon: 'https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/1d83482ab_generated_b9ab621a.png', url: 'https://memory-shield-game.vercel.app' },
-  { title: 'טריוויה התגוננות', subtitle: 'טריוויה אינטראקטיבית על מדיניות ההתגוננות', icon: 'https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/33478a37b_generated_6942b97d.png', url: 'https://defense-policy-trivia.vercel.app/' },
+  { title: 'טריוויה התגוננות', subtitle: 'טריוויה אינטראקטיבית על מדיניות ההתגוננות', icon: 'https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/33478a37b_generated_6942b97d.png', url: 'https://defend-smart-ready.base44.app' },
   { title: 'לוח הגורלות', subtitle: 'תחרות בין קבוצות בנושא מדיניות ההתגוננות', icon: 'https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/30ec4049f_generated_c007ea62.png', url: 'https://defend-policy-play.base44.app' },
   { title: 'אמת או מיתוס', subtitle: 'בדיקת עובדות על מדיניות ההתגוננות', icon: 'https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/8d326c596_generated_7c3df486.png', url: 'https://fact-myth-game.vercel.app' },
   { title: 'דגים הנחיות', subtitle: 'איסוף הנחיות התגוננות מהים', icon: 'https://media.base44.com/images/public/69bfa8f7c160ff3fb92ea9a6/18b5ac458_generated_2bac441b.png', url: 'https://fish-game-plum.vercel.app/' },
@@ -38,7 +38,7 @@ function ProductCard({ product }) {
         src={product.icon}
         alt={product.title}
         className="object-contain transition-transform duration-200 group-active:scale-105"
-        style={{ width: 'clamp(40px, 6.5vh, 76px)', height: 'clamp(40px, 6.5vh, 76px)' }}
+        style={{ width: 'clamp(60px, 9.75vh, 114px)', height: 'clamp(60px, 9.75vh, 114px)' }}
       />
       <h3 className="font-assistant font-bold text-white leading-tight" style={{ fontSize: 'clamp(0.78rem, 1.5vh, 1rem)' }}>
         {product.title}
