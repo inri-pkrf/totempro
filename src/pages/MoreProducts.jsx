@@ -56,7 +56,7 @@ function ProductSection({ title, products, style }) {
       className="rounded-2xl flex flex-col"
       style={{ ...style, padding: '1vh 1.5%' }}
     >
-      <h2 className="font-karantina text-[#003A57] font-normal text-center leading-none" style={{ fontSize: 'clamp(3.3rem, 7.5vh, 6.6rem)', marginBottom: '0.8vh' }}>
+      <h2 className="font-karantina text-[#003A57] font-normal text-center leading-none" style={{ fontSize: 'clamp(2.2rem, 5vh, 4.4rem)', marginBottom: '0.8vh' }}>
         {title}
       </h2>
       <div
