@@ -56,7 +56,7 @@ function ProductSection({ title, products, style }) {
       className="rounded-2xl flex flex-col"
       style={{ ...style, padding: '1vh 1.5%' }}
     >
-      <h2 className="font-karantina text-[#003A57] font-normal text-center leading-none" style={{ fontSize: 'clamp(1.1rem, 2.5vh, 2.2rem)', marginBottom: '0.8vh' }}>
+      <h2 className="font-karantina text-[#003A57] font-normal text-center leading-none" style={{ fontSize: 'clamp(3.3rem, 7.5vh, 6.6rem)', marginBottom: '0.8vh' }}>
         {title}
       </h2>
       <div
@@ -90,7 +90,7 @@ export default function MoreProducts({ onBack, onOpenCarousel }) {
       </div>
 
       {/* Header: logo + back */}
-      <div className="flex justify-between items-center flex-shrink-0 relative z-10" style={{ padding: '1.2vh 4%' }}>
+      <div className="flex justify-between items-center absolute top-0 inset-x-0 z-10" style={{ padding: '1.2vh 4%' }}>
         <img
           src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/b4fb5c195_logo.png"
           alt="Logo"
@@ -103,9 +103,9 @@ export default function MoreProducts({ onBack, onOpenCarousel }) {
       </div>
 
       {/* Title */}
-      <div className="text-center z-10 flex-shrink-0" style={{ marginTop: '0.3vh' }}>
+      <div className="text-center z-10 absolute top-0 inset-x-0" style={{ marginTop: '9vh' }}>
         <h1 className="font-karantina text-[#003A57] font-normal leading-none"
-          style={{ fontSize: 'clamp(1.8rem, 5vh, 5rem)' }}>
+          style={{ fontSize: 'clamp(2.7rem, 7.5vh, 7.5rem)' }}>
           עוד מוצרים דיגיטליים
         </h1>
       </div>
