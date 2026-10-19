@@ -1,6 +1,6 @@
 import React from 'react';
 import FullscreenButton from '../components/totem/FullscreenButton';
-import { Users, GraduationCap, Disc, Copy, Package, Brain, HelpCircle, Clock, Vote, Compass } from 'lucide-react';
+import { Users, GraduationCap, Disc, Copy, Package, Brain, HelpCircle, Vote, Compass } from 'lucide-react';
 
 const DIGITAL_PRODUCTS = [
   { title: 'סקר איומים', subtitle: 'סקר על האיומים ברשויות השונות', icon: Vote, url: 'https://threat-survey-58n9.vercel.app/' },
@@ -126,16 +126,6 @@ export default function MoreProducts({ onBack, onOpenCarousel }) {
             border: '2px dashed rgba(0,58,87,0.12)',
             '--card-grad-from': '#0f9268ff',
             '--card-grad-to': '#38B38C',
-          }}
-        />
-        <ProductSection
-          title="בקרוב"
-          products={COMING_SOON}
-          style={{
-            background: 'linear-gradient(135deg, rgba(0, 126, 189, 0.03), rgba(0, 58, 87, 0.02))',
-            border: '2px dashed rgba(0,58,87,0.12)',
-            '--card-grad-from': '#b17f09ff',
-            '--card-grad-to': '#d49d1cff',
           }}
         />
       </div>
