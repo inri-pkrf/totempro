@@ -20,12 +20,7 @@ const GAMES = [
   { title: 'משחק 8', subtitle: 'דגים הנחיות', icon: HelpCircle, url: 'https://safe-catch-game.base44.app' },
 
 ];
-const COMING_SOON = Array.from({ length: 10 }, (_, i) => ({
-  title: `מוצר ${i + 8}`,
-  subtitle: 'מוצר זה כרגע בהכנה - שווה לחכות',
-  icon: Clock,
-  url: null,
-}));
+
 
 function ProductCard({ product }) {
   const Icon = product.icon;
