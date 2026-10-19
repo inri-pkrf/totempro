@@ -1,9 +1,10 @@
 import React from 'react';
 import FullscreenButton from '../components/totem/FullscreenButton';
-import { Users, GraduationCap, Disc, Copy, Package, Brain, HelpCircle, Vote, Compass } from 'lucide-react';
+import { Users, GraduationCap, Disc, Copy, Package, Brain, HelpCircle, Vote, Compass, Database } from 'lucide-react';
 
 const DIGITAL_PRODUCTS = [
   { title: 'סקר איומים', subtitle: 'סקר על האיומים ברשויות השונות', icon: Vote, url: 'https://threat-survey-58n9.vercel.app/' },
+  { title: 'מאגר מצבי חירום', subtitle: 'מאגר מצבי החירום השונים וההנחיות לכל מצב', icon: Database, url: 'https://emergency-reserve.vercel.app/' },
   { title: 'החברה הישראלית', subtitle: 'שיעור דיגיטלי על רבדי החברה הישראלית ומרכיביה', icon: Users, url: 'https://inri-pkrf.github.io/israeli-society-copy/' },
   { title: 'הצגת המכללה', subtitle: 'לומדת היכרות מעמיקה עם המכללה ומרכיביה השונים', icon: GraduationCap, url: 'https://inri-pkrf.github.io/taz-michlala/' },
   { title: 'מצפן החלטות', subtitle: 'כלי עזר לקביעת מדיניות התגוננות לאוכלוסייה', icon: Compass, url: 'https://inri-pkrf.github.io/shelter-compass/' },
@@ -11,13 +12,13 @@ const DIGITAL_PRODUCTS = [
 
 const GAMES = [
   { title: 'משחק 1', subtitle: 'משחק אינטראקטיבי - גלגל העורף הישראלי', icon: Disc, url: 'https://inri-pkrf.github.io/wheel-game/' },
-  { title: 'משחק 2', subtitle: 'משחק אינטראקטיבי - התאמת לוגואים וסמלים', icon: Copy, url: 'https://inri-game2.base44.app' },
+  { title: 'משחק 2', subtitle: 'משחק אינטראקטיבי - התאמת לוגואים וסמלים', icon: Copy, url: 'https://logo-game-murex.vercel.app' },
   { title: 'משחק 3', subtitle: 'משחק אינטראקטיבי - מבצע ציוד והצלה', icon: Package, url: 'https://inri-pkrf.github.io/Equipment-Game-/' },
-  { title: 'משחק 4', subtitle: 'משחק הזיכרון האינטראקטיבי לאימון יכולות', icon: Brain, url: 'https://game4.base44.app' },
-  { title: 'משחק 5', subtitle: 'טריוויה אינטראקטיבית על מדיניות ההתגוננות', icon: HelpCircle, url: 'https://defend-smart-ready.base44.app' },
-  { title: 'משחק 6', subtitle: 'לוח הגורלות - תחרות בין קבוצות בנושא מדיניות ההתגוננות', icon: HelpCircle, url: 'https://defend-policy-play.base44.app' },
-  { title: 'משחק 7', subtitle: 'אמת או מיתוס - מדיניות ההתגוננות', icon: HelpCircle, url: 'https://fact-myth-quest.base44.app' },
-  { title: 'משחק 8', subtitle: 'דגים הנחיות', icon: HelpCircle, url: 'https://safe-catch-game.base44.app' },
+  { title: 'משחק 4', subtitle: 'משחק הזיכרון האינטראקטיבי לאימון יכולות', icon: Brain, url: 'https://memory-shield-game.vercel.app' },
+  { title: 'משחק 5', subtitle: 'טריוויה אינטראקטיבית על מדיניות ההתגוננות', icon: HelpCircle, url: 'https://defense-policy-trivia.vercel.app/' },
+  { title: 'משחק 6', subtitle: 'לוח הגורלות - תחרות בין קבוצות בנושא מדיניות ההתגוננות', icon: HelpCircle, url: 'https://defense-policy-board.vercel.app/' },
+  { title: 'משחק 7', subtitle: 'אמת או מיתוס - מדיניות ההתגוננות', icon: HelpCircle, url: 'https://fact-myth-game.vercel.app' },
+  { title: 'משחק 8', subtitle: 'דגים הנחיות', icon: HelpCircle, url: 'https://fish-game-plum.vercel.app/' },
 
 ];
 
