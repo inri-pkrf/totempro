@@ -3,21 +3,21 @@ import FullscreenButton from '../components/totem/FullscreenButton';
 import { Users, GraduationCap, LoaderPinwheel, Puzzle, LifeBuoy, Brain, ShieldQuestion, Trophy, Scale, Fish, Vote, Compass } from 'lucide-react';
 
 const DIGITAL_PRODUCTS = [
-  { title: 'סקר איומים', subtitle: 'שאלת סקר לבחירת האיום המרכזי על הארגון שלי', icon: Vote, url: 'https://threat-survey-58n9.vercel.app/' },
-  { title: 'החברה הישראלית', subtitle: 'שיעור דיגיטלי על רבדי החברה הישראלית ומרכיביה', icon: Users, url: 'https://inri-pkrf.github.io/israeli-society-copy/' },
-  { title: 'הצגת המכללה', subtitle: 'לומדת היכרות מעמיקה עם המכללה ומרכיביה השונים', icon: GraduationCap, url: 'https://inri-pkrf.github.io/taz-michlala/' },
-  { title: 'מצפן החלטות', subtitle: 'כלי עזר לקביעת מדיניות התגוננות לאוכלוסייה', icon: Compass, url: 'https://inri-pkrf.github.io/shelter-compass/' },
+  { title: 'סקר איומים', subtitle: 'שאלת סקר לבחירת האיום המרכזי על הארגון שלי', icon: Vote, badge: '#EF4444', url: 'https://threat-survey-58n9.vercel.app/' },
+  { title: 'החברה הישראלית', subtitle: 'שיעור דיגיטלי על רבדי החברה הישראלית ומרכיביה', icon: Users, badge: '#F97316', url: 'https://inri-pkrf.github.io/israeli-society-copy/' },
+  { title: 'הצגת המכללה', subtitle: 'לומדת היכרות מעמיקה עם המכללה ומרכיביה השונים', icon: GraduationCap, badge: '#6366F1', url: 'https://inri-pkrf.github.io/taz-michlala/' },
+  { title: 'מצפן החלטות', subtitle: 'כלי עזר לקביעת מדיניות התגוננות לאוכלוסייה', icon: Compass, badge: '#14B8A6', url: 'https://inri-pkrf.github.io/shelter-compass/' },
 ];
 
 const GAMES = [
-  { title: 'גלגל העורף', subtitle: 'גלגל מזלות אינטראקטיבי על החברה הישראלית', icon: LoaderPinwheel, url: 'https://inri-pkrf.github.io/wheel-game/' },
-  { title: 'התאמת לוגואים', subtitle: 'התאמת לוגואים וסמלים אינטראקטיבית', icon: Puzzle, url: 'https://logo-game-murex.vercel.app' },
-  { title: 'מבצע ציוד', subtitle: 'חילוץ והצלה - התאמת הציוד למצב', icon: LifeBuoy, url: 'https://inri-pkrf.github.io/Equipment-Game-/' },
-  { title: 'משחק הזיכרון', subtitle: 'אימון זיכרון באמצעות כרטיסי התאמה', icon: Brain, url: 'https://memory-shield-game.vercel.app' },
-  { title: 'טריוויה התגוננות', subtitle: 'טריוויה אינטראקטיבית על מדיניות ההתגוננות', icon: ShieldQuestion, url: 'https://defense-policy-trivia.vercel.app/' },
-  { title: 'לוח הגורלות', subtitle: 'תחרות בין קבוצות בנושא מדיניות ההתגוננות', icon: Trophy, url: 'https://defend-policy-play.base44.app' },
-  { title: 'אמת או מיתוס', subtitle: 'בדיקת עובדות על מדיניות ההתגוננות', icon: Scale, url: 'https://fact-myth-game.vercel.app' },
-  { title: 'דגים הנחיות', subtitle: 'איסוף הנחיות התגוננות מהים', icon: Fish, url: 'https://fish-game-plum.vercel.app/' },
+  { title: 'גלגל העורף', subtitle: 'גלגל מזלות אינטראקטיבי על החברה הישראלית', icon: LoaderPinwheel, badge: '#F97316', url: 'https://inri-pkrf.github.io/wheel-game/' },
+  { title: 'התאמת לוגואים', subtitle: 'התאמת לוגואים וסמלים אינטראקטיבית', icon: Puzzle, badge: '#8B5CF6', url: 'https://logo-game-murex.vercel.app' },
+  { title: 'מבצע ציוד', subtitle: 'חילוץ והצלה - התאמת הציוד למצב', icon: LifeBuoy, badge: '#EF4444', url: 'https://inri-pkrf.github.io/Equipment-Game-/' },
+  { title: 'משחק הזיכרון', subtitle: 'אימון זיכרון באמצעות כרטיסי התאמה', icon: Brain, badge: '#EC4899', url: 'https://memory-shield-game.vercel.app' },
+  { title: 'טריוויה התגוננות', subtitle: 'טריוויה אינטראקטיבית על מדיניות ההתגוננות', icon: ShieldQuestion, badge: '#22C55E', url: 'https://defense-policy-trivia.vercel.app/' },
+  { title: 'לוח הגורלות', subtitle: 'תחרות בין קבוצות בנושא מדיניות ההתגוננות', icon: Trophy, badge: '#EAB308', url: 'https://defend-policy-play.base44.app' },
+  { title: 'אמת או מיתוס', subtitle: 'בדיקת עובדות על מדיניות ההתגוננות', icon: Scale, badge: '#3B82F6', url: 'https://fact-myth-game.vercel.app' },
+  { title: 'דגים הנחיות', subtitle: 'איסוף הנחיות התגוננות מהים', icon: Fish, badge: '#06B6D4', url: 'https://fish-game-plum.vercel.app/' },
 
 ];
 
@@ -37,8 +37,8 @@ function ProductCard({ product }) {
       }}
     >
       <div className="pointer-events-none absolute" style={{ top: '-30%', right: '-15%', width: '75%', height: '75%', borderRadius: '9999px', background: 'radial-gradient(circle, rgba(255,255,255,0.35), transparent 70%)' }} />
-      <div className="flex items-center justify-center rounded-full bg-white/25 border border-white/30" style={{ width: 'clamp(32px, 5vh, 56px)', height: 'clamp(32px, 5vh, 56px)' }}>
-        <Icon className="text-white transition-transform duration-200 group-active:scale-110" style={{ width: 'clamp(18px, 2.6vh, 30px)', height: 'clamp(18px, 2.6vh, 30px)' }} strokeWidth={1.8} />
+      <div className="flex items-center justify-center rounded-full border-2 border-white/70 shadow-md" style={{ width: 'clamp(32px, 5vh, 56px)', height: 'clamp(32px, 5vh, 56px)', backgroundColor: product.badge }}>
+        <Icon className="text-white transition-transform duration-200 group-active:scale-110" style={{ width: 'clamp(18px, 2.6vh, 30px)', height: 'clamp(18px, 2.6vh, 30px)' }} strokeWidth={2.2} />
       </div>
       <h3 className="font-assistant font-bold text-white leading-tight" style={{ fontSize: 'clamp(0.78rem, 1.5vh, 1rem)' }}>
         {product.title}
