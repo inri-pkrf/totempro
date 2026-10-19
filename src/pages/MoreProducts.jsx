@@ -1,6 +1,6 @@
 import React from 'react';
 import FullscreenButton from '../components/totem/FullscreenButton';
-import { Users, GraduationCap, Disc, Copy, Package, Brain, HelpCircle, Vote, Compass } from 'lucide-react';
+import { Users, GraduationCap, Disc3, Shapes, Backpack, Brain, Gamepad2, Dices, Scale, Fish, Vote, Compass } from 'lucide-react';
 
 const DIGITAL_PRODUCTS = [
   { title: 'סקר איומים', subtitle: 'סקר על האיומים ברשויות השונות', icon: Vote, url: 'https://threat-survey-58n9.vercel.app/' },
@@ -10,14 +10,14 @@ const DIGITAL_PRODUCTS = [
 ];
 
 const GAMES = [
-  { title: 'משחק 1', subtitle: 'משחק אינטראקטיבי - גלגל העורף הישראלי', icon: Disc, url: 'https://inri-pkrf.github.io/wheel-game/' },
-  { title: 'משחק 2', subtitle: 'משחק אינטראקטיבי - התאמת לוגואים וסמלים', icon: Copy, url: 'https://logo-game-murex.vercel.app' },
-  { title: 'משחק 3', subtitle: 'משחק אינטראקטיבי - מבצע ציוד והצלה', icon: Package, url: 'https://inri-pkrf.github.io/Equipment-Game-/' },
+  { title: 'משחק 1', subtitle: 'משחק אינטראקטיבי - גלגל העורף הישראלי', icon: Disc3, url: 'https://inri-pkrf.github.io/wheel-game/' },
+  { title: 'משחק 2', subtitle: 'משחק אינטראקטיבי - התאמת לוגואים וסמלים', icon: Shapes, url: 'https://logo-game-murex.vercel.app' },
+  { title: 'משחק 3', subtitle: 'משחק אינטראקטיבי - מבצע ציוד והצלה', icon: Backpack, url: 'https://inri-pkrf.github.io/Equipment-Game-/' },
   { title: 'משחק 4', subtitle: 'משחק הזיכרון האינטראקטיבי לאימון יכולות', icon: Brain, url: 'https://memory-shield-game.vercel.app' },
-  { title: 'משחק 5', subtitle: 'טריוויה אינטראקטיבית על מדיניות ההתגוננות', icon: HelpCircle, url: 'https://defense-policy-trivia.vercel.app/' },
-  { title: 'משחק 6', subtitle: 'לוח הגורלות - תחרות בין קבוצות בנושא מדיניות ההתגוננות', icon: HelpCircle, url: 'https://defense-policy-board.vercel.app/' },
-  { title: 'משחק 7', subtitle: 'אמת או מיתוס - מדיניות ההתגוננות', icon: HelpCircle, url: 'https://fact-myth-game.vercel.app' },
-  { title: 'משחק 8', subtitle: 'דגים הנחיות', icon: HelpCircle, url: 'https://fish-game-plum.vercel.app/' },
+  { title: 'משחק 5', subtitle: 'טריוויה אינטראקטיבית על מדיניות ההתגוננות', icon: Gamepad2, url: 'https://defense-policy-trivia.vercel.app/' },
+  { title: 'משחק 6', subtitle: 'לוח הגורלות - תחרות בין קבוצות בנושא מדיניות ההתגוננות', icon: Dices, url: 'https://defense-policy-board.vercel.app/' },
+  { title: 'משחק 7', subtitle: 'אמת או מיתוס - מדיניות ההתגוננות', icon: Scale, url: 'https://fact-myth-game.vercel.app' },
+  { title: 'משחק 8', subtitle: 'דגים הנחיות', icon: Fish, url: 'https://fish-game-plum.vercel.app/' },
 
 ];
 
@@ -27,19 +27,23 @@ function ProductCard({ product }) {
   return (
     <button
       onClick={() => product.url && window.open(product.url, '_blank')}
-      className="product-card flex flex-col items-center justify-center text-center rounded-2xl transition-all duration-200 active:scale-95 overflow-hidden group aspect-square w-full"
+      className="product-card relative flex flex-col items-center justify-center text-center rounded-2xl transition-all duration-200 active:scale-95 overflow-hidden group aspect-square w-full"
       style={{
-        padding: '0.6vh 5%',
-        gap: '0.3vh',
-        boxShadow: '0 6px 20px rgba(0,58,87,0.3), 0 2px 8px rgba(0,0,0,0.2)',
-        borderBottom: '2px solid rgba(0,0,0,0.12)'
+        padding: '0.8vh 6%',
+        gap: '0.5vh',
+        background: 'linear-gradient(160deg, var(--card-grad-from), var(--card-grad-to))',
+        boxShadow: '0 8px 22px rgba(0,58,87,0.28), 0 2px 6px rgba(0,0,0,0.18)',
+        borderBottom: '2px solid rgba(0,0,0,0.15)'
       }}
     >
-      <Icon className="text-white group-active:text-[#003A57] transition-colors duration-150" style={{ width: 'clamp(22px, 3.2vh, 38px)', height: 'clamp(22px, 3.2vh, 38px)' }} strokeWidth={1.5} />
-      <h3 className="font-assistant font-bold text-white group-active:text-[#003A57] leading-tight transition-colors duration-150" style={{ fontSize: 'clamp(0.78rem, 1.5vh, 1rem)' }}>
+      <div className="pointer-events-none absolute" style={{ top: '-30%', right: '-15%', width: '75%', height: '75%', borderRadius: '9999px', background: 'radial-gradient(circle, rgba(255,255,255,0.35), transparent 70%)' }} />
+      <div className="flex items-center justify-center rounded-full bg-white/25 border border-white/30" style={{ width: 'clamp(32px, 5vh, 56px)', height: 'clamp(32px, 5vh, 56px)' }}>
+        <Icon className="text-white transition-transform duration-200 group-active:scale-110" style={{ width: 'clamp(18px, 2.6vh, 30px)', height: 'clamp(18px, 2.6vh, 30px)' }} strokeWidth={1.8} />
+      </div>
+      <h3 className="font-assistant font-bold text-white leading-tight" style={{ fontSize: 'clamp(0.78rem, 1.5vh, 1rem)' }}>
         {product.title}
       </h3>
-      <p className="font-assistant text-white/75 group-active:text-gray-500 leading-tight transition-colors duration-150" style={{ fontSize: 'clamp(0.62rem, 1.1vh, 0.82rem)' }}>
+      <p className="font-assistant text-white/80 leading-tight" style={{ fontSize: 'clamp(0.6rem, 1.05vh, 0.8rem)' }}>
         {product.subtitle}
       </p>
     </button>
@@ -58,7 +62,7 @@ function ProductSection({ title, products, style }) {
       <div
         className="grid w-full mx-auto"
         style={{
-          gridTemplateColumns: 'repeat(5, 1fr)',
+          gridTemplateColumns: 'repeat(4, 1fr)',
           gap: '1vh 1%',
           maxWidth: '1100px'
         }}
@@ -107,7 +111,7 @@ export default function MoreProducts({ onBack, onOpenCarousel }) {
       </div>
 
       {/* Products - fits screen, no scroll */}
-      <div className="flex-1 min-h-0 relative z-10 flex flex-col overflow-hidden" style={{ padding: '1vh 3% 1.5vh', gap: '1vh' }}>
+      <div className="flex-1 min-h-0 relative z-10 flex flex-col justify-center overflow-hidden" style={{ padding: '1vh 3% 1.5vh', gap: '1.5vh' }}>
         <ProductSection
           title="מוצרים דיגיטליים"
           products={DIGITAL_PRODUCTS}
